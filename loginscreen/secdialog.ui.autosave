@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SecDialog</class>
+ <widget class="QDialog" name="SecDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>MS Shell Dlg 2</family>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>30</y>
+     <width>56</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>ur in</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="customerList_pushButton">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>80</y>
+     <width>141</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>View Customer List</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="editList_pushButton">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>130</y>
+     <width>141</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Edit Customer List</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="snedPamphlet_pushButton">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>180</y>
+     <width>141</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Send Pamphlet</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>customerList_pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>SecDialog</receiver>
+   <slot>viewCustomerList()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>189</x>
+     <y>97</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>264</x>
+     <y>41</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>editList_pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>SecDialog</receiver>
+   <slot>editCustomerList()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>241</x>
+     <y>140</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>273</x>
+     <y>122</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>snedPamphlet_pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>SecDialog</receiver>
+   <slot>sendPamphletList()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>181</x>
+     <y>189</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>265</x>
+     <y>240</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>viewCustomerList()</slot>
+  <slot>editCustomerList()</slot>
+  <slot>sendPamphletList()</slot>
+ </slots>
+</ui>
