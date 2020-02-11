@@ -3,6 +3,7 @@
 
 #include <QDialog>
 
+//Testing it out
 namespace Ui {
 class SecDialog;
 }
