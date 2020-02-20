@@ -13,20 +13,19 @@ MainWindow::MainWindow(QWidget *parent) :
    // ui->label_pic->setPixmap(pix.scaled(w,h,Qt::KeepAspectRatio));
 
 }
-
 MainWindow::~MainWindow()
 {
     delete ui;
 }
 
-void MainWindow::on_pushButton_Login_clicked()
+void MainWindow::on_Login_clicked()
 {
     QString username = ui->lineEdit_username->text();
     QString password = ui->lineEdit_password->text();
 
-    if(username ==  "irobotadmin" && password == "robottime") {
+    if(username.toLower() ==  "irobotadmin" && password == "robottime") {
         QMessageBox::information(this, "Login", "Username and password is correct");
-        //hide();
+        hide();
         secDialog = new SecDialog(this);
         secDialog->show();
     }

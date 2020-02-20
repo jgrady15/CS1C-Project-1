@@ -12,11 +12,15 @@ class SecDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit SecDialog(QWidget *parent = 0);
+    explicit SecDialog(QWidget *parent = nullptr);
     ~SecDialog();
 
 private:
     Ui::SecDialog *ui;
+public slots:
+    //void sendPampletList();
+    //void editCustomerList();
+    //void viewCustomerList();
 };
 
 #endif // SECDIALOG_H

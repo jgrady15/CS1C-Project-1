@@ -12,15 +12,16 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
+    explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 private slots:
-    void on_pushButton_Login_clicked();
+    void on_Login_clicked();
 
 private:
     Ui::MainWindow *ui;
     SecDialog *secDialog;
+    bool loggedIn = false;
 };
 
 #endif // MAINWINDOW_H
