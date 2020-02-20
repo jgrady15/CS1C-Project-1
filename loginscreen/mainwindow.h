@@ -3,16 +3,17 @@
 
 #include <QMainWindow>
 #include "secdialog.h"
-namespace Ui {
-class MainWindow;
-}
+
+QT_BEGIN_NAMESPACE
+namespace Ui { class MainWindow; }
+QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
+    MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 private slots:
@@ -22,5 +23,4 @@ private:
     Ui::MainWindow *ui;
     SecDialog *secDialog;
 };
-
 #endif // MAINWINDOW_H

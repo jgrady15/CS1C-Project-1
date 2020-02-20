@@ -13,19 +13,9 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>30</y>
-     <width>56</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>ur in</string>
-   </property>
-  </widget>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QPushButton" name="customerList_pushButton">
    <property name="geometry">
     <rect>

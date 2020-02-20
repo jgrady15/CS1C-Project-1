@@ -14,16 +14,22 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
+        frontpage.cpp \
         mainwindow.cpp \
-    secdialog.cpp
+        secdialog.cpp
 
 HEADERS  += mainwindow.h \
+    frontpage.h \
     secdialog.h
 
 FORMS    += mainwindow.ui \
+    frontpage.ui \
     secdialog.ui
 
 DISTFILES += \
     Uyvhv.qml \
     UyvhvForm.ui.qml
+
+RESOURCES += \
+    resource.qrc
 

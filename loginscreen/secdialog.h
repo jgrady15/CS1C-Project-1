@@ -3,7 +3,6 @@
 
 #include <QDialog>
 
-//Testing it out
 namespace Ui {
 class SecDialog;
 }
@@ -13,8 +12,15 @@ class SecDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit SecDialog(QWidget *parent = 0);
+    explicit SecDialog(QWidget *parent = nullptr);
     ~SecDialog();
+
+private slots:
+    void on_customerList_pushButton_clicked();
+
+    void on_editList_pushButton_clicked();
+
+    void on_snedPamphlet_pushButton_clicked();
 
 private:
     Ui::SecDialog *ui;
