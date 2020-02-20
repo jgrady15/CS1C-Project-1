@@ -27,6 +27,7 @@ void addValues(QString Name, QString Address, QString Address2, QString WebSite,
     if(!qry.exec()){
         qDebug() << "ERROR";
     }
+    //HGI
 
 }
 //readFromFile reads the customer lists and add them onto the database
