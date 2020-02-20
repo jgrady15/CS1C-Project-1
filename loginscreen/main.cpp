@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+#include "frontpage.h"
 #include <QCoreApplication>
 #include <QApplication>
 #include <QDebug>
@@ -100,7 +100,7 @@ int main(int argc, char *argv[])
 
     qDebug()<< "END";
 
-    MainWindow w;
+    FrontPage w;
     w.show();
 
     return a.exec();
