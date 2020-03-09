@@ -2,6 +2,7 @@
 #define FRONTPAGE_H
 
 #include "header.h"
+#include "sql_database.h"
 #include "mainwindow.h"
 
 namespace Ui { class FrontPage; }
@@ -19,6 +20,20 @@ private slots:
     void on_pushButton_1_clicked();
     void on_pushButton_2_clicked();
     void on_pushButton_3_clicked();
+
+    void on_customerListView_entered(const QModelIndex &index);
+
+    void on_goBackButtonAdminLogin_clicked();
+
+    void on_goBackButtonAdminCommands_clicked();
+
+    void on_AdminCommands_customContextMenuRequested(const QPoint &pos);
+
+    void on_loginButton_clicked();
+
+    void on_pushButton_5_clicked();
+
+    void on_loadDatabaseButton_clicked();
 
 private:
     Ui::FrontPage *ui;

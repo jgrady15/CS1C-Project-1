@@ -9,12 +9,21 @@ sql_database::sql_database()
 
 sql_database::~sql_database()
 {
-    database.close();
 }
 
 bool sql_database::isOpen() const
 {
     return database.isOpen();
+}
+
+QSqlDatabase sql_database::grabDatabase()
+{
+    return database;
+}
+
+void sql_database::closeConnection()
+{
+    database.close();
 }
 
 void sql_database::sql_createDatabase()

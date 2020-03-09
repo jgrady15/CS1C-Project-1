@@ -24,8 +24,7 @@ HEADERS  += mainwindow.h \
             secdialog.h \
             sql_database.h
 
-FORMS    += mainwindow.ui \
-            customerListing.ui \
+FORMS    += \
             frontpage.ui \
             secdialog.ui
 

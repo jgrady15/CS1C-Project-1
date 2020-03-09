@@ -17,7 +17,6 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
 void MainWindow::on_pushButton_Login_clicked()
 {
     QString username = ui->lineEdit_username->text();
@@ -38,5 +37,4 @@ void MainWindow::on_pushButton_Login_clicked()
        // QMessageBox::warning(this, "Login", "ur not in");
         ui->statusbar->showMessage("ur not in", 5000);
     }
-
 }

@@ -27,6 +27,9 @@ public:
 
     bool isOpen() const;
     void sql_createDatabase();
+    QSqlDatabase grabDatabase();
+    void closeConnection();
+
 
     void addCustomer(int index);
     void editCustomer(int index);
