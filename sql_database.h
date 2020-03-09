@@ -5,6 +5,7 @@
 
 struct customerNode
 {
+    int companyID;
     QString companyName;
     QString streetName;
     QString cityStateZip;
@@ -16,9 +17,9 @@ struct customerNode
 class sql_database
 {
 private:
+    unsigned int indexBookmark;
     std::vector<customerNode> data;
     QString DB_PATH = "D:/Programming/CS-1C-master/CS1C-Project-1-mainTestBranch/loginscreen/database.sqlite";
-
     QSqlDatabase database;
 
 public:
@@ -30,10 +31,12 @@ public:
     QSqlDatabase grabDatabase();
     void closeConnection();
 
+    std::vector<customerNode> grabVector();
 
     void addCustomer(int index);
-    void editCustomer(int index);
+    void editCustomer(QString *temp);
     void deleteCustomer(QString& searchFor);
+    void setIndex(int index);
 
     void readFile();
 };

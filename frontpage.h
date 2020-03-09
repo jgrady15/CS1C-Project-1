@@ -35,6 +35,22 @@ private slots:
 
     void on_loadDatabaseButton_clicked();
 
+    void on_CustomerListView_activated(const QModelIndex &index);
+
+    void on_toolButton_clicked();
+
+    void on_helpButtonAdminCommands_clicked();
+
+    void on_helpButtonAdminCommands_triggered(QAction *arg1);
+
+    void on_customerListView_activated(const QModelIndex &index);
+
+    void on_tableView_activated(const QModelIndex &index);
+
+    void on_AdminCommandsSaveChanges_clicked();
+
+    void on_searchBarAdminCommands_textChanged(const QString &arg1);
+
 private:
     Ui::FrontPage *ui;
     MainWindow *mainWindow;

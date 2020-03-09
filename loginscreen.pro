@@ -25,8 +25,7 @@ HEADERS  += mainwindow.h \
             sql_database.h
 
 FORMS    += \
-            frontpage.ui \
-            secdialog.ui
+            frontpage.ui
 
 DISTFILES += \
     Uyvhv.qml \
