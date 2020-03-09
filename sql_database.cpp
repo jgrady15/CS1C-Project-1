@@ -9,7 +9,7 @@ sql_database::sql_database()
 
 sql_database::~sql_database()
 {
-
+    database.close();
 }
 
 bool sql_database::isOpen() const
@@ -20,61 +20,58 @@ bool sql_database::isOpen() const
 void sql_database::sql_createDatabase()
 {
     QSqlQuery query;
-
     query.exec("CREATE TABLE iRobotsPamphlet("
            "CompanyName  VARCHAR(35) PRIMARY KEY,"
            "StreetName   VARCHAR(40),"
            "CityStateZip VARCHAR(40),"
            "WebsiteName  VARCHAR(35),"
-           "InterestLvl  VARCHAR(35),"
+           "InterestLevel  VARCHAR(35),"
            "KeyCustomer  VARCHAR(15));");
 }
 
-void sql_database::addCustomer()
+void sql_database::addCustomer(int index)
 {
     QSqlQuery query;
-
     query.exec("CREATE UNIQUE INDEX idx_companyName"
                "ON iRobotsPamphlet (CompanyName)");
 
     // WILL INSERT IF NEW VALUES EXIST
-    query.prepare("REPLACE INTO iRobotsPamphlet(CompanyName, StreetName, CityStateZip, WebsiteName, InterestLvl, KeyCustomer)"
-                  "VALUES(:companyName, :streetName, :cityStateZip, :websiteName, :interestLvl, :keyCustomer)");
+    query.prepare("REPLACE INTO iRobotsPamphlet(CompanyName, StreetName, CityStateZip, WebsiteName, InterestLevel, KeyCustomer)"
+                  "VALUES(:companyName, :streetName, :cityStateZip, :websiteName, :interestLevel, :keyCustomer)");
 
-    query.bindValue(":companyName",  data[0]);
-    query.bindValue(":streetName",   data[1]);
-    query.bindValue(":cityStateZip", data[2]);
-    query.bindValue(":websiteName",  data[3]);
-    query.bindValue(":interestLvl",  data[4]);
-    query.bindValue(":keyCustomer",  data[5]);
+    query.bindValue(":companyName",  data[index].companyName);
+    query.bindValue(":streetName",   data[index].streetName);
+    query.bindValue(":cityStateZip", data[index].cityStateZip);
+    query.bindValue(":websiteName",  data[index].websiteName);
+    query.bindValue(":interestLevel",  data[index].interestLevel);
+    query.bindValue(":keyCustomer",  data[index].keyCustomer);
 
     if(!query.exec())
         qDebug() << "Failed: " << query.lastError();
 }
 
-void sql_database::updateCustomer()
+void sql_database::editCustomer(int index)
 {
     QSqlQuery query;
-
-    query.bindValue(":companyName",  data[0]);
-    query.bindValue(":streetName",   data[1]);
-    query.bindValue(":cityStateZip", data[2]);
-    query.bindValue(":websiteName",  data[3]);
-    query.bindValue(":interestLvl",  data[4]);
-    query.bindValue(":keyCustomer",  data[5]);
-
     query.prepare("UPDATE iRobotsPamplet"
                   "SET CompanyName = :companyName,"
-                  "StreetName = :streetName,"
-                  "CityStateZip = :cityStateZip,"
-                  "WebsiteName = :websiteName,"
-                  "InterestLvl = :interestLvl,"
-                  "KeyCustomer = :keyCustomer");
+                  "    StreetName = :streetName,"
+                  "    CityStateZip = :cityStateZip,"
+                  "    WebsiteName = :websiteName,"
+                  "    InterestLevel = :interestLevel,"
+                  "    KeyCustomer = :keyCustomer"
+                  "WHERE"
+                  "    CompanyName = :companyName");
 
-    if(query.exec())
-        qDebug() << "UPDATE WORKED!";
-    else
-        qDebug() << "UPDATE DID NOT WORK";
+    query.bindValue(":companyName",  data[index].companyName);
+    query.bindValue(":streetName",   data[index].streetName);
+    query.bindValue(":cityStateZip", data[index].cityStateZip);
+    query.bindValue(":websiteName",  data[index].websiteName);
+    query.bindValue(":interestLevel",  data[index].interestLevel);
+    query.bindValue(":keyCustomer",  data[index].keyCustomer);
+
+    if(!query.exec())
+        qDebug() << "UPDATE Failed: " << query.lastError();
 }
 
 void sql_database::deleteCustomer(QString& searchFor)
@@ -94,20 +91,19 @@ void sql_database::readFile()
     QFile file("D:/Programming/CS-1C-master/CS1C-Project-1-mainTestBranch/loginscreen/customers.txt");
     file.open(QIODevice::ReadOnly);
     QTextStream inFile(&file);
+    customerNode temp;
 
     int index = 0;
     while(!inFile.atEnd())
     {
-        data[index] = inFile.readLine();
-
-        if(index == 5)
-        {
-            addCustomer();
-            index = -1;
-        }
-
+        temp.companyName = inFile.readLine();
+        temp.streetName = inFile.readLine();
+        temp.cityStateZip = inFile.readLine();
+        temp.websiteName = inFile.readLine();
+        temp.interestLevel = inFile.readLine();
+        temp.keyCustomer = inFile.readLine();
+        data.push_back(temp);
+        addCustomer(index);
         ++index;
-    }
-
-    file.close();
+    }   file.close();
 }

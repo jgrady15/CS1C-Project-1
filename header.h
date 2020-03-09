@@ -28,9 +28,13 @@
 #include <QMessageBox>
 #include <QPixmap>
 
+// WIDGETS
+#include <QStackedWidget>
+
 // STL
-// #include <iostream>
-// #include <algorithm>
+#include <iostream>
+#include <algorithm>
+#include <vector>
 // #include <list>
 
 #endif // HEADER_H

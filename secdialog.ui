@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>910</width>
+    <height>509</height>
    </rect>
   </property>
   <property name="font">
@@ -74,8 +74,8 @@
      <y>97</y>
     </hint>
     <hint type="destinationlabel">
-     <x>264</x>
-     <y>41</y>
+     <x>261</x>
+     <y>35</y>
     </hint>
    </hints>
   </connection>
@@ -90,8 +90,8 @@
      <y>140</y>
     </hint>
     <hint type="destinationlabel">
-     <x>273</x>
-     <y>122</y>
+     <x>329</x>
+     <y>164</y>
     </hint>
    </hints>
   </connection>

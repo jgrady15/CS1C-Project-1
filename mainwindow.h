@@ -20,6 +20,10 @@ private slots:
     void on_pushButton_Login_clicked();
 
 private:
+    QWidget *firstPageWidget;
+    QWidget *secondPageWidget;
+    QWidget *thirdPageWidget;
+
     Ui::MainWindow *ui;
     SecDialog *secDialog;
 };

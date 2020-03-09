@@ -16,6 +16,7 @@ SecDialog::~SecDialog()
 void SecDialog::on_customerList_pushButton_clicked()
 {
     QMessageBox::information(this, "not built yet", "customer listing");
+
 }
 
 void SecDialog::on_editList_pushButton_clicked()

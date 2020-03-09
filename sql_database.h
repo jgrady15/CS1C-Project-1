@@ -3,10 +3,20 @@
 
 #include "header.h"
 
+struct customerNode
+{
+    QString companyName;
+    QString streetName;
+    QString cityStateZip;
+    QString websiteName;
+    QString interestLevel;
+    QString keyCustomer;
+};
+
 class sql_database
 {
 private:
-    QString data[6];
+    std::vector<customerNode> data;
     QString DB_PATH = "D:/Programming/CS-1C-master/CS1C-Project-1-mainTestBranch/loginscreen/database.sqlite";
 
     QSqlDatabase database;
@@ -18,8 +28,8 @@ public:
     bool isOpen() const;
     void sql_createDatabase();
 
-    void addCustomer();
-    void updateCustomer();
+    void addCustomer(int index);
+    void editCustomer(int index);
     void deleteCustomer(QString& searchFor);
 
     void readFile();
