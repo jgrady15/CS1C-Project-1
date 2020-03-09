@@ -25,6 +25,12 @@ private slots:
 
     void on_pushButton_3_clicked();
 
+    void on_homeButton_1_clicked();
+
+    void on_homeButton_2_clicked();
+
+    void on_homeButton_3_clicked();
+
 private:
     Ui::FrontPage *ui;
     MainWindow *mainWindow;
