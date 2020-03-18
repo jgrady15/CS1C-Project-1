@@ -33,7 +33,7 @@ void addValues(QString Name, QString Address, QString Address2, QString WebSite,
 //readFromFile reads the customer lists and add them onto the database
 void readFromFile(){
 
-    QFile file("C:\\Users\\Andy\\GitProject1\\CS1C-Project-1\\Customers.txt");      //Change the file folder to yours
+    QFile file("C:\\Users\\edpou\\Documents\\GitHub\\CS1C-Project-1\\loginscreen\\customers.txt");      //Change the file folder to yours
     if(!file.open(QIODevice::ReadOnly)) {
         QMessageBox::information(0, "error", file.errorString());
     }

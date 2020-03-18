@@ -1,5 +1,6 @@
 #include "frontpage.h"
 #include "ui_frontpage.h"
+#include "reviewwindow.h"
 #include <QMessageBox>
 #include <QPixmap>
 
@@ -76,4 +77,8 @@ void FrontPage::on_homeButton_2_clicked()
 void FrontPage::on_homeButton_3_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
+}
+
+void FrontPage::submitReview() {
+   review->show();
 }
