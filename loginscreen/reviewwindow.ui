@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>reviewWindow</class>
+ <widget class="QMainWindow" name="reviewWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>450</width>
+    <height>379</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>431</width>
+      <height>311</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="vertLayout">
+     <item>
+      <layout class="QHBoxLayout" name="nameHoriz">
+       <item>
+        <widget class="QLabel" name="nameLabel">
+         <property name="text">
+          <string>Name: </string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="nameLine"/>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="anonBox">
+         <property name="text">
+          <string>Anonymous</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="productHoriz">
+       <item>
+        <widget class="QLabel" name="productLabel">
+         <property name="text">
+          <string>Product:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="productLine">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Fixed</enum>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QComboBox" name="menuDrop"/>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="ratingHoriz">
+       <item>
+        <widget class="QLabel" name="reviewLabel">
+         <property name="text">
+          <string>Review:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSpinBox" name="ratingBox">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="wrapping">
+          <bool>false</bool>
+         </property>
+         <property name="frame">
+          <bool>true</bool>
+         </property>
+         <property name="maximum">
+          <number>5</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="starLabel">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="reviewHoriz">
+       <item>
+        <widget class="QTextEdit" name="textEdit"/>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QPushButton" name="submitButton">
+       <property name="text">
+        <string>Submit Review</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>450</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>anonBox</sender>
+   <signal>clicked()</signal>
+   <receiver>reviewWindow</receiver>
+   <slot>makeAnon()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>382</x>
+     <y>49</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>139</x>
+     <y>65</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>menuDrop</sender>
+   <signal>activated(int)</signal>
+   <receiver>reviewWindow</receiver>
+   <slot>setProduct()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>383</x>
+     <y>88</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>373</x>
+     <y>95</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>submitButton</sender>
+   <signal>clicked()</signal>
+   <receiver>reviewWindow</receiver>
+   <slot>submitReview()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>223</x>
+     <y>332</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>225</x>
+     <y>352</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>makeAnon()</slot>
+  <slot>setProduct()</slot>
+  <slot>submitReview()</slot>
+ </slots>
+</ui>

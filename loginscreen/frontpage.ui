@@ -23,8 +23,11 @@
       <property name="styleSheet">
        <string notr="true">img url(:/img/images/pamphlet1.jpg)</string>
       </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
       <widget class="QWidget" name="home_1">
-       <widget class="QWidget" name="">
+       <widget class="QWidget" name="layoutWidget">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -227,9 +230,9 @@
        <widget class="QPushButton" name="homeButton_3">
         <property name="geometry">
          <rect>
-          <x>1010</x>
+          <x>992</x>
           <y>10</y>
-          <width>93</width>
+          <width>111</width>
           <height>28</height>
          </rect>
         </property>
@@ -250,6 +253,19 @@
          <string/>
         </property>
        </widget>
+       <widget class="QPushButton" name="reviewButton">
+        <property name="geometry">
+         <rect>
+          <x>992</x>
+          <y>40</y>
+          <width>111</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Submit A Review</string>
+        </property>
+       </widget>
       </widget>
      </widget>
     </item>
@@ -268,5 +284,25 @@
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>reviewButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FrontPage</receiver>
+   <slot>submitReview()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1030</x>
+     <y>83</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1129</x>
+     <y>271</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>submitReview()</slot>
+ </slots>
 </ui>

@@ -2,7 +2,8 @@
 #define FRONTPAGE_H
 
 #include <QMainWindow>
-#include "mainwindow.h"
+#include "loginwindow.h"
+#include "reviewwindow.h"
 
 namespace Ui {
 class FrontPage;
@@ -31,9 +32,11 @@ private slots:
 
     void on_homeButton_3_clicked();
 
+    void submitReview();
 private:
     Ui::FrontPage *ui;
     MainWindow *mainWindow;
+    reviewWindow *review = new reviewWindow();
 };
 
 #endif // FRONTPAGE_H
