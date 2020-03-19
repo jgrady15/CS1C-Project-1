@@ -1,6 +1,6 @@
 #include "reviewwindow.h"
 #include "ui_reviewwindow.h"
-
+#include <QMessageBox>
 reviewWindow::reviewWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::reviewWindow)
@@ -37,13 +37,32 @@ void reviewWindow::setProduct(int index) {
 }
 
 void reviewWindow::submitReview() {
+    QMessageBox errorOccurred;
+    errorOccurred.setStyleSheet("QLabel {min-width: 300px;}");
     if (this->ui->nameLine->text() != "" && this->ui->productLine->text() != "") {
-        //good
+        errorOccurred.setInformativeText("Review Successfully Submitted!");
+        errorOccurred.setStandardButtons(QMessageBox::Ok);
+        errorOccurred.exec();
+        this->ui->productLabel->setStyleSheet("QLabel {font-weight: normal;}");
+        this->ui->nameLabel->setStyleSheet("QLabel {font-weight: normal;}");
+        //Code to put it in an review area?
     } else if (this->ui->nameLine->text() == "" && this->ui->productLine->text() != "") {
-        //forgot name
+        errorOccurred.setInformativeText("No name!");
+        errorOccurred.setStandardButtons(QMessageBox::Ok);
+        errorOccurred.exec();
+        this->ui->nameLabel->setStyleSheet("QLabel {font: bold 14px; color: red}");
+        this->ui->productLabel->setStyleSheet("QLabel {font-weight: normal;}");
     } else if (this->ui->nameLine->text() != "" && this->ui->productLine->text() == "") {
-        //forgot product
+        errorOccurred.setInformativeText("No product selected!");
+        errorOccurred.setStandardButtons(QMessageBox::Ok);
+        errorOccurred.exec();
+        this->ui->productLabel->setStyleSheet("QLabel {font: bold 14px; color: red}");
+        this->ui->nameLabel->setStyleSheet("QLabel {font-weight: normal;}");
     } else {
-        //forgot everything, I guess?
+        errorOccurred.setInformativeText("No info provided!");
+        errorOccurred.setStandardButtons(QMessageBox::Ok);
+        errorOccurred.exec();
+        this->ui->nameLabel->setStyleSheet("QLabel {font: bold 14px; color: red}");
+        this->ui->productLabel->setStyleSheet("QLabel {font: bold 14px; color: red}");
     }
 }

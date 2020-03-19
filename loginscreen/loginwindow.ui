@@ -95,6 +95,12 @@
        <property name="text">
         <string>Login</string>
        </property>
+       <property name="autoDefault">
+        <bool>true</bool>
+       </property>
+       <property name="default">
+        <bool>true</bool>
+       </property>
       </widget>
      </item>
     </layout>
@@ -148,5 +154,6 @@
  <connections/>
  <slots>
   <slot>on_pushButton_Login_clicked()</slot>
+  <slot>focusLoginButton()</slot>
  </slots>
 </ui>

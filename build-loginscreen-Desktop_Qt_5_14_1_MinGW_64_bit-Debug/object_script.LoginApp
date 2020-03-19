@@ -1,8 +1,8 @@
-main.o
 adminoptions.o
 adminwindow.o
 frontpage.o
 loginwindow.o
+main.o
 reviewwindow.o
 qrc_resource.o
 moc_adminoptions.o

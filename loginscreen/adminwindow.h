@@ -16,6 +16,7 @@ public:
     ~adminWindow();
 private slots:
     void searchFor();
+    void alphaNumOptions(int);
 private:
     Ui::adminWindow *ui;
 };

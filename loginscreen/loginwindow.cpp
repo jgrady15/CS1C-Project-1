@@ -12,9 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     int w =  ui->label_pic->width();
     int h =  ui->label_pic->height();
     ui->label_pic->setPixmap(pix.scaled(w,h,Qt::KeepAspectRatio));
-
-
-
+    this->ui->pushButton_Login->connect(this->ui->lineEdit_password, SIGNAL(returnPressed()), this, SLOT(on_pushButton_Login_clicked()));
 
 }
 
@@ -24,25 +22,15 @@ MainWindow::~MainWindow()
 }
 
 
-void MainWindow::on_pushButton_Login_clicked()
-{
+void MainWindow::on_pushButton_Login_clicked() {
     QString username = ui->lineEdit_username->text();
     QString password = ui->lineEdit_password->text();
-
-    if(username == "test" && password == "test")
-    {
-        //QMessageBox::information(this, "Login", "ur in");
-        //hide();
+    if(username == "test" && password == "test") {
         secDialog = new SecDialog(this);
         secDialog->show();
-
-        //ui->statusbar->showMessage("ur in", 5000);
-
+        this->hide();
     }
-    else
-    {
-       // QMessageBox::warning(this, "Login", "ur not in");
+    else {
         ui->statusbar->showMessage("ur not in", 5000);
     }
-
 }

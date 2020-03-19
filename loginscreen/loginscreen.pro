@@ -13,11 +13,12 @@ TARGET = LoginApp
 TEMPLATE = app
 
 
-SOURCES += main.cpp\
+SOURCES +=\
         adminoptions.cpp \
         adminwindow.cpp \
         frontpage.cpp \
         loginwindow.cpp \
+        main.cpp \
         reviewwindow.cpp
 
 HEADERS  += \
@@ -25,7 +26,7 @@ HEADERS  += \
     adminwindow.h \
     frontpage.h \
     loginwindow.h \
-    reviewwindow.h
+    reviewwindow.h \
 
 FORMS    += \
     adminoptions.ui \

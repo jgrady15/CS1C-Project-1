@@ -18,9 +18,9 @@ public:
 
 private slots:
     void on_pushButton_Login_clicked();
-
 private:
     Ui::MainWindow *ui;
     SecDialog *secDialog;
+    adminWindow *admin = new adminWindow;
 };
 #endif // MAINWINDOW_H

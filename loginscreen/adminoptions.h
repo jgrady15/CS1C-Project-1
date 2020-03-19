@@ -2,6 +2,7 @@
 #define SECDIALOG_H
 
 #include <QDialog>
+#include "adminwindow.h"
 
 namespace Ui {
 class SecDialog;
@@ -16,14 +17,13 @@ public:
     ~SecDialog();
 
 private slots:
-    void on_customerList_pushButton_clicked();
-
     void on_editList_pushButton_clicked();
 
     void on_snedPamphlet_pushButton_clicked();
 
 private:
     Ui::SecDialog *ui;
+    adminWindow *admin = new adminWindow();
 };
 
 #endif // SECDIALOG_H

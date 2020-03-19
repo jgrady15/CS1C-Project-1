@@ -2,6 +2,7 @@
 #define FRONTPAGE_H
 
 #include <QMainWindow>
+#include "ui_frontpage.h"
 #include "loginwindow.h"
 #include "reviewwindow.h"
 

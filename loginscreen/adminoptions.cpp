@@ -14,14 +14,8 @@ SecDialog::~SecDialog()
     delete ui;
 }
 
-void SecDialog::on_customerList_pushButton_clicked()
-{
-    QMessageBox::information(this, "not built yet", "customer listing");
-}
-
-void SecDialog::on_editList_pushButton_clicked()
-{
-    QMessageBox::information(this, "not built yet", "edit listing");
+void SecDialog::on_editList_pushButton_clicked() {
+    admin->show();
 }
 
 void SecDialog::on_snedPamphlet_pushButton_clicked()

@@ -30,7 +30,7 @@ public:
     QHBoxLayout *horizontalLayout;
     QStackedWidget *stackedWidget;
     QWidget *home_1;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout_2;
     QPushButton *pushButton;
     QPushButton *pushButton_2;
@@ -49,6 +49,7 @@ public:
     QWidget *home_4;
     QPushButton *homeButton_3;
     QLabel *customer_label;
+    QPushButton *reviewButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -67,13 +68,13 @@ public:
         stackedWidget->setStyleSheet(QString::fromUtf8("img url(:/img/images/pamphlet1.jpg)"));
         home_1 = new QWidget();
         home_1->setObjectName(QString::fromUtf8("home_1"));
-        widget = new QWidget(home_1);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(0, 10, 1120, 522));
-        horizontalLayout_2 = new QHBoxLayout(widget);
+        layoutWidget = new QWidget(home_1);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setGeometry(QRect(0, 10, 1120, 522));
+        horizontalLayout_2 = new QHBoxLayout(layoutWidget);
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
-        pushButton = new QPushButton(widget);
+        pushButton = new QPushButton(layoutWidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
@@ -85,7 +86,7 @@ public:
 
         horizontalLayout_2->addWidget(pushButton);
 
-        pushButton_2 = new QPushButton(widget);
+        pushButton_2 = new QPushButton(layoutWidget);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
         sizePolicy.setHeightForWidth(pushButton_2->sizePolicy().hasHeightForWidth());
         pushButton_2->setSizePolicy(sizePolicy);
@@ -94,7 +95,7 @@ public:
 
         horizontalLayout_2->addWidget(pushButton_2);
 
-        pushButton_3 = new QPushButton(widget);
+        pushButton_3 = new QPushButton(layoutWidget);
         pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
         sizePolicy.setHeightForWidth(pushButton_3->sizePolicy().hasHeightForWidth());
         pushButton_3->setSizePolicy(sizePolicy);
@@ -103,7 +104,7 @@ public:
 
         horizontalLayout_2->addWidget(pushButton_3);
 
-        pushButton_4 = new QPushButton(widget);
+        pushButton_4 = new QPushButton(layoutWidget);
         pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
         sizePolicy.setHeightForWidth(pushButton_4->sizePolicy().hasHeightForWidth());
         pushButton_4->setSizePolicy(sizePolicy);
@@ -152,10 +153,13 @@ public:
         home_4->setObjectName(QString::fromUtf8("home_4"));
         homeButton_3 = new QPushButton(home_4);
         homeButton_3->setObjectName(QString::fromUtf8("homeButton_3"));
-        homeButton_3->setGeometry(QRect(1010, 10, 93, 28));
+        homeButton_3->setGeometry(QRect(992, 10, 111, 28));
         customer_label = new QLabel(home_4);
         customer_label->setObjectName(QString::fromUtf8("customer_label"));
         customer_label->setGeometry(QRect(0, 0, 981, 511));
+        reviewButton = new QPushButton(home_4);
+        reviewButton->setObjectName(QString::fromUtf8("reviewButton"));
+        reviewButton->setGeometry(QRect(992, 40, 111, 28));
         stackedWidget->addWidget(home_4);
 
         horizontalLayout->addWidget(stackedWidget);
@@ -170,7 +174,9 @@ public:
         FrontPage->setStatusBar(statusbar);
 
         retranslateUi(FrontPage);
+        QObject::connect(reviewButton, SIGNAL(clicked()), FrontPage, SLOT(submitReview()));
 
+        stackedWidget->setCurrentIndex(0);
         tabWidget->setCurrentIndex(0);
 
 
@@ -193,6 +199,7 @@ public:
         contact_label->setText(QString());
         homeButton_3->setText(QCoreApplication::translate("FrontPage", "Home", nullptr));
         customer_label->setText(QString());
+        reviewButton->setText(QCoreApplication::translate("FrontPage", "Submit A Review", nullptr));
     } // retranslateUi
 
 };
