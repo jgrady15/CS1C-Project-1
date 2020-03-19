@@ -1,0 +1,12 @@
+adminoptions.o
+adminwindow.o
+frontpage.o
+loginwindow.o
+main.o
+reviewwindow.o
+qrc_resource.o
+moc_adminoptions.o
+moc_adminwindow.o
+moc_frontpage.o
+moc_loginwindow.o
+moc_reviewwindow.o

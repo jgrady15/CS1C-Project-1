@@ -32,8 +32,7 @@ void addValues(QString Name, QString Address, QString Address2, QString WebSite,
 }
 //readFromFile reads the customer lists and add them onto the database
 void readFromFile(){
-
-    QFile file("C:\\Users\\Andy\\GitProject1\\CS1C-Project-1\\Customers.txt");      //Change the file folder to yours
+    QFile file("C:/Users/edpou/Documents/GitHub/CS1C-Project-1/loginscreen/customers.txt");      //Change the file folder to yours
     if(!file.open(QIODevice::ReadOnly)) {
         QMessageBox::information(0, "error", file.errorString());
     }
@@ -57,49 +56,7 @@ void readFromFile(){
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    qDebug()<< "Start";
 
-//Creates and opens the database
-    QString path= "db.sqlite";
-    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName(path);
-    db.open();
-
-    if(db.isOpen()){
-        qDebug() << "Databse is open";
-    }
-    else{
-        qDebug() << "Database doesn't open";
-    }
-
-    QString query = "CREATE TABLE customertable ("
-                    "Name VARCHAR(20),"
-                    "Address VARCHAR(40),"
-                    "Address2 VARCHAR(30),"
-                    "Website VARCHAR(30),"
-                    "Intrest VARCHAR(20),"
-                    "Key VARCHAR(10))";
-
-    QSqlQuery qry; //TBH im not entirely sure what this does but it works...
-    qry.exec(query);
-
- //DELETES ITEMS FROM DATABASE  - use it to delete the items
-  /*  QString name= "Orange County Airport";
-    qry.prepare("Delete from customertable");
-     if(!qry.exec() )
-        qDebug() << "deletion failed";
-
-     query.clear();
-     qry.prepare("DELETE FROM SQLITE_SEQUENCE WHERE name='customertable'");
-     if(!qry.exec() )
-         qDebug() << "deletion failed";
-*/
-
-    //readFromFile(); //Uses the function to insert the file into the database (THE DATABASE IS ALREADY FULL SO NO NEED TO UNCOMMENT THIS)
-
-    db.close();
-
-    qDebug()<< "END";
 
     FrontPage w;
     w.show();

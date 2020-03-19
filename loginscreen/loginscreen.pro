@@ -13,18 +13,27 @@ TARGET = LoginApp
 TEMPLATE = app
 
 
-SOURCES += main.cpp\
+SOURCES +=\
+        adminoptions.cpp \
+        adminwindow.cpp \
         frontpage.cpp \
-        mainwindow.cpp \
-        secdialog.cpp
+        loginwindow.cpp \
+        main.cpp \
+        reviewwindow.cpp
 
-HEADERS  += mainwindow.h \
+HEADERS  += \
+    adminoptions.h \
+    adminwindow.h \
     frontpage.h \
-    secdialog.h
+    loginwindow.h \
+    reviewwindow.h \
 
-FORMS    += mainwindow.ui \
+FORMS    += \
+    adminoptions.ui \
+    adminwindow.ui \
     frontpage.ui \
-    secdialog.ui
+    loginwindow.ui \
+    reviewwindow.ui
 
 DISTFILES += \
     Uyvhv.qml \
