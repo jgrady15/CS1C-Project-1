@@ -5,6 +5,7 @@
 #include "ui_frontpage.h"
 #include "loginwindow.h"
 #include "reviewwindow.h"
+#include "ui_frontpage.h"
 
 namespace Ui {
 class FrontPage;
