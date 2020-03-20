@@ -43,6 +43,7 @@ void reviewWindow::submitReview() {
         errorOccurred.setInformativeText("Review Successfully Submitted!");
         errorOccurred.setStandardButtons(QMessageBox::Ok);
         errorOccurred.exec();
+        this->destroy();
         this->ui->productLabel->setStyleSheet("QLabel {font-weight: normal;}");
         this->ui->nameLabel->setStyleSheet("QLabel {font-weight: normal;}");
         //Code to put it in an review area?
