@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>emailWidget</class>
+ <widget class="QWidget" name="emailWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>374</width>
+    <height>288</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>351</width>
+     <height>271</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="sendVert">
+    <item>
+     <layout class="QHBoxLayout" name="nameHoriz">
+      <item>
+       <widget class="QLabel" name="nameLabel">
+        <property name="text">
+         <string>Name: </string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="nameEdit"/>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="emailHoriz">
+      <item>
+       <widget class="QLabel" name="emailLabel">
+        <property name="text">
+         <string>Email Address:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="emailLine"/>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QPushButton" name="sendButton">
+      <property name="text">
+       <string>Send Pamphlet</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>sendButton</sender>
+   <signal>clicked()</signal>
+   <receiver>emailWidget</receiver>
+   <slot>sendPamphlet()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>236</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>361</x>
+     <y>231</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>emailLine</sender>
+   <signal>returnPressed()</signal>
+   <receiver>sendButton</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>233</x>
+     <y>195</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>329</x>
+     <y>268</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>sendPamphlet()</slot>
+ </slots>
+</ui>

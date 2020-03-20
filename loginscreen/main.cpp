@@ -3,8 +3,10 @@
 #include <QApplication>
 #include <QDebug>
 #include <QtSql>
+#include <QDesktopServices>
 #include <QSqlDatabase>
 #include <QMessageBox>
+#include <QDir>
 #include "./src/SmtpMime"
 
 //AddValues - adds the values to the database. It is used by the readFromFile function
@@ -57,28 +59,6 @@ void readFromFile(){
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-
-    SmtpClient smtp("smtp.gmail.com", 587, SmtpClient::TlsConnection);
-    smtp.setUser("burntheburns@gmail.com");
-    smtp.setPassword("burnbabyburn1");
-    MimeMessage message;
-    message.setSender(new EmailAddress("burntheburns@gmail.com", "Mr. Burns"));
-    message.addRecipient(new EmailAddress("burntheburns@gmail.com", "Burns"));
-    message.setSubject("Very Important Information");
-    MimeText text;
-    text.setText("The FitnessGram Pacer Test is a multistage aerobic capacity test that progressively gets"
-                 "more difficult as it continues.");
-    message.addPart(&text);
-    if (smtp.connectToHost())
-        qDebug() << "Epic";
-    else
-        qDebug() << "Not epic";
-    if(smtp.login())
-        qDebug() << "Very epic";
-    else
-        qDebug() << "FUCK";
-    smtp.sendMail(message);
-    smtp.quit();
     FrontPage w;
     w.show();
 
