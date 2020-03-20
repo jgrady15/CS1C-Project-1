@@ -16,6 +16,7 @@ TEMPLATE = app
 SOURCES +=\
         adminoptions.cpp \
         adminwindow.cpp \
+        emailwidget.cpp \
         frontpage.cpp \
         loginwindow.cpp \
         main.cpp \
@@ -24,6 +25,7 @@ SOURCES +=\
 HEADERS  += \
     adminoptions.h \
     adminwindow.h \
+    emailwidget.h \
     frontpage.h \
     loginwindow.h \
     reviewwindow.h \
@@ -31,6 +33,7 @@ HEADERS  += \
 FORMS    += \
     adminoptions.ui \
     adminwindow.ui \
+    emailwidget.ui \
     frontpage.ui \
     loginwindow.ui \
     reviewwindow.ui

@@ -1,5 +1,6 @@
 adminoptions.o
 adminwindow.o
+emailwidget.o
 frontpage.o
 loginwindow.o
 main.o
@@ -7,6 +8,7 @@ reviewwindow.o
 qrc_resource.o
 moc_adminoptions.o
 moc_adminwindow.o
+moc_emailwidget.o
 moc_frontpage.o
 moc_loginwindow.o
 moc_reviewwindow.o
