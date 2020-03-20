@@ -43,9 +43,8 @@ void emailWidget::sendPamphlet() {
         sent.warning(this, "Connection Failed", "The connection to host has encountered an error", QMessageBox::Ok);
     }
     if(smtp.login()) {
-        qDebug() << "More Epic";
-    }
-    else {
+        qDebug() << "Login successful";
+    } else {
         sent.warning(this, "Login Failed", "An error has occurred in attemption a login", QMessageBox::Ok);
     }
     smtp.sendMail(message);
