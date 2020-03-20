@@ -63,8 +63,8 @@ int main(int argc, char *argv[])
     smtp.setPassword("burnbabyburn1");
     MimeMessage message;
     message.setSender(new EmailAddress("burntheburns@gmail.com", "Mr. Burns"));
-    message.addRecipient(new EmailAddress("{insert-your-email-here@gmail.com}", "{name-here}"));
-    message.setSubject("Important Shit");
+    message.addRecipient(new EmailAddress("burntheburns@gmail.com", "Burns"));
+    message.setSubject("Very Important Information");
     MimeText text;
     text.setText("The FitnessGram Pacer Test is a multistage aerobic capacity test that progressively gets"
                  "more difficult as it continues.");
