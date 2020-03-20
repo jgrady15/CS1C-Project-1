@@ -14,8 +14,8 @@ TEMPLATE = app
 
 
 SOURCES +=\
+        adminWindow.cpp \
         adminoptions.cpp \
-        adminwindow.cpp \
         emailwidget.cpp \
         frontpage.cpp \
         loginwindow.cpp \

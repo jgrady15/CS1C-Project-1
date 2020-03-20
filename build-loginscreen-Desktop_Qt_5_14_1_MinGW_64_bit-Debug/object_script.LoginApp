@@ -1,5 +1,5 @@
+adminWindow.o
 adminoptions.o
-adminwindow.o
 emailwidget.o
 frontpage.o
 loginwindow.o
