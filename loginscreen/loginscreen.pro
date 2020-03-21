@@ -56,14 +56,14 @@ INCLUDEPATH += $$PWD/../SmtpClient-for-Qt-1.1
 DEPENDPATH += $$PWD/../SmtpClient-for-Qt-1.1
 
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../OpenSSL-Win64/lib/ -llibcrypto
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../OpenSSL-Win64/lib/ -llibcryptod
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../OpenSSL-Win64/lib/ -llibcrypto
 else:unix: LIBS += -L$$PWD/../OpenSSL-Win64/lib/ -llibcrypto
 
 INCLUDEPATH += $$PWD/../OpenSSL-Win64/include
 DEPENDPATH += $$PWD/../OpenSSL-Win64/include
 
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../OpenSSL-Win64/lib/ -llibssl
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../OpenSSL-Win64/lib/ -llibssld
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../OpenSSL-Win64/lib/ -llibssl
 else:unix: LIBS += -L$$PWD/../OpenSSL-Win64/lib/ -llibssl
 
 INCLUDEPATH += $$PWD/../OpenSSL-Win64/include
