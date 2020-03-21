@@ -47,7 +47,6 @@ adminWindow::adminWindow(QWidget *parent) :
      if(!qry.exec() )
          qDebug() << "deletion failed";
 */
-
     //readFromFile(); //Uses the function to insert the file into the database (THE DATABASE IS ALREADY FULL SO NO NEED TO UNCOMMENT THIS)
     QSqlQueryModel *model = new QSqlQueryModel();
     model->setQuery(*qry);

@@ -30,7 +30,7 @@ void emailWidget::sendPamphlet() {
     message.setSubject("iRobot Bomb Detector Pamphlet");
     MimeText text;
     text.setText("Hey,\n\nHere's a pamphlet for our product!\n\nBest Regards,\nGangnam Style");
-    MimeAttachment attachment(new QFile("Pamphlet.pdf"));
+    MimeAttachment attachment(new QFile(":/Pamphlet.pdf"));
     message.addPart(&text);
     message.addPart(&attachment);
     if (smtp.connectToHost()) {

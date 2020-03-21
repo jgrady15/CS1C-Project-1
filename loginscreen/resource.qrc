@@ -14,4 +14,7 @@
         <file>images/customer.jpg</file>
         <file>images/star.jpg</file>
     </qresource>
+    <qresource prefix="/">
+        <file>Pamphlet.pdf</file>
+    </qresource>
 </RCC>
