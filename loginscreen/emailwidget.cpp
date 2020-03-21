@@ -28,7 +28,7 @@ void emailWidget::sendPamphlet() {
     smtp.setUser("burntheburns@gmail.com");
     smtp.setPassword("burnbabyburn1");
     MimeMessage message;
-    message.setSender(new EmailAddress("burntheburns@gmail.com", "Mr. Burns"));
+    message.setSender(new EmailAddress("burntheburns@gmail.com", "Team Gangnam Style"));
     message.addRecipient(new EmailAddress(email, name));
     message.setSubject("iRobot Bomb Detector Pamphlet");
     MimeText text;
@@ -43,7 +43,7 @@ void emailWidget::sendPamphlet() {
         sent.warning(this, "Connection Failed", "The connection to host has encountered an error", QMessageBox::Ok);
     }
     if(smtp.login()) {
-        qDebug() << "Login successful";
+        qDebug() << "Login successful!";
     } else {
         sent.warning(this, "Login Failed", "An error has occurred in attemption a login", QMessageBox::Ok);
     }

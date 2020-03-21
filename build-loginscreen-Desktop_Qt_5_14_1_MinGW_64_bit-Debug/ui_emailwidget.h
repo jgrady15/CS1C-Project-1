@@ -15,6 +15,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -28,9 +29,11 @@ public:
     QHBoxLayout *nameHoriz;
     QLabel *nameLabel;
     QLineEdit *nameEdit;
+    QSpacerItem *horizontalSpacer;
     QHBoxLayout *emailHoriz;
     QLabel *emailLabel;
     QLineEdit *emailLine;
+    QSpacerItem *horizontalSpacer_2;
     QPushButton *sendButton;
 
     void setupUi(QWidget *emailWidget)
@@ -56,6 +59,10 @@ public:
 
         nameHoriz->addWidget(nameEdit);
 
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::MinimumExpanding, QSizePolicy::Minimum);
+
+        nameHoriz->addItem(horizontalSpacer);
+
 
         sendVert->addLayout(nameHoriz);
 
@@ -70,6 +77,10 @@ public:
         emailLine->setObjectName(QString::fromUtf8("emailLine"));
 
         emailHoriz->addWidget(emailLine);
+
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Minimum, QSizePolicy::Minimum);
+
+        emailHoriz->addItem(horizontalSpacer_2);
 
 
         sendVert->addLayout(emailHoriz);

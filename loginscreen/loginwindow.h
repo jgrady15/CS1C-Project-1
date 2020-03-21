@@ -2,7 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "adminoptions.h"
+#include "adminoption.h"
+#include "adminwindow.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -20,7 +21,7 @@ private slots:
     void on_pushButton_Login_clicked();
 private:
     Ui::MainWindow *ui;
-    SecDialog *secDialog;
+    adminOption *option;
     adminWindow *admin = new adminWindow;
 };
 #endif // MAINWINDOW_H

@@ -27,8 +27,8 @@ void MainWindow::on_pushButton_Login_clicked() {
     QString username = ui->lineEdit_username->text();
     QString password = ui->lineEdit_password->text();
     if(username == "test" && password == "test") {
-        secDialog = new SecDialog(this);
-        secDialog->show();
+        option = new adminOption(this);
+        option->show();
         this->hide();
     }
     else {
