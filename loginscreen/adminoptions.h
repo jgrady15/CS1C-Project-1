@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "adminwindow.h"
+#include "emailwidget.h"
 
 namespace Ui {
 class SecDialog;
@@ -24,6 +25,7 @@ private slots:
 private:
     Ui::SecDialog *ui;
     adminWindow *admin = new adminWindow();
+    emailWidget *email = new emailWidget();
 };
 
 #endif // SECDIALOG_H

@@ -80,5 +80,6 @@ void FrontPage::on_homeButton_3_clicked()
 }
 
 void FrontPage::submitReview() {
+   review = new reviewWindow();
    review->show();
 }

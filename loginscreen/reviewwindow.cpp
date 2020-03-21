@@ -6,9 +6,9 @@ reviewWindow::reviewWindow(QWidget *parent) :
     ui(new Ui::reviewWindow)
 {
     ui->setupUi(this);
-    this->ui->menuDrop->addItem("Bomb Bot 1000");
-    this->ui->menuDrop->addItem("Bomb Bot 1250");
-    this->ui->menuDrop->addItem("Bomb Bot 1500");
+    this->ui->menuDrop->addItem("Basic Package");
+    this->ui->menuDrop->addItem("Rugged Edition");
+    this->ui->menuDrop->addItem("Deluxe Package");
     QObject::connect(this->ui->menuDrop, SIGNAL(activated(int)), this, SLOT(setProduct(int)));
 
     QPixmap star(":/img/images/star");
@@ -43,6 +43,7 @@ void reviewWindow::submitReview() {
         errorOccurred.setInformativeText("Review Successfully Submitted!");
         errorOccurred.setStandardButtons(QMessageBox::Ok);
         errorOccurred.exec();
+        delete this;
         this->ui->productLabel->setStyleSheet("QLabel {font-weight: normal;}");
         this->ui->nameLabel->setStyleSheet("QLabel {font-weight: normal;}");
         //Code to put it in an review area?

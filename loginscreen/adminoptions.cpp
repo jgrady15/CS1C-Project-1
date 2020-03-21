@@ -20,5 +20,5 @@ void SecDialog::on_editList_pushButton_clicked() {
 
 void SecDialog::on_snedPamphlet_pushButton_clicked()
 {
-    QMessageBox::information(this, "not built yet", "send pamphlets");
+   email->show();
 }

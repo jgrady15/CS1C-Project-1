@@ -78,6 +78,8 @@ public:
         retranslateUi(adminWindow);
         QObject::connect(searchButton, SIGNAL(clicked()), adminWindow, SLOT(searchFor()));
         QObject::connect(adDropMenu, SIGNAL(activated(int)), adminWindow, SLOT(alphaNumOptions()));
+        QObject::connect(updateButton, SIGNAL(clicked()), adminWindow, SLOT(updateDB()));
+        QObject::connect(deleteButton, SIGNAL(clicked()), adminWindow, SLOT(deleteInDB()));
 
         QMetaObject::connectSlotsByName(adminWindow);
     } // setupUi

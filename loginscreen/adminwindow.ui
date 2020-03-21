@@ -143,9 +143,43 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>updateButton</sender>
+   <signal>clicked()</signal>
+   <receiver>adminWindow</receiver>
+   <slot>updateDB()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>552</x>
+     <y>99</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>477</x>
+     <y>71</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>deleteButton</sender>
+   <signal>clicked()</signal>
+   <receiver>adminWindow</receiver>
+   <slot>deleteInDB()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>662</x>
+     <y>104</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>495</x>
+     <y>41</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>searchFor()</slot>
   <slot>alphaNumOptions()</slot>
+  <slot>updateDB()</slot>
+  <slot>deleteInDB()</slot>
  </slots>
 </ui>

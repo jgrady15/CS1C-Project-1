@@ -56,8 +56,6 @@ void readFromFile(){
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-
-
     FrontPage w;
     w.show();
 

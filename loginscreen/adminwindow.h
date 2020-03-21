@@ -17,6 +17,8 @@ public:
 private slots:
     void searchFor();
     void alphaNumOptions(int);
+    void updateDB();
+    void deleteInDB();
 private:
     Ui::adminWindow *ui;
 };
