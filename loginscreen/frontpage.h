@@ -38,7 +38,7 @@ private slots:
 private:
     Ui::FrontPage *ui;
     MainWindow *mainWindow;
-    reviewWindow *review = new reviewWindow();
+    reviewWindow *review;
 };
 
 #endif // FRONTPAGE_H

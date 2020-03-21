@@ -3,11 +3,8 @@
 #include <QApplication>
 #include <QDebug>
 #include <QtSql>
-#include <QDesktopServices>
 #include <QSqlDatabase>
 #include <QMessageBox>
-#include <QDir>
-#include "./src/SmtpMime"
 
 //AddValues - adds the values to the database. It is used by the readFromFile function
 void addValues(QString Name, QString Address, QString Address2, QString WebSite, QString Intrest, QString Key){
