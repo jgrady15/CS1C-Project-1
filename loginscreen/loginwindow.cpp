@@ -1,5 +1,5 @@
 #include "loginwindow.h"
-#include "ui_mainwindow.h"
+#include "ui_loginwindow.h"
 #include <QMessageBox>
 #include <QPixmap>
 #include <QDebug>
