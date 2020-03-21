@@ -50,5 +50,5 @@ void emailWidget::sendPamphlet() {
     smtp.sendMail(message);
     smtp.quit();
     sent.information(this, "Success!", "Pamphlet successfully sent!", QMessageBox::Ok);
-    this->destroy();
+    this->hide();
 }
