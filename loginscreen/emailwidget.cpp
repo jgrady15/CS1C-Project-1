@@ -51,9 +51,6 @@ void emailWidget::sendPamphlet() {
     smtp.quit();
     sent.information(this, "Success!", "Pamphlet successfully sent!", QMessageBox::Ok);
     this->hide();
-<<<<<<< HEAD
     this->ui->emailLine->setText("");
     this->ui->nameEdit->setText("");
-=======
->>>>>>> ee07f2488017888eb21068ee8df2c63008cfcf9c
 }
