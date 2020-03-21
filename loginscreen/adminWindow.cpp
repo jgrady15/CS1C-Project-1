@@ -86,3 +86,10 @@ void adminWindow::alphaNumOptions(int index) {
     }
 }
 
+void adminWindow::updateDB() {
+
+}
+
+void adminWindow::deleteInDB() {
+
+}
