@@ -12,5 +12,6 @@
         <file>images/pricing.jpg</file>
         <file>images/contact.jpg</file>
         <file>images/customer.jpg</file>
+        <file>images/star.jpg</file>
     </qresource>
 </RCC>

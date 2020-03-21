@@ -20,7 +20,7 @@ CXXFLAGS      = -fno-keep-inline-dllexport -g -Wall -Wextra -Wextra -fexceptions
 INCPATH       = -I..\loginscreen -I. -I..\SmtpClient-for-Qt-1.1 -I..\OpenSSL-Win64\include -I..\OpenSSL-Win64\include -IC:\Qt\5.14.1\mingw73_64\include -IC:\Qt\5.14.1\mingw73_64\include\QtWidgets -IC:\Qt\5.14.1\mingw73_64\include\QtGui -IC:\Qt\5.14.1\mingw73_64\include\QtANGLE -IC:\Qt\5.14.1\mingw73_64\include\QtSql -IC:\Qt\5.14.1\mingw73_64\include\QtCore -I. -I. -I/include -IC:\Qt\5.14.1\mingw73_64\mkspecs\win32-g++ 
 LINKER      =        g++
 LFLAGS        =        -Wl,-subsystem,windows -mthreads
-LIBS        =        -LC:\Users\edpou\Documents\GitHub\CS1C-Project-1\SmtpClient-for-Qt-1.1 -lSMTPEmail -LC:\Users\edpou\Documents\GitHub\CS1C-Project-1\OpenSSL-Win64\lib -llibcryptod -llibssld C:\Qt\5.14.1\mingw73_64\lib\libQt5Widgets.a C:\Qt\5.14.1\mingw73_64\lib\libQt5Gui.a C:\Qt\5.14.1\mingw73_64\lib\libQt5Sql.a C:\Qt\5.14.1\mingw73_64\lib\libQt5Core.a  -lmingw32 C:\Qt\5.14.1\mingw73_64\lib\libqtmain.a -LC:\openssl\lib -LC:\Utils\my_sql\mysql-5.7.25-winx64\lib -LC:\Utils\postgresql\pgsql\lib -lshell32 
+LIBS        =        -LC:\Users\edpou\Documents\GitHub\CS1C-Project-1\SmtpClient-for-Qt-1.1 -lSMTPEmail -LC:\Users\edpou\Documents\GitHub\CS1C-Project-1\OpenSSL-Win64\lib -llibcrypto -llibssl C:\Qt\5.14.1\mingw73_64\lib\libQt5Widgets.a C:\Qt\5.14.1\mingw73_64\lib\libQt5Gui.a C:\Qt\5.14.1\mingw73_64\lib\libQt5Sql.a C:\Qt\5.14.1\mingw73_64\lib\libQt5Core.a  -lmingw32 C:\Qt\5.14.1\mingw73_64\lib\libqtmain.a -LC:\openssl\lib -LC:\Utils\my_sql\mysql-5.7.25-winx64\lib -LC:\Utils\postgresql\pgsql\lib -lshell32 
 QMAKE         = C:\Qt\5.14.1\mingw73_64\bin\qmake.exe
 DEL_FILE      = del
 CHK_DIR_EXISTS= if not exist
@@ -80,7 +80,8 @@ OBJECTS       = adminWindow.o \
 		moc_reviewwindow.o
 
 DIST          = Uyvhv.qml \
-		UyvhvForm.ui.qml ..\loginscreen\adminoption.h \
+		UyvhvForm.ui.qml \
+		images/Pamphlet.pdf ..\loginscreen\adminoption.h \
 		..\loginscreen\adminwindow.h \
 		..\loginscreen\emailwidget.h \
 		..\loginscreen\frontpage.h \
@@ -502,6 +503,7 @@ compiler_rcc_clean:
 qrc_resource.cpp: ../loginscreen/resource.qrc \
 		C:/Qt/5.14.1/mingw73_64/bin/rcc.exe \
 		../loginscreen/images/screen1.jpg \
+		../loginscreen/images/star.jpg \
 		../loginscreen/images/screen4.jpg \
 		../loginscreen/images/pamphlet1.jpg \
 		../loginscreen/images/screen3.jpg \
@@ -2055,7 +2057,7 @@ loginwindow.o: ../loginscreen/loginwindow.cpp ../loginscreen/loginwindow.h \
 		../loginscreen/adminwindow.h \
 		../loginscreen/emailwidget.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QWidget \
-		ui_mainwindow.h \
+		ui_loginwindow.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtCore/QVariant \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QAction \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qaction.h \

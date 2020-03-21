@@ -40,7 +40,8 @@ FORMS    += \
 
 DISTFILES += \
     Uyvhv.qml \
-    UyvhvForm.ui.qml
+    UyvhvForm.ui.qml \
+    images/Pamphlet.pdf
 
 RESOURCES += \
     resource.qrc

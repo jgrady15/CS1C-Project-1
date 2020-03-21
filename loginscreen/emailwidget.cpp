@@ -18,12 +18,9 @@ emailWidget::~emailWidget()
 }
 
 void emailWidget::sendPamphlet() {
-    QDir dir;
     QMessageBox sent;
     QString name = this->ui->nameEdit->text();
     QString email = this->ui->emailLine->text();
-    QString path = dir.absolutePath();
-    path.append("/Pamphlet.pdf");
     SmtpClient smtp("smtp.gmail.com", 587, SmtpClient::TlsConnection);
     smtp.setUser("burntheburns@gmail.com");
     smtp.setPassword("burnbabyburn1");
@@ -33,7 +30,7 @@ void emailWidget::sendPamphlet() {
     message.setSubject("iRobot Bomb Detector Pamphlet");
     MimeText text;
     text.setText("Hey,\n\nHere's a pamphlet for our product!\n\nBest Regards,\nGangnam Style");
-    MimeAttachment attachment(new QFile(path));
+    MimeAttachment attachment(new QFile("Pamphlet.pdf"));
     message.addPart(&text);
     message.addPart(&attachment);
     if (smtp.connectToHost()) {
