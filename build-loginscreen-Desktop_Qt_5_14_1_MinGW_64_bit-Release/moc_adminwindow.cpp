@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_adminWindow_t {
-    QByteArrayData data[6];
-    char stringdata0[59];
+    QByteArrayData data[10];
+    char stringdata0[128];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -37,11 +37,17 @@ QT_MOC_LITERAL(1, 12, 9), // "searchFor"
 QT_MOC_LITERAL(2, 22, 0), // ""
 QT_MOC_LITERAL(3, 23, 15), // "alphaNumOptions"
 QT_MOC_LITERAL(4, 39, 8), // "updateDB"
-QT_MOC_LITERAL(5, 48, 10) // "deleteInDB"
+QT_MOC_LITERAL(5, 48, 10), // "deleteInDB"
+QT_MOC_LITERAL(6, 59, 13), // "selectCompany"
+QT_MOC_LITERAL(7, 73, 11), // "QModelIndex"
+QT_MOC_LITERAL(8, 85, 5), // "index"
+QT_MOC_LITERAL(9, 91, 36) // "on_adminWindow_refreshButton_..."
 
     },
     "adminWindow\0searchFor\0\0alphaNumOptions\0"
-    "updateDB\0deleteInDB"
+    "updateDB\0deleteInDB\0selectCompany\0"
+    "QModelIndex\0index\0"
+    "on_adminWindow_refreshButton_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -51,7 +57,7 @@ static const uint qt_meta_data_adminWindow[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       4,   14, // methods
+       6,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -59,15 +65,19 @@ static const uint qt_meta_data_adminWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   34,    2, 0x08 /* Private */,
-       3,    1,   35,    2, 0x08 /* Private */,
-       4,    0,   38,    2, 0x08 /* Private */,
-       5,    0,   39,    2, 0x08 /* Private */,
+       1,    0,   44,    2, 0x08 /* Private */,
+       3,    1,   45,    2, 0x08 /* Private */,
+       4,    0,   48,    2, 0x08 /* Private */,
+       5,    0,   49,    2, 0x08 /* Private */,
+       6,    1,   50,    2, 0x08 /* Private */,
+       9,    0,   53,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int,    2,
     QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 7,    8,
     QMetaType::Void,
 
        0        // eod
@@ -83,6 +93,8 @@ void adminWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         case 1: _t->alphaNumOptions((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 2: _t->updateDB(); break;
         case 3: _t->deleteInDB(); break;
+        case 4: _t->selectCompany((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
+        case 5: _t->on_adminWindow_refreshButton_clicked(); break;
         default: ;
         }
     }
@@ -117,13 +129,13 @@ int adminWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 6)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 6;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
+        if (_id < 6)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 4;
+        _id -= 6;
     }
     return _id;
 }

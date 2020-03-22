@@ -19,9 +19,8 @@ public:
 private slots:
     void sendPamphlet();
     void viewCustomerList();
-    void on_pushButton_clicked();
-
-    void on_displayAdminWindow_clicked();
+    //void on_pushButton_clicked();
+    //void on_displayAdminWindow_clicked();
 
 private:
     Ui::adminOption *ui;

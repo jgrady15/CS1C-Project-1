@@ -61,8 +61,7 @@ void FrontPage::on_pushButton_3_clicked()
 
 void FrontPage::on_pushButton_4_clicked()
 {
-    mainWindow = new MainWindow(this);
-    mainWindow->show();
+    mainW->show();
 }
 
 

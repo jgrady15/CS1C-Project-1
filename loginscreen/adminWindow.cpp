@@ -47,7 +47,7 @@ void adminWindow::searchFor()
 
     else
     {
-        ui->adminWindow_displayListCompanyName->clear();a
+        ui->adminWindow_displayListCompanyName->clear();
         ui->adminWindow_displayListCompanyName->addItems(temp1);
 
         ui->adminWindow_displayListInterestLevel->clear();

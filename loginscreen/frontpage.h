@@ -40,7 +40,7 @@ private slots:
     void stopItGetSomeHelp();
 private:
     Ui::FrontPage *ui;
-    MainWindow *mainWindow;
+    MainWindow *mainW = new MainWindow;
     reviewWindow *review;
     helpMenu *help = new helpMenu;
 };

@@ -6,6 +6,7 @@ helpmenu.o
 loginwindow.o
 main.o
 reviewwindow.o
+sql_database.o
 qrc_resource.o
 moc_adminoption.o
 moc_adminwindow.o
