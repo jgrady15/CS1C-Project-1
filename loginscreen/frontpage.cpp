@@ -30,6 +30,11 @@ FrontPage::FrontPage(QWidget *parent) :
     int h4 =  ui->pamphlet_pic->height();
     ui->customer_label->setPixmap(pix4.scaled(w4,h4,Qt::KeepAspectRatio));
 
+    QPixmap pix5(":/img/images/gangnam style.jpg");
+    int w5 =  ui->logo->width();
+    int h5 =  ui->logo->height();
+    ui->logo->setPixmap(pix5.scaled(w5,h5,Qt::KeepAspectRatio));
+
 }
 
 FrontPage::~FrontPage()
@@ -82,4 +87,8 @@ void FrontPage::on_homeButton_3_clicked()
 void FrontPage::submitReview() {
    review = new reviewWindow();
    review->show();
+}
+
+void FrontPage::stopItGetSomeHelp() {
+    help->show();
 }
