@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>adminWindow</class>
+ <widget class="QMainWindow" name="adminWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLineEdit" name="adminWindow_searchBar">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>60</y>
+      <width>281</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="adminWindow_searchButton">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>60</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Search</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="adminWindow_sortComboBox">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>60</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="editable">
+     <bool>false</bool>
+    </property>
+    <property name="currentText">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>40</y>
+      <width>71</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Sort by . . .</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="adminWindow_deleteButton">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>60</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Delete</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="adminWindow_addNewButton">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>60</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Add New</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="adminWindow_refreshButton">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>60</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Refresh</string>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="adminWindow_displayListCompanyName">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>100</y>
+      <width>361</width>
+      <height>451</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="adminWindow_displayListInterestLevel">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>100</y>
+      <width>221</width>
+      <height>451</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="adminWindow_displayListKeyCustomer">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>100</y>
+      <width>181</width>
+      <height>451</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>adminWindow_searchButton</sender>
+   <signal>clicked()</signal>
+   <receiver>adminWindow</receiver>
+   <slot>searchFor()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>361</x>
+     <y>113</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>381</x>
+     <y>62</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>adminWindow_sortComboBox</sender>
+   <signal>activated(int)</signal>
+   <receiver>adminWindow</receiver>
+   <slot>alphaNumOptions()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>723</x>
+     <y>93</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>641</x>
+     <y>60</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>adminWindow_deleteButton</sender>
+   <signal>clicked()</signal>
+   <receiver>adminWindow</receiver>
+   <slot>deleteInDB()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>520</x>
+     <y>115</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>495</x>
+     <y>41</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>searchFor()</slot>
+  <slot>alphaNumOptions()</slot>
+  <slot>updateDB()</slot>
+  <slot>deleteInDB()</slot>
+  <slot>selectedCompany()</slot>
+ </slots>
+</ui>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>adminOption</class>
+ <widget class="QDialog" name="adminOption">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>182</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QPushButton" name="displayAdminWindow">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>60</y>
+     <width>171</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>View and Edit Customer List</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>100</y>
+     <width>101</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Send Pamphlet</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>displayAdminWindow</sender>
+   <signal>clicked()</signal>
+   <receiver>adminOption</receiver>
+   <slot>viewCustomerList()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>230</x>
+     <y>71</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>279</x>
+     <y>22</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>adminOption</receiver>
+   <slot>sendPamphlet()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>202</x>
+     <y>120</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>85</x>
+     <y>144</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>viewCustomerList()</slot>
+  <slot>sendPamphlet()</slot>
+ </slots>
+</ui>
