@@ -23,6 +23,5 @@
     <qresource prefix="/">
         <file>Pamphlet.pdf</file>
         <file>customers.txt</file>
-        <file>database.sqlite</file>
     </qresource>
 </RCC>

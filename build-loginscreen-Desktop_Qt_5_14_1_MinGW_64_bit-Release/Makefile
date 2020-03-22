@@ -521,7 +521,6 @@ qrc_resource.cpp: ../loginscreen/resource.qrc \
 		C:/Qt/5.14.1/mingw73_64/bin/rcc.exe \
 		../loginscreen/Pamphlet.pdf \
 		../loginscreen/customers.txt \
-		../loginscreen/database.sqlite \
 		../loginscreen/images/star.jpg \
 		../loginscreen/images/screen1.jpg \
 		../loginscreen/images/screen2.jpg \
@@ -4003,7 +4002,8 @@ main.o: ../loginscreen/main.cpp ../loginscreen/frontpage.h \
 		../loginscreen/emailwidget.h \
 		../loginscreen/reviewwindow.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QComboBox \
-		../loginscreen/helpmenu.h
+		../loginscreen/helpmenu.h \
+		../loginscreen/sql_database.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ..\loginscreen\main.cpp
 
 reviewwindow.o: ../loginscreen/reviewwindow.cpp ../loginscreen/reviewwindow.h \
