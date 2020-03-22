@@ -66,7 +66,7 @@ void sql_database::addCustomer(customerNode &temp)
 
 void sql_database::readFile()
 {
-    QFile file("C:/Users/Eddie/Documents/GitHub/CS1C-Project-1/loginscreen/customers.txt");
+    QFile file(":/customers.txt");
     file.open(QIODevice::ReadOnly);
     QTextStream inFile(&file);
 

@@ -21,6 +21,7 @@ class Ui_adminOption
 public:
     QPushButton *pushButton;
     QPushButton *pushButton_2;
+    QPushButton *pushButton_3;
 
     void setupUi(QDialog *adminOption)
     {
@@ -29,10 +30,13 @@ public:
         adminOption->resize(400, 182);
         pushButton = new QPushButton(adminOption);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(120, 60, 171, 28));
+        pushButton->setGeometry(QRect(120, 20, 171, 28));
         pushButton_2 = new QPushButton(adminOption);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
         pushButton_2->setGeometry(QRect(150, 100, 101, 28));
+        pushButton_3 = new QPushButton(adminOption);
+        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
+        pushButton_3->setGeometry(QRect(150, 60, 101, 31));
 
         retranslateUi(adminOption);
         QObject::connect(pushButton, SIGNAL(clicked()), adminOption, SLOT(viewCustomerList()));
@@ -44,8 +48,9 @@ public:
     void retranslateUi(QDialog *adminOption)
     {
         adminOption->setWindowTitle(QCoreApplication::translate("adminOption", "Dialog", nullptr));
-        pushButton->setText(QCoreApplication::translate("adminOption", "View and Edit Customer List", nullptr));
+        pushButton->setText(QCoreApplication::translate("adminOption", "View and Edit Company List", nullptr));
         pushButton_2->setText(QCoreApplication::translate("adminOption", "Send Pamphlet", nullptr));
+        pushButton_3->setText(QCoreApplication::translate("adminOption", "View Customer List", nullptr));
     } // retranslateUi
 
 };
