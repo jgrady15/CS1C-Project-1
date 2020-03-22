@@ -1,5 +1,9 @@
 #include "reviewwindow.h"
 #include "ui_reviewwindow.h"
+#include <QSqlQuery>
+#include <QMessageBox>
+#include <QDebug>
+#include <QSqlError>
 
 reviewWindow::reviewWindow(QWidget *parent) :
     QMainWindow(parent),
