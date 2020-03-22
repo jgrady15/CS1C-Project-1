@@ -31,7 +31,4 @@
 #include <string>
 #include <vector>
 #include <set>
-
-#define DB_PATH "C:/Users/Eddie/Documents/GitHub/CS1C-Project-1/loginscreen/database.sqlite"
-
 #endif // !HEADER_H

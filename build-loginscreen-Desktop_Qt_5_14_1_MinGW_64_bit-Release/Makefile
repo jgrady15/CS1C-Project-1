@@ -4458,7 +4458,8 @@ sql_database.o: ../loginscreen/sql_database.cpp ../loginscreen/sql_database.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qdialog.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QMessageBox \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qmessagebox.h \
-		C:/Qt/5.14.1/mingw73_64/include/QtGui/QPixmap
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/QPixmap \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QFileInfo
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o sql_database.o ..\loginscreen\sql_database.cpp
 
 qrc_resource.o: qrc_resource.cpp 

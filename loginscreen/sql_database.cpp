@@ -1,7 +1,11 @@
 #include "sql_database.h"
+#include <QFileInfo>
 sql_database::sql_database()
 {
     database = QSqlDatabase::addDatabase("QSQLITE");
+    QFileInfo db("database.sqlite");
+    QString DB_PATH = db.absoluteFilePath();
+    qDebug() << DB_PATH;
     database.setDatabaseName(DB_PATH);
     database.open();
 }
