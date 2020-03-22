@@ -88,3 +88,7 @@ void FrontPage::submitReview() {
    review = new reviewWindow();
    review->show();
 }
+
+void FrontPage::stopItGetSomeHelp() {
+    help->show();
+}

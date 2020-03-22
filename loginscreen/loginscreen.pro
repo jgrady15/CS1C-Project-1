@@ -18,6 +18,7 @@ SOURCES +=\
         adminoption.cpp \
         emailwidget.cpp \
         frontpage.cpp \
+        helpmenu.cpp \
         loginwindow.cpp \
         main.cpp \
         reviewwindow.cpp
@@ -27,6 +28,7 @@ HEADERS  += \
     adminwindow.h \
     emailwidget.h \
     frontpage.h \
+    helpmenu.h \
     loginwindow.h \
     reviewwindow.h \
 
@@ -35,6 +37,7 @@ FORMS    += \
     adminwindow.ui \
     emailwidget.ui \
     frontpage.ui \
+    helpmenu.ui \
     loginwindow.ui \
     reviewwindow.ui
 

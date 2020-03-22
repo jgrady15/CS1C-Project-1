@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
@@ -30,12 +31,14 @@ public:
     QHBoxLayout *horizontalLayout;
     QStackedWidget *stackedWidget;
     QWidget *home_1;
-    QWidget *layoutWidget;
-    QHBoxLayout *horizontalLayout_2;
+    QWidget *gridLayoutWidget;
+    QGridLayout *gridLayout;
     QPushButton *pushButton;
-    QPushButton *pushButton_2;
     QPushButton *pushButton_3;
+    QPushButton *pushButton_2;
     QPushButton *pushButton_4;
+    QLabel *logo;
+    QPushButton *helpButton;
     QWidget *home_2;
     QPushButton *homeButton_1;
     QTabWidget *tabWidget;
@@ -57,7 +60,7 @@ public:
     {
         if (FrontPage->objectName().isEmpty())
             FrontPage->setObjectName(QString::fromUtf8("FrontPage"));
-        FrontPage->resize(1138, 592);
+        FrontPage->resize(1270, 861);
         FrontPage->setStyleSheet(QString::fromUtf8(""));
         centralwidget = new QWidget(FrontPage);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
@@ -68,59 +71,71 @@ public:
         stackedWidget->setStyleSheet(QString::fromUtf8("img url(:/img/images/pamphlet1.jpg)"));
         home_1 = new QWidget();
         home_1->setObjectName(QString::fromUtf8("home_1"));
-        layoutWidget = new QWidget(home_1);
-        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(0, 10, 1120, 522));
-        horizontalLayout_2 = new QHBoxLayout(layoutWidget);
-        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
-        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
-        pushButton = new QPushButton(layoutWidget);
+        gridLayoutWidget = new QWidget(home_1);
+        gridLayoutWidget->setObjectName(QString::fromUtf8("gridLayoutWidget"));
+        gridLayoutWidget->setGeometry(QRect(0, 60, 1241, 721));
+        gridLayout = new QGridLayout(gridLayoutWidget);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        gridLayout->setContentsMargins(0, 0, 0, 0);
+        pushButton = new QPushButton(gridLayoutWidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(pushButton->sizePolicy().hasHeightForWidth());
         pushButton->setSizePolicy(sizePolicy);
-        pushButton->setMinimumSize(QSize(275, 520));
-        pushButton->setStyleSheet(QString::fromUtf8("image: url(:/img/images/screen1.jpg);"));
+        pushButton->setMinimumSize(QSize(562, 132));
+        pushButton->setStyleSheet(QString::fromUtf8("image: url(:/img/images/pushbutton1.jpg);"));
 
-        horizontalLayout_2->addWidget(pushButton);
+        gridLayout->addWidget(pushButton, 0, 0, 1, 1);
 
-        pushButton_2 = new QPushButton(layoutWidget);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        sizePolicy.setHeightForWidth(pushButton_2->sizePolicy().hasHeightForWidth());
-        pushButton_2->setSizePolicy(sizePolicy);
-        pushButton_2->setMinimumSize(QSize(275, 520));
-        pushButton_2->setStyleSheet(QString::fromUtf8("image: url(:/img/images/screen2.jpg);"));
-
-        horizontalLayout_2->addWidget(pushButton_2);
-
-        pushButton_3 = new QPushButton(layoutWidget);
+        pushButton_3 = new QPushButton(gridLayoutWidget);
         pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
         sizePolicy.setHeightForWidth(pushButton_3->sizePolicy().hasHeightForWidth());
         pushButton_3->setSizePolicy(sizePolicy);
-        pushButton_3->setMinimumSize(QSize(275, 520));
-        pushButton_3->setStyleSheet(QString::fromUtf8("image: url(:/img/images/screen3.jpg);"));
+        pushButton_3->setMinimumSize(QSize(562, 132));
+        pushButton_3->setStyleSheet(QString::fromUtf8("image: url(:/img/images/pushbutton3.jpg);"));
 
-        horizontalLayout_2->addWidget(pushButton_3);
+        gridLayout->addWidget(pushButton_3, 2, 0, 1, 1);
 
-        pushButton_4 = new QPushButton(layoutWidget);
+        pushButton_2 = new QPushButton(gridLayoutWidget);
+        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+        sizePolicy.setHeightForWidth(pushButton_2->sizePolicy().hasHeightForWidth());
+        pushButton_2->setSizePolicy(sizePolicy);
+        pushButton_2->setMinimumSize(QSize(562, 132));
+        pushButton_2->setStyleSheet(QString::fromUtf8("image: url(:/img/images/pushbutton2.jpg);"));
+
+        gridLayout->addWidget(pushButton_2, 1, 0, 1, 1);
+
+        pushButton_4 = new QPushButton(gridLayoutWidget);
         pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
         sizePolicy.setHeightForWidth(pushButton_4->sizePolicy().hasHeightForWidth());
         pushButton_4->setSizePolicy(sizePolicy);
-        pushButton_4->setMinimumSize(QSize(275, 520));
-        pushButton_4->setStyleSheet(QString::fromUtf8("image: url(:/img/images/screen4.jpg);"));
+        pushButton_4->setMinimumSize(QSize(562, 132));
+        pushButton_4->setStyleSheet(QString::fromUtf8("image: url(:/img/images/pushbutton4.jpg);"));
 
-        horizontalLayout_2->addWidget(pushButton_4);
+        gridLayout->addWidget(pushButton_4, 3, 0, 1, 1);
+
+        logo = new QLabel(gridLayoutWidget);
+        logo->setObjectName(QString::fromUtf8("logo"));
+        logo->setMinimumSize(QSize(562, 562));
+
+        gridLayout->addWidget(logo, 0, 1, 3, 1);
+
+        helpButton = new QPushButton(gridLayoutWidget);
+        helpButton->setObjectName(QString::fromUtf8("helpButton"));
+        sizePolicy.setHeightForWidth(helpButton->sizePolicy().hasHeightForWidth());
+        helpButton->setSizePolicy(sizePolicy);
+        helpButton->setMinimumSize(QSize(562, 132));
+        helpButton->setStyleSheet(QString::fromUtf8("image: url(:/img/images/pushbutton5.jpg);"));
+
+        gridLayout->addWidget(helpButton, 3, 1, 1, 1);
 
         stackedWidget->addWidget(home_1);
         home_2 = new QWidget();
         home_2->setObjectName(QString::fromUtf8("home_2"));
-        QSizePolicy sizePolicy1(QSizePolicy::Fixed, QSizePolicy::Fixed);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(home_2->sizePolicy().hasHeightForWidth());
-        home_2->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(home_2->sizePolicy().hasHeightForWidth());
+        home_2->setSizePolicy(sizePolicy);
         homeButton_1 = new QPushButton(home_2);
         homeButton_1->setObjectName(QString::fromUtf8("homeButton_1"));
         homeButton_1->setGeometry(QRect(970, 70, 93, 28));
@@ -167,7 +182,7 @@ public:
         FrontPage->setCentralWidget(centralwidget);
         menubar = new QMenuBar(FrontPage);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1138, 26));
+        menubar->setGeometry(QRect(0, 0, 1270, 21));
         FrontPage->setMenuBar(menubar);
         statusbar = new QStatusBar(FrontPage);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -175,6 +190,7 @@ public:
 
         retranslateUi(FrontPage);
         QObject::connect(reviewButton, SIGNAL(clicked()), FrontPage, SLOT(submitReview()));
+        QObject::connect(helpButton, SIGNAL(clicked()), FrontPage, SLOT(stopItGetSomeHelp()));
 
         stackedWidget->setCurrentIndex(0);
         tabWidget->setCurrentIndex(0);
@@ -187,9 +203,11 @@ public:
     {
         FrontPage->setWindowTitle(QCoreApplication::translate("FrontPage", "MainWindow", nullptr));
         pushButton->setText(QString());
-        pushButton_2->setText(QString());
         pushButton_3->setText(QString());
+        pushButton_2->setText(QString());
         pushButton_4->setText(QString());
+        logo->setText(QString());
+        helpButton->setText(QString());
         homeButton_1->setText(QCoreApplication::translate("FrontPage", "Home", nullptr));
         pamphlet_pic->setText(QString());
         tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("FrontPage", "Info", nullptr));
