@@ -24,7 +24,7 @@
        <string notr="true">img url(:/img/images/pamphlet1.jpg)</string>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="home_1">
        <widget class="QWidget" name="gridLayoutWidget">
@@ -258,6 +258,19 @@
         </property>
         <property name="text">
          <string/>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pamphlet_button">
+        <property name="geometry">
+         <rect>
+          <x>920</x>
+          <y>0</y>
+          <width>121</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Request Pamphlet</string>
         </property>
        </widget>
       </widget>

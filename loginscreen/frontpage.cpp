@@ -57,6 +57,11 @@ void FrontPage::on_pushButton_3_clicked()
     ui->stackedWidget->setCurrentIndex(3);
 }
 
+void FrontPage::on_pamphlet_button_clicked()
+{
+    sendPamphlet();
+}
+
 
 
 void FrontPage::on_pushButton_4_clicked()
@@ -95,3 +100,5 @@ void FrontPage::stopItGetSomeHelp() {
 void FrontPage::sendPamphlet() {
     email->show();
 }
+
+

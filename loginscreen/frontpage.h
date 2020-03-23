@@ -40,6 +40,8 @@ private slots:
 
     void stopItGetSomeHelp();
     void sendPamphlet();
+    void on_pamphlet_button_clicked();
+
 private:
     Ui::FrontPage *ui;
     MainWindow *mainW = new MainWindow;
