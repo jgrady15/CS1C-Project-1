@@ -1,5 +1,9 @@
 #include "sql_database.h"
 #include <QFileInfo>
+
+/*!
+ * \brief Creates database, sets path, and opens database to use in program
+ */
 sql_database::sql_database()
 {
     database = QSqlDatabase::addDatabase("QSQLITE");
@@ -29,6 +33,9 @@ void sql_database::closeConnection()
     database.close();
 }
 
+/*!
+ * \brief Creates two tables iRobotsPamphlet and CustomerReviews that will be used as separate databases
+ */
 void sql_database::sql_createDatabase()
 {
     QSqlQuery query;
@@ -48,6 +55,9 @@ void sql_database::sql_createDatabase()
                "UNIQUE        (CustomerName, ProductName));");
 }
 
+/*!
+ * \brief Takes information and stores into iRobotsPamphlet Table, input is ignored if duplicate is detected
+ */
 void sql_database::addCustomer(customerNode &temp)
 {
     QSqlQuery query;
@@ -68,6 +78,9 @@ void sql_database::addCustomer(customerNode &temp)
         qDebug() << "Failed: " << query.lastError();
 }
 
+/*!
+ * \brief reads in a text file and stores data into a struct
+ */
 void sql_database::readFile()
 {
     QFile file(":/customers.txt");

@@ -14,19 +14,19 @@ class adminWindow : public QMainWindow
 
 public:
     explicit adminWindow(QWidget *parent = nullptr);
-    void setupPage();
-    void refreshWindow();
-    void displayCompany();
-    void displayCustomer();
+    void setupPage(); // sets up current admin page
+    void refreshWindow(); // refreshes admin page
+    void displayCompany(); // displays admin page to edit/update/delete company info
+    void displayCustomer(); // displays customer list page
     ~adminWindow();
 
 private slots:
-    void searchFor();
+    void searchFor(); // Function that allows search bar/button to work
     void alphaNumOptions(int);
-    void updateDB();
-    void deleteInDB();
-    void selectCompany(const QModelIndex &index);
-    void addCompany();
+    void updateDB(); // Allows for updating database rows
+    void deleteInDB(); // Allows for deleting database rows
+    void selectCompany(const QModelIndex &index); // highlights company selected in display list
+    void addCompany(); // creates an add company window
 private:
     QString selectedCompany;
     customerNode tempCustomer;

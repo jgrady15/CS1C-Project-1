@@ -78,7 +78,7 @@ void reviewWindow::submitReview()
         query.bindValue(":rating", ui->ratingBox->text());
         query.bindValue(":textReview", splitData);
 
-
+        query.exec();
         this->close();
     }
 
@@ -108,4 +108,5 @@ void reviewWindow::submitReview()
         this->ui->nameLabel->setStyleSheet("QLabel {font: bold 14px; color: red}");
         this->ui->productLabel->setStyleSheet("QLabel {font: bold 14px; color: red}");
    }
+    delete this;
 }

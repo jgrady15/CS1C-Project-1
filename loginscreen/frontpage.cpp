@@ -35,7 +35,6 @@ FrontPage::FrontPage(QWidget *parent) :
     int h5 =  ui->logo->height();
     ui->logo->setPixmap(pix5.scaled(w5,h5,Qt::KeepAspectRatio));
     setupReviews();
-
 }
 
 FrontPage::~FrontPage()
@@ -82,6 +81,7 @@ void FrontPage::on_homeButton_2_clicked()
 void FrontPage::on_homeButton_3_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
+    refreshWindow();
 }
 
 void FrontPage::submitReview() {
@@ -102,7 +102,7 @@ void FrontPage::setupReviews() {
     QSqlRecord record;
     QStringList temp1, temp2, temp3, temp4;
 
-    query.prepare("SELECT CustomerName, ProductName, ReviewNumber, TextReview FROM CustomerReviews");
+    query.prepare("SELECT CustomerName, ProductName, ReviewNumber, TextReview FROM CustomerReviews;");
     if (!query.exec())
         qDebug() << query.lastError();
     while(query.next()) {
@@ -112,6 +112,37 @@ void FrontPage::setupReviews() {
         temp3 << record.value(2).toString();
         temp4 << record.value(3).toString();
     }
+    ui->nameList->addItems(temp1);
+    ui->productList->addItems(temp2);
+    ui->ratingList->addItems(temp3);
+    ui->reviewList->addItems(temp4);
+}
+
+void FrontPage::refreshWindow()
+{
+    QSqlQuery query;
+    QSqlRecord record;
+    QStringList temp1, temp2, temp3, temp4;
+
+    query.prepare("SELECT CustomerName, ProductName, ReviewNumber, TextReview FROM CustomerReviews;");
+
+    if(!query.exec())
+        qDebug() << query.lastError();
+
+    while(query.next())
+    {
+        record = query.record();
+        temp1 << record.value(0).toString();
+        temp2 << record.value(1).toString();
+        temp3 << record.value(2).toString();
+        temp4 << record.value(3).toString();
+    }
+
+    ui->nameList->clear();
+    ui->productList->clear();
+    ui->ratingList->clear();
+    ui->reviewList->clear();
+
     ui->nameList->addItems(temp1);
     ui->productList->addItems(temp2);
     ui->ratingList->addItems(temp3);

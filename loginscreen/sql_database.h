@@ -29,14 +29,12 @@ public:
     QSqlDatabase grabDatabase();
     void closeConnection();
 
-    std::vector<customerNode> grabVector();
-
-    void addCustomer(customerNode &temp);
+    void addCustomer(customerNode &temp); // Adds information to iRobotsPamphlet table
     void editCustomer(QString *temp);
-    void deleteCustomer(QString& searchFor);
+    void deleteCustomer(QString& searchFor); // Deletes information from iRobotsPamphlet
     void setIndex(int index);
 
-    void readFile();
+    void readFile(); // Reads in text file and stores information into a struct
 };
 
 #endif // SQL_DATABASE_H

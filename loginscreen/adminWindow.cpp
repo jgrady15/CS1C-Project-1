@@ -14,6 +14,9 @@ adminWindow::~adminWindow()
     delete ui;
 }
 
+/*!
+ * \brief Sets up combo boxes with various sorting methods (Ascending, Key, Interest, Descending), also leads to first page in stackedWidget
+ */
 void adminWindow::displayCompany()
 {
     ui->companyPage_sortComboBox->addItem("Ascending A-Z");
@@ -25,6 +28,9 @@ void adminWindow::displayCompany()
     ui->stackedWidget->setCurrentIndex(0);
 }
 
+/*!
+ * \brief Sets up Customer List and leads to second page in stackedWidget
+ */
 void adminWindow::displayCustomer()
 {
     QSqlQuery query;
@@ -38,6 +44,9 @@ void adminWindow::displayCustomer()
     ui->stackedWidget->setCurrentIndex(1);
 }
 
+/*!
+ * \brief Search function that searches through SQLITE for company names, case-insensitive
+ */
 void adminWindow::searchFor()
 {
     //Obviously this function is going to be for searching
@@ -76,12 +85,18 @@ void adminWindow::searchFor()
     this->ui->companyPage_searchBar->setText("");
 }
 
+/*!
+ * \brief Double click to activate, grabs current row selected and stores into (QString selectedCompany)
+ */
 void adminWindow::selectCompany(const QModelIndex &index)
 {
     selectedCompany = ui->companyPage_displayListCompanyName->model()->data(index).toString();
     qDebug() << selectedCompany;
 }
 
+/*!
+ * \brief This page is loaded before all others, sets up all three display lists
+ */
 void adminWindow::setupPage()
 {
     QSqlQuery query;
@@ -106,6 +121,9 @@ void adminWindow::setupPage()
     ui->companyPage_displayListKeyCustomer->addItems(temp3);
 }
 
+/*!
+ * \brief Function for QComboBox, stores various sorting methods based off (Ascending, Descending, Interest Level, and Key order)
+ */
 void adminWindow::alphaNumOptions(int index)
 {
     QSqlQuery query;
@@ -202,6 +220,9 @@ void adminWindow::alphaNumOptions(int index)
     }
 }
 
+/*!
+ * \brief Modular code that refreshes current admin window, typically paired with refresh button
+ */
 void adminWindow::refreshWindow()
 {
     QSqlQuery query;
@@ -231,13 +252,18 @@ void adminWindow::refreshWindow()
     ui->companyPage_displayListKeyCustomer->addItems(temp3);
 }
 
-
+/*!
+ * \brief Displays the add company window
+ */
 void adminWindow::addCompany()
 {
     temp.displayAdd();
     temp.show();
 }
 
+/*!
+ * \brief Allows the user to edit currently selected information and updates it into the SQLITE database
+ */
 void adminWindow::updateDB()
 {
     QSqlQuery query;
@@ -265,6 +291,9 @@ void adminWindow::updateDB()
     temp.show();
 }
 
+/*!
+ * \brief Function allows deleting information in SQLITE Database by selecting a company in the display list
+ */
 void adminWindow::deleteInDB()
 {
     QSqlQuery query;

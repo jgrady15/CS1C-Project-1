@@ -6,7 +6,6 @@
 #include "ui_frontpage.h"
 #include "loginwindow.h"
 #include "reviewwindow.h"
-#include "ui_frontpage.h"
 #include "helpmenu.h"
 
 namespace Ui {
@@ -20,7 +19,6 @@ class FrontPage : public QMainWindow
 public:
     explicit FrontPage(QWidget *parent = nullptr);
     ~FrontPage();
-
 private slots:
     void on_pushButton_4_clicked();
 
@@ -41,6 +39,7 @@ private slots:
     void stopItGetSomeHelp();
     void sendPamphlet();
     void setupReviews();
+    void refreshWindow();
 private:
     Ui::FrontPage *ui;
     MainWindow *mainW = new MainWindow;
