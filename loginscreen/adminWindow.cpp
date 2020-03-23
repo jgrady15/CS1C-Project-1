@@ -7,6 +7,7 @@ adminWindow::adminWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     setupPage();
+    setupCustomer();
 }
 
 adminWindow::~adminWindow()
@@ -111,7 +112,7 @@ void adminWindow::setupCustomer() {
     QSqlRecord record;
     QStringList temp1, temp2, temp3, temp4;
 
-    query.prepare("SELECT CustomerName, ProductName, QtyBought, MoneySpent FROM iRobotsPamphlet;");
+    query.prepare("SELECT CustomerName, ProductName, QtyBought, MoneySpent FROM CustomerInfo;");
 
     if(!query.exec())
         qDebug() << query.lastError();

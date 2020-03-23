@@ -50,7 +50,7 @@ void sql_database::sql_createDatabase()
                "CustomerName VARCHAR(50),"
                "ProductName VARCHAR(50),"
                "QtyBought INTEGER,"
-               "MoneySpent REAL);");
+               "MoneySpent VARCHAR(20));");
     query.exec("CREATE TABLE PamphletInfo("
                "CustomerName VARCHAR(50),"
                "CustomerEmail VARCHAR (50));");
