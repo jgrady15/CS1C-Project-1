@@ -36,7 +36,7 @@ public:
     void deleteCustomer(QString& searchFor);
     void setIndex(int index);
 
-    void readFile();
+   // void readFile();
 };
 
 #endif // SQL_DATABASE_H

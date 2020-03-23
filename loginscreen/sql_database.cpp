@@ -46,6 +46,14 @@ void sql_database::sql_createDatabase()
                "ReviewNumber  INTEGER,"
                "TextReview    TEXT,"
                "UNIQUE        (CustomerName, ProductName));");
+    query.exec("CREATE TABLE CustomerInfo("
+               "CustomerName VARCHAR(50),"
+               "ProductName VARCHAR(50),"
+               "QtyBought INTEGER,"
+               "MoneySpent REAL);");
+    query.exec("CREATE TABLE PamphletInfo("
+               "CustomerName VARCHAR(50),"
+               "CustomerEmail VARCHAR (50));");
 }
 
 void sql_database::addCustomer(customerNode &temp)
@@ -68,21 +76,21 @@ void sql_database::addCustomer(customerNode &temp)
         qDebug() << "Failed: " << query.lastError();
 }
 
-void sql_database::readFile()
-{
-    QFile file(":/customers.txt");
-    file.open(QIODevice::ReadOnly);
-    QTextStream inFile(&file);
+//void sql_database::readFile()
+//{
+   // QFile file(":/customers.txt");
+   // file.open(QIODevice::ReadOnly);
+   // QTextStream inFile(&file);
 
-    while(!inFile.atEnd())
-    {
-        data.companyName    = inFile.readLine();
-        data.streetName     = inFile.readLine();
-        data.cityStateZip   = inFile.readLine();
-        data.websiteName    = inFile.readLine();
-        data.interestLevel  = inFile.readLine();
-        data.keyCustomer    = inFile.readLine();
+   // while(!inFile.atEnd())
+   // {
+     //   data.companyName    = inFile.readLine();
+      //  data.streetName     = inFile.readLine();
+      //  data.cityStateZip   = inFile.readLine();
+      //  data.websiteName    = inFile.readLine();
+      //  data.interestLevel  = inFile.readLine();
+      //  data.keyCustomer    = inFile.readLine();
 
-        addCustomer(data);
-    }   file.close();
-}
+      //  addCustomer(data);
+  //  }  // file.close();
+//}

@@ -13,6 +13,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
@@ -20,6 +21,7 @@
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
+#include <QtWidgets/QTableView>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -49,10 +51,12 @@ public:
     QWidget *home_3;
     QPushButton *homeButton_2;
     QLabel *contact_label;
+    QPushButton *orderButton;
+    QPushButton *pamphletButton;
     QWidget *home_4;
     QPushButton *homeButton_3;
-    QLabel *customer_label;
     QPushButton *reviewButton;
+    QTableView *tableView;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -138,43 +142,54 @@ public:
         home_2->setSizePolicy(sizePolicy);
         homeButton_1 = new QPushButton(home_2);
         homeButton_1->setObjectName(QString::fromUtf8("homeButton_1"));
-        homeButton_1->setGeometry(QRect(970, 70, 93, 28));
+        homeButton_1->setGeometry(QRect(1120, 10, 93, 28));
         tabWidget = new QTabWidget(home_2);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
-        tabWidget->setGeometry(QRect(0, 40, 900, 480));
+        tabWidget->setGeometry(QRect(0, 40, 1250, 760));
         tab = new QWidget();
         tab->setObjectName(QString::fromUtf8("tab"));
         pamphlet_pic = new QLabel(tab);
         pamphlet_pic->setObjectName(QString::fromUtf8("pamphlet_pic"));
-        pamphlet_pic->setGeometry(QRect(0, 0, 900, 450));
+        pamphlet_pic->setGeometry(QRect(0, 0, 1250, 760));
+        pamphlet_pic->setStyleSheet(QString::fromUtf8("background-color: rgb(240, 240, 240);"));
         tabWidget->addTab(tab, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QString::fromUtf8("tab_2"));
         pricing_label = new QLabel(tab_2);
         pricing_label->setObjectName(QString::fromUtf8("pricing_label"));
-        pricing_label->setGeometry(QRect(0, 0, 900, 450));
+        pricing_label->setGeometry(QRect(0, 0, 1250, 760));
         tabWidget->addTab(tab_2, QString());
         stackedWidget->addWidget(home_2);
         home_3 = new QWidget();
         home_3->setObjectName(QString::fromUtf8("home_3"));
         homeButton_2 = new QPushButton(home_3);
         homeButton_2->setObjectName(QString::fromUtf8("homeButton_2"));
-        homeButton_2->setGeometry(QRect(1020, 0, 93, 28));
+        homeButton_2->setGeometry(QRect(1070, 0, 93, 28));
         contact_label = new QLabel(home_3);
         contact_label->setObjectName(QString::fromUtf8("contact_label"));
-        contact_label->setGeometry(QRect(15, 45, 1001, 481));
+        contact_label->setGeometry(QRect(0, 40, 1250, 760));
+        orderButton = new QPushButton(home_3);
+        orderButton->setObjectName(QString::fromUtf8("orderButton"));
+        orderButton->setGeometry(QRect(890, 0, 61, 31));
+        pamphletButton = new QPushButton(home_3);
+        pamphletButton->setObjectName(QString::fromUtf8("pamphletButton"));
+        pamphletButton->setGeometry(QRect(960, 0, 101, 31));
         stackedWidget->addWidget(home_3);
         home_4 = new QWidget();
         home_4->setObjectName(QString::fromUtf8("home_4"));
         homeButton_3 = new QPushButton(home_4);
         homeButton_3->setObjectName(QString::fromUtf8("homeButton_3"));
         homeButton_3->setGeometry(QRect(992, 10, 111, 28));
-        customer_label = new QLabel(home_4);
-        customer_label->setObjectName(QString::fromUtf8("customer_label"));
-        customer_label->setGeometry(QRect(0, 0, 981, 511));
         reviewButton = new QPushButton(home_4);
         reviewButton->setObjectName(QString::fromUtf8("reviewButton"));
         reviewButton->setGeometry(QRect(992, 40, 111, 28));
+        tableView = new QTableView(home_4);
+        tableView->setObjectName(QString::fromUtf8("tableView"));
+        tableView->setGeometry(QRect(30, 30, 901, 731));
+        tableView->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+        tableView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        tableView->setSizeAdjustPolicy(QAbstractScrollArea::AdjustIgnored);
+        tableView->setVerticalScrollMode(QAbstractItemView::ScrollPerItem);
         stackedWidget->addWidget(home_4);
 
         horizontalLayout->addWidget(stackedWidget);
@@ -191,8 +206,10 @@ public:
         retranslateUi(FrontPage);
         QObject::connect(reviewButton, SIGNAL(clicked()), FrontPage, SLOT(submitReview()));
         QObject::connect(helpButton, SIGNAL(clicked()), FrontPage, SLOT(stopItGetSomeHelp()));
+        QObject::connect(orderButton, SIGNAL(clicked()), FrontPage, SLOT(orderWin()));
+        QObject::connect(pamphletButton, SIGNAL(clicked()), FrontPage, SLOT(sendPamphlet()));
 
-        stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(2);
         tabWidget->setCurrentIndex(0);
 
 
@@ -215,8 +232,9 @@ public:
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QCoreApplication::translate("FrontPage", "Pricing", nullptr));
         homeButton_2->setText(QCoreApplication::translate("FrontPage", "Home", nullptr));
         contact_label->setText(QString());
+        orderButton->setText(QCoreApplication::translate("FrontPage", "Order", nullptr));
+        pamphletButton->setText(QCoreApplication::translate("FrontPage", "Request Pamphlet", nullptr));
         homeButton_3->setText(QCoreApplication::translate("FrontPage", "Home", nullptr));
-        customer_label->setText(QString());
         reviewButton->setText(QCoreApplication::translate("FrontPage", "Submit A Review", nullptr));
     } // retranslateUi
 

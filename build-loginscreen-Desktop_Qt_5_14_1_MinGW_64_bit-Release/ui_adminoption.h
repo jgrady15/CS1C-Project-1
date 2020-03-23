@@ -22,12 +22,13 @@ public:
     QPushButton *pushButton;
     QPushButton *pushButton_2;
     QPushButton *pushButton_3;
+    QPushButton *pushButton_4;
 
     void setupUi(QDialog *adminOption)
     {
         if (adminOption->objectName().isEmpty())
             adminOption->setObjectName(QString::fromUtf8("adminOption"));
-        adminOption->resize(400, 182);
+        adminOption->resize(400, 199);
         pushButton = new QPushButton(adminOption);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
         pushButton->setGeometry(QRect(120, 20, 171, 28));
@@ -37,10 +38,14 @@ public:
         pushButton_3 = new QPushButton(adminOption);
         pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
         pushButton_3->setGeometry(QRect(150, 60, 101, 31));
+        pushButton_4 = new QPushButton(adminOption);
+        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
+        pushButton_4->setGeometry(QRect(150, 140, 101, 31));
 
         retranslateUi(adminOption);
         QObject::connect(pushButton, SIGNAL(clicked()), adminOption, SLOT(viewCustomerList()));
         QObject::connect(pushButton_2, SIGNAL(clicked()), adminOption, SLOT(sendPamphlet()));
+        QObject::connect(pushButton_4, SIGNAL(clicked()), adminOption, SLOT(viewPamphletList()));
 
         QMetaObject::connectSlotsByName(adminOption);
     } // setupUi
@@ -51,6 +56,7 @@ public:
         pushButton->setText(QCoreApplication::translate("adminOption", "View and Edit Company List", nullptr));
         pushButton_2->setText(QCoreApplication::translate("adminOption", "Send Pamphlet", nullptr));
         pushButton_3->setText(QCoreApplication::translate("adminOption", "View Customer List", nullptr));
+        pushButton_4->setText(QCoreApplication::translate("adminOption", "View Pamphlet List", nullptr));
     } // retranslateUi
 
 };

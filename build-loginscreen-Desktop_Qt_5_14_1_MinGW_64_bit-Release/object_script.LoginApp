@@ -6,6 +6,8 @@ frontpage.o
 helpmenu.o
 loginwindow.o
 main.o
+orderwindow.o
+pamphletinfo.o
 reviewwindow.o
 sql_database.o
 qrc_resource.o
@@ -16,4 +18,6 @@ moc_emailwidget.o
 moc_frontpage.o
 moc_helpmenu.o
 moc_loginwindow.o
+moc_orderwindow.o
+moc_pamphletinfo.o
 moc_reviewwindow.o

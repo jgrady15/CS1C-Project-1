@@ -99,9 +99,7 @@ void reviewWindow::submitReview()
         this->ui->productLabel->setStyleSheet("QLabel {font: bold 14px; color: red}");
         this->ui->nameLabel->setStyleSheet("QLabel {font-weight: normal;}");
     }
-
-    else
-  {
+    else {
         errorOccurred.setInformativeText("No info provided!");
         errorOccurred.setStandardButtons(QMessageBox::Ok);
         errorOccurred.exec();

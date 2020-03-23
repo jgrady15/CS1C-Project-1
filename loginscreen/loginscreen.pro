@@ -22,6 +22,8 @@ SOURCES +=\
         helpmenu.cpp \
         loginwindow.cpp \
         main.cpp \
+        orderwindow.cpp \
+        pamphletinfo.cpp \
         reviewwindow.cpp \
         sql_database.cpp
 
@@ -34,6 +36,8 @@ HEADERS  += \
     header.h \
     helpmenu.h \
     loginwindow.h \
+    orderwindow.h \
+    pamphletinfo.h \
     reviewwindow.h \ \
     sql_database.h
 
@@ -45,6 +49,8 @@ FORMS    += \
     frontpage.ui \
     helpmenu.ui \
     loginwindow.ui \
+    orderwindow.ui \
+    pamphletinfo.ui \
     reviewwindow.ui
 
 DISTFILES += \

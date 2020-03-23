@@ -26,3 +26,7 @@ void adminOption::on_pushButton_3_clicked() {
     admin->displayCustomer();
     admin->show();
 }
+
+void adminOption::viewPamphletList() {
+    pamphlet->show();
+}

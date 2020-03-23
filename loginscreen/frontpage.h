@@ -7,6 +7,7 @@
 #include "loginwindow.h"
 #include "reviewwindow.h"
 #include "helpmenu.h"
+#include "orderwindow.h"
 
 namespace Ui {
 class FrontPage;
@@ -40,12 +41,14 @@ private slots:
     void sendPamphlet();
     void setupReviews();
     void refreshWindow();
+    void orderWin();
 private:
     Ui::FrontPage *ui;
     MainWindow *mainW = new MainWindow;
     reviewWindow *review;
     helpMenu *help = new helpMenu;
-    emailWidget *email = new emailWidget();
+    emailWidget *email = new emailWidget;
+    orderWindow *order = new orderWindow;
 };
 
 #endif // FRONTPAGE_H

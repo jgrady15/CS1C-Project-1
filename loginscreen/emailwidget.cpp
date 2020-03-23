@@ -18,6 +18,7 @@ emailWidget::~emailWidget()
 }
 
 void emailWidget::sendPamphlet() {
+    QSqlQuery query;
     QMessageBox sent;
     QString name = this->ui->nameEdit->text();
     QString email = this->ui->emailLine->text();
@@ -27,6 +28,11 @@ void emailWidget::sendPamphlet() {
     MimeMessage message;
     message.setSender(new EmailAddress("burntheburns@gmail.com", "Team Gangnam Style"));
     message.addRecipient(new EmailAddress(email, name));
+    query.prepare("INSERT OR IGNORE INTO PamphletInfo(CustomerName, CustomerEmail)"
+                  "VALUES(:name, :email);");
+    query.bindValue(":name", name);
+    query.bindValue(":email", email);
+    query.exec();
     message.setSubject("iRobot Bomb Detector Pamphlet");
     MimeText text;
     text.setText("Hey,\n\nHere's a pamphlet for our product!\n\nBest Regards,\nGangnam Style");

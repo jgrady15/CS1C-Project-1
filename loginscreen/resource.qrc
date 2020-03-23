@@ -18,4 +18,8 @@
         <file>images/pushbutton5.jpg</file>
         <file>images/star.jpg</file>
     </qresource>
+    <qresource prefix="/">
+        <file>Pamphlet.pdf</file>
+        <file>customers.txt</file>
+    </qresource>
 </RCC>
