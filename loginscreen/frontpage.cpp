@@ -91,3 +91,7 @@ void FrontPage::submitReview() {
 void FrontPage::stopItGetSomeHelp() {
     help->show();
 }
+
+void FrontPage::sendPamphlet() {
+    email->show();
+}
