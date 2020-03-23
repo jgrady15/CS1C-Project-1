@@ -43,10 +43,6 @@ public:
     QLabel *label_2;
     QLineEdit *lineEdit_password;
     QPushButton *pushButton_Login;
-    QWidget *layoutWidget1;
-    QVBoxLayout *verticalLayout_3;
-    QLabel *label_4;
-    QLabel *label_3;
     QStatusBar *statusbar;
     QMenuBar *menubar;
     QMenu *menuirobot_login;
@@ -120,22 +116,6 @@ public:
 
         verticalLayout_2->addWidget(pushButton_Login);
 
-        layoutWidget1 = new QWidget(centralwidget);
-        layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(350, 90, 93, 40));
-        verticalLayout_3 = new QVBoxLayout(layoutWidget1);
-        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
-        verticalLayout_3->setContentsMargins(0, 0, 0, 0);
-        label_4 = new QLabel(layoutWidget1);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
-
-        verticalLayout_3->addWidget(label_4);
-
-        label_3 = new QLabel(layoutWidget1);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
-
-        verticalLayout_3->addWidget(label_3);
-
         MainWindow->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -165,8 +145,6 @@ public:
         label->setText(QCoreApplication::translate("MainWindow", "Username:", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "Password: ", nullptr));
         pushButton_Login->setText(QCoreApplication::translate("MainWindow", "Login", nullptr));
-        label_4->setText(QCoreApplication::translate("MainWindow", "PW:test", nullptr));
-        label_3->setText(QCoreApplication::translate("MainWindow", "USERNAME:test", nullptr));
         menuirobot_login->setTitle(QCoreApplication::translate("MainWindow", "irobot tool", nullptr));
     } // retranslateUi
 

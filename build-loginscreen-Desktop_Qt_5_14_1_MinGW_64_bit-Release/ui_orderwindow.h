@@ -12,10 +12,12 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpinBox>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
@@ -26,14 +28,18 @@ class Ui_orderWindow
 {
 public:
     QWidget *centralwidget;
-    QComboBox *menuDrop;
-    QLabel *nameLabel;
+    QWidget *gridLayoutWidget;
+    QGridLayout *gridLayout;
+    QLineEdit *totalLine;
     QLabel *productLabel;
     QLabel *totalLabel;
     QLabel *qtyLabel;
+    QPushButton *orderButton;
+    QLabel *nameLabel;
     QSpinBox *qtyBox;
-    QLineEdit *totalLine;
-    QLineEdit *lineEdit;
+    QLineEdit *nameLine;
+    QComboBox *menuDrop;
+    QLineEdit *productLine;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -41,39 +47,71 @@ public:
     {
         if (orderWindow->objectName().isEmpty())
             orderWindow->setObjectName(QString::fromUtf8("orderWindow"));
-        orderWindow->resize(800, 600);
+        orderWindow->resize(426, 220);
         centralwidget = new QWidget(orderWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        menuDrop = new QComboBox(centralwidget);
-        menuDrop->setObjectName(QString::fromUtf8("menuDrop"));
-        menuDrop->setGeometry(QRect(70, 70, 151, 16));
-        nameLabel = new QLabel(centralwidget);
-        nameLabel->setObjectName(QString::fromUtf8("nameLabel"));
-        nameLabel->setGeometry(QRect(20, 40, 101, 16));
-        productLabel = new QLabel(centralwidget);
-        productLabel->setObjectName(QString::fromUtf8("productLabel"));
-        productLabel->setGeometry(QRect(20, 70, 61, 16));
-        totalLabel = new QLabel(centralwidget);
-        totalLabel->setObjectName(QString::fromUtf8("totalLabel"));
-        totalLabel->setGeometry(QRect(20, 100, 47, 13));
-        qtyLabel = new QLabel(centralwidget);
-        qtyLabel->setObjectName(QString::fromUtf8("qtyLabel"));
-        qtyLabel->setGeometry(QRect(230, 70, 51, 16));
-        qtyBox = new QSpinBox(centralwidget);
-        qtyBox->setObjectName(QString::fromUtf8("qtyBox"));
-        qtyBox->setGeometry(QRect(280, 70, 42, 16));
-        qtyBox->setMaximum(10);
-        totalLine = new QLineEdit(centralwidget);
+        gridLayoutWidget = new QWidget(centralwidget);
+        gridLayoutWidget->setObjectName(QString::fromUtf8("gridLayoutWidget"));
+        gridLayoutWidget->setGeometry(QRect(20, 20, 372, 141));
+        gridLayout = new QGridLayout(gridLayoutWidget);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        gridLayout->setContentsMargins(0, 0, 0, 0);
+        totalLine = new QLineEdit(gridLayoutWidget);
         totalLine->setObjectName(QString::fromUtf8("totalLine"));
-        totalLine->setGeometry(QRect(70, 100, 113, 16));
         totalLine->setReadOnly(true);
-        lineEdit = new QLineEdit(centralwidget);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-        lineEdit->setGeometry(QRect(110, 40, 151, 20));
+
+        gridLayout->addWidget(totalLine, 5, 2, 1, 1);
+
+        productLabel = new QLabel(gridLayoutWidget);
+        productLabel->setObjectName(QString::fromUtf8("productLabel"));
+
+        gridLayout->addWidget(productLabel, 2, 0, 1, 1);
+
+        totalLabel = new QLabel(gridLayoutWidget);
+        totalLabel->setObjectName(QString::fromUtf8("totalLabel"));
+
+        gridLayout->addWidget(totalLabel, 5, 1, 1, 1);
+
+        qtyLabel = new QLabel(gridLayoutWidget);
+        qtyLabel->setObjectName(QString::fromUtf8("qtyLabel"));
+
+        gridLayout->addWidget(qtyLabel, 2, 2, 1, 1);
+
+        orderButton = new QPushButton(gridLayoutWidget);
+        orderButton->setObjectName(QString::fromUtf8("orderButton"));
+
+        gridLayout->addWidget(orderButton, 7, 1, 1, 2);
+
+        nameLabel = new QLabel(gridLayoutWidget);
+        nameLabel->setObjectName(QString::fromUtf8("nameLabel"));
+
+        gridLayout->addWidget(nameLabel, 0, 0, 1, 1);
+
+        qtyBox = new QSpinBox(gridLayoutWidget);
+        qtyBox->setObjectName(QString::fromUtf8("qtyBox"));
+        qtyBox->setMaximum(10);
+
+        gridLayout->addWidget(qtyBox, 2, 3, 1, 1);
+
+        nameLine = new QLineEdit(gridLayoutWidget);
+        nameLine->setObjectName(QString::fromUtf8("nameLine"));
+
+        gridLayout->addWidget(nameLine, 0, 1, 1, 1);
+
+        menuDrop = new QComboBox(gridLayoutWidget);
+        menuDrop->setObjectName(QString::fromUtf8("menuDrop"));
+
+        gridLayout->addWidget(menuDrop, 3, 0, 1, 1);
+
+        productLine = new QLineEdit(gridLayoutWidget);
+        productLine->setObjectName(QString::fromUtf8("productLine"));
+
+        gridLayout->addWidget(productLine, 3, 1, 1, 1);
+
         orderWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(orderWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 21));
+        menubar->setGeometry(QRect(0, 0, 426, 21));
         orderWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(orderWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -81,6 +119,7 @@ public:
 
         retranslateUi(orderWindow);
         QObject::connect(menuDrop, SIGNAL(activated(int)), orderWindow, SLOT(setProduct()));
+        QObject::connect(orderButton, SIGNAL(clicked()), orderWindow, SLOT(order()));
 
         QMetaObject::connectSlotsByName(orderWindow);
     } // setupUi
@@ -88,10 +127,11 @@ public:
     void retranslateUi(QMainWindow *orderWindow)
     {
         orderWindow->setWindowTitle(QCoreApplication::translate("orderWindow", "MainWindow", nullptr));
-        nameLabel->setText(QCoreApplication::translate("orderWindow", "Customer Name: ", nullptr));
         productLabel->setText(QCoreApplication::translate("orderWindow", "Product:", nullptr));
         totalLabel->setText(QCoreApplication::translate("orderWindow", "Total:  $", nullptr));
         qtyLabel->setText(QCoreApplication::translate("orderWindow", "Quantity: ", nullptr));
+        orderButton->setText(QCoreApplication::translate("orderWindow", "Order", nullptr));
+        nameLabel->setText(QCoreApplication::translate("orderWindow", "Customer Name: ", nullptr));
     } // retranslateUi
 
 };
