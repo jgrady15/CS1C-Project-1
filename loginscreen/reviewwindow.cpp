@@ -78,7 +78,7 @@ void reviewWindow::submitReview()
         query.bindValue(":rating", ui->ratingBox->text());
         query.bindValue(":textReview", splitData);
 
-
+        query.exec();
         this->close();
     }
 
