@@ -100,12 +100,12 @@ void reviewWindow::submitReview()
         this->ui->nameLabel->setStyleSheet("QLabel {font-weight: normal;}");
     }
 
-//    else if ()
-//    {
-//        errorOccurred.setInformativeText("No info provided!");
-//        errorOccurred.setStandardButtons(QMessageBox::Ok);
-//        errorOccurred.exec();
-//        this->ui->nameLabel->setStyleSheet("QLabel {font: bold 14px; color: red}");
-//        this->ui->productLabel->setStyleSheet("QLabel {font: bold 14px; color: red}");
-//    }
+    else
+  {
+        errorOccurred.setInformativeText("No info provided!");
+        errorOccurred.setStandardButtons(QMessageBox::Ok);
+        errorOccurred.exec();
+        this->ui->nameLabel->setStyleSheet("QLabel {font: bold 14px; color: red}");
+        this->ui->productLabel->setStyleSheet("QLabel {font: bold 14px; color: red}");
+   }
 }
