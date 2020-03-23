@@ -1,6 +1,7 @@
 #ifndef HELPMENU_H
 #define HELPMENU_H
 
+#include "header.h"
 #include <QWidget>
 
 namespace Ui {

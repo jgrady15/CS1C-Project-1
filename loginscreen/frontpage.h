@@ -1,6 +1,7 @@
 #ifndef FRONTPAGE_H
 #define FRONTPAGE_H
 
+#include "header.h"
 #include <QMainWindow>
 #include "ui_frontpage.h"
 #include "loginwindow.h"

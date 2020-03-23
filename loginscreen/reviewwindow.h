@@ -1,6 +1,7 @@
 #ifndef REVIEWWINDOW_H
 #define REVIEWWINDOW_H
 
+#include "header.h"
 #include <QMainWindow>
 #include <QComboBox>
 

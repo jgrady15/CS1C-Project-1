@@ -1,6 +1,7 @@
 #ifndef EMAILWIDGET_H
 #define EMAILWIDGET_H
 
+#include "header.h"
 #include <QWidget>
 
 namespace Ui {

@@ -19,6 +19,9 @@
         <file>images/pushbutton3.jpg</file>
         <file>images/pushbutton4.jpg</file>
         <file>images/pushbutton5.jpg</file>
+        <file>images/contact.png</file>
+        <file>images/info.png</file>
+        <file>images/pricing.png</file>
     </qresource>
     <qresource prefix="/">
         <file>Pamphlet.pdf</file>

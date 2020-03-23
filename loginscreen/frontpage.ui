@@ -24,7 +24,7 @@
        <string notr="true">img url(:/img/images/pamphlet1.jpg)</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="home_1">
        <widget class="QWidget" name="gridLayoutWidget">
@@ -173,8 +173,8 @@
        <widget class="QPushButton" name="homeButton_1">
         <property name="geometry">
          <rect>
-          <x>970</x>
-          <y>70</y>
+          <x>1120</x>
+          <y>10</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -188,8 +188,8 @@
          <rect>
           <x>0</x>
           <y>40</y>
-          <width>900</width>
-          <height>480</height>
+          <width>1250</width>
+          <height>760</height>
          </rect>
         </property>
         <property name="currentIndex">
@@ -204,8 +204,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>900</width>
-            <height>450</height>
+            <width>1250</width>
+            <height>760</height>
            </rect>
           </property>
           <property name="text">
@@ -222,8 +222,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>900</width>
-            <height>450</height>
+            <width>1250</width>
+            <height>760</height>
            </rect>
           </property>
           <property name="text">
@@ -237,7 +237,7 @@
        <widget class="QPushButton" name="homeButton_2">
         <property name="geometry">
          <rect>
-          <x>1020</x>
+          <x>1070</x>
           <y>0</y>
           <width>93</width>
           <height>28</height>
@@ -250,10 +250,10 @@
        <widget class="QLabel" name="contact_label">
         <property name="geometry">
          <rect>
-          <x>15</x>
-          <y>45</y>
-          <width>1001</width>
-          <height>481</height>
+          <x>0</x>
+          <y>40</y>
+          <width>1250</width>
+          <height>760</height>
          </rect>
         </property>
         <property name="text">
@@ -273,19 +273,6 @@
         </property>
         <property name="text">
          <string>Home</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="customer_label">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>981</width>
-          <height>511</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string/>
         </property>
        </widget>
        <widget class="QPushButton" name="reviewButton">
@@ -312,7 +299,7 @@
      <x>0</x>
      <y>0</y>
      <width>1270</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

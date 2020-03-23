@@ -1,6 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "header.h"
 #include <QMainWindow>
 #include "adminoption.h"
 #include "adminwindow.h"

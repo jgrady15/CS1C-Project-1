@@ -10,25 +10,25 @@ FrontPage::FrontPage(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    QPixmap pix(":/img/images/pamphlet_2.jpg");
+    QPixmap pix(":/img/images/info.png");
     int w =  ui->pamphlet_pic->width();
     int h =  ui->pamphlet_pic->height();
     ui->pamphlet_pic->setPixmap(pix.scaled(w,h,Qt::KeepAspectRatio));
 
-    QPixmap pix2(":/img/images/pricing.jpg");
-    int w2 =  ui->pamphlet_pic->width();
-    int h2 =  ui->pamphlet_pic->height();
+    QPixmap pix2(":/img/images/pricing.png");
+    int w2 =  ui->pricing_label->width();
+    int h2 =  ui->pricing_label->height();
     ui->pricing_label->setPixmap(pix2.scaled(w2,h2,Qt::KeepAspectRatio));
 
-    QPixmap pix3(":/img/images/contact.jpg");
-    int w3 =  ui->pamphlet_pic->width();
-    int h3 =  ui->pamphlet_pic->height();
+    QPixmap pix3(":/img/images/contact.png");
+    int w3 =  ui->contact_label->width();
+    int h3 =  ui->contact_label->height();
     ui->contact_label->setPixmap(pix3.scaled(w3,h3,Qt::KeepAspectRatio));
 
-    QPixmap pix4(":/img/images/customer.jpg");
-    int w4 =  ui->pamphlet_pic->width();
-    int h4 =  ui->pamphlet_pic->height();
-    ui->customer_label->setPixmap(pix4.scaled(w4,h4,Qt::KeepAspectRatio));
+//    QPixmap pix4(":/img/images/customer.jpg");
+//    int w4 =  ui->customer_label->width();
+//    int h4 =  ui->customer_label->height();
+//    ui->customer_label->setPixmap(pix4.scaled(w4,h4,Qt::KeepAspectRatio));
 
     QPixmap pix5(":/img/images/gangnam style.jpg");
     int w5 =  ui->logo->width();
