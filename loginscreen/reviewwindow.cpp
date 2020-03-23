@@ -47,6 +47,13 @@ void reviewWindow::makeAnon()
 void reviewWindow::setProduct(int index)
 {
     this->ui->productLine->setText(this->ui->menuDrop->itemText(index));
+    if (this->ui->productLine->text() == "Basic Package") {
+        this->ui->priceLine->setText("$1299.99");
+    } else if (this->ui->productLine->text() == "Rugged Edition") {
+       this->ui->priceLine->setText("$1799.99");
+    } else if (this->ui->productLine->text() == "Deluxe Package") {
+       this->ui->priceLine->setText("$2199.99");
+    }
 }
 
 void reviewWindow::submitReview()
