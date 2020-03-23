@@ -1,6 +1,5 @@
 #include "adminoption.h"
 #include "ui_adminoption.h"
-#include "adminwindow.h"
 
 adminOption::adminOption(QWidget *parent) :
     QDialog(parent),
@@ -14,21 +13,22 @@ adminOption::~adminOption()
     delete ui;
 }
 
-void adminOption::viewCustomerList()
-{
+void adminOption::viewCustomerList() {
+    admin->displayCompany();
     admin->show();
 }
 
-void adminOption::sendPamphlet()
-{
+void adminOption::sendPamphlet() {
     email->show();
 }
 
-void adminOption::on_pushButton_clicked()
+void adminOption::on_pushButton_3_clicked()
 {
+    admin->displayCustomer();
+    admin->show();
 }
 
-void adminOption::on_displayAdminWindow_clicked()
+void adminOption::on_pushButton_clicked()
 {
 
 }

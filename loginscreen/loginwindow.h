@@ -1,7 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include "header.h"
+#include <QMainWindow>
 #include "adminoption.h"
 #include "adminwindow.h"
 
@@ -15,14 +15,12 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow(QWidget *parent = nullptr);
-    void setupAdminWindow();
     ~MainWindow();
-
 private slots:
     void on_pushButton_Login_clicked();
 private:
     Ui::MainWindow *ui;
-    adminOption *option;
+    adminOption *option = new adminOption;
     adminWindow *admin = new adminWindow;
 };
 #endif // MAINWINDOW_H

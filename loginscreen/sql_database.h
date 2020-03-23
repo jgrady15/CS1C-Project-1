@@ -29,8 +29,6 @@ public:
     QSqlDatabase grabDatabase();
     void closeConnection();
 
-    std::vector<customerNode> grabVector();
-
     void addCustomer(customerNode &temp);
     void editCustomer(QString *temp);
     void deleteCustomer(QString& searchFor);

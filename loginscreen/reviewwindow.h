@@ -18,7 +18,6 @@ private slots:
     void makeAnon();
     void setProduct(int);
     void submitReview();
-
 private:
     Ui::reviewWindow *ui;
 };

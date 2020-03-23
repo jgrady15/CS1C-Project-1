@@ -1,24 +1,34 @@
-#include "adminoptions.h"
-#include "ui_secdialog.h"
-#include <QMessageBox>
+#include "adminoption.h"
+#include "ui_adminoption.h"
+#include "adminwindow.h"
 
-SecDialog::SecDialog(QWidget *parent) :
+adminOption::adminOption(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::SecDialog)
+    ui(new Ui::adminOption)
 {
     ui->setupUi(this);
 }
 
-SecDialog::~SecDialog()
+adminOption::~adminOption()
 {
     delete ui;
 }
 
-void SecDialog::on_editList_pushButton_clicked() {
+void adminOption::viewCustomerList()
+{
     admin->show();
 }
 
-void SecDialog::on_snedPamphlet_pushButton_clicked()
+void adminOption::sendPamphlet()
 {
-   email->show();
+    email->show();
+}
+
+void adminOption::on_pushButton_clicked()
+{
+}
+
+void adminOption::on_displayAdminWindow_clicked()
+{
+
 }

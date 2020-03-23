@@ -1,7 +1,7 @@
 #ifndef EMAILWIDGET_H
 #define EMAILWIDGET_H
 
-#include "header.h"
+#include <QWidget>
 
 namespace Ui {
 class emailWidget;
@@ -16,7 +16,6 @@ public:
     ~emailWidget();
 private slots:
     void sendPamphlet();
-
 private:
     Ui::emailWidget *ui;
 };

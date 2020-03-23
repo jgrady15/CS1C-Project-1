@@ -1,8 +1,11 @@
 #include "sql_database.h"
-
+#include <QFileInfo>
 sql_database::sql_database()
 {
     database = QSqlDatabase::addDatabase("QSQLITE");
+    QFileInfo db("database.sqlite");
+    QString DB_PATH = db.absoluteFilePath();
+    qDebug() << DB_PATH;
     database.setDatabaseName(DB_PATH);
     database.open();
 }
@@ -40,9 +43,9 @@ void sql_database::sql_createDatabase()
     query.exec("CREATE TABLE CustomerReviews("
                "CustomerName  VARCHAR(50),"
                "ProductName   VARCHAR(40),"
+               "ProductPrice  NUMERIC,"
                "ReviewNumber  INTEGER,"
-               "TextReview    TEXT,"
-               "UNIQUE        (CustomerName, ProductName));");
+               "TextReview    TEXT);");
 }
 
 void sql_database::addCustomer(customerNode &temp)
@@ -67,7 +70,7 @@ void sql_database::addCustomer(customerNode &temp)
 
 void sql_database::readFile()
 {
-    QFile file("D:/Programming/CS-1C-master/CS1C-Project-1-mainTestBranch/loginscreen/customers.txt");
+    QFile file(":/customers.txt");
     file.open(QIODevice::ReadOnly);
     QTextStream inFile(&file);
 
