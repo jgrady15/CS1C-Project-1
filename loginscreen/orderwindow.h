@@ -12,6 +12,12 @@ class orderWindow : public QMainWindow
     Q_OBJECT
 private slots:
     void setProduct(int);
+    void on_pushButton_clicked();
+
+
+
+    void on_orderButton_clicked();
+
 public:
     explicit orderWindow(QWidget *parent = nullptr);
     ~orderWindow();
