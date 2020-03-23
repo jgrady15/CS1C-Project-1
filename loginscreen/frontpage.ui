@@ -288,44 +288,26 @@
          <string>Submit A Review</string>
         </property>
        </widget>
-       <widget class="QListWidget" name="nameList">
+       <widget class="QTableView" name="tableView">
         <property name="geometry">
          <rect>
-          <x>10</x>
-          <y>60</y>
-          <width>171</width>
-          <height>581</height>
+          <x>30</x>
+          <y>30</y>
+          <width>901</width>
+          <height>731</height>
          </rect>
         </property>
-       </widget>
-       <widget class="QListWidget" name="productList">
-        <property name="geometry">
-         <rect>
-          <x>190</x>
-          <y>60</y>
-          <width>181</width>
-          <height>581</height>
-         </rect>
+        <property name="verticalScrollBarPolicy">
+         <enum>Qt::ScrollBarAsNeeded</enum>
         </property>
-       </widget>
-       <widget class="QListWidget" name="ratingList">
-        <property name="geometry">
-         <rect>
-          <x>380</x>
-          <y>60</y>
-          <width>191</width>
-          <height>581</height>
-         </rect>
+        <property name="horizontalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
         </property>
-       </widget>
-       <widget class="QListWidget" name="reviewList">
-        <property name="geometry">
-         <rect>
-          <x>580</x>
-          <y>60</y>
-          <width>191</width>
-          <height>581</height>
-         </rect>
+        <property name="sizeAdjustPolicy">
+         <enum>QAbstractScrollArea::AdjustIgnored</enum>
+        </property>
+        <property name="verticalScrollMode">
+         <enum>QAbstractItemView::ScrollPerItem</enum>
         </property>
        </widget>
       </widget>
@@ -339,7 +321,7 @@
      <x>0</x>
      <y>0</y>
      <width>1270</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

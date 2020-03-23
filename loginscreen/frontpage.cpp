@@ -2,6 +2,7 @@
 #include "ui_frontpage.h"
 #include "reviewwindow.h"
 #include <QMessageBox>
+#include <QTableWidget>
 #include <QPixmap>
 
 FrontPage::FrontPage(QWidget *parent) :
@@ -98,10 +99,11 @@ void FrontPage::sendPamphlet() {
 }
 
 void FrontPage::setupReviews() {
+    //QSqlQuery *query = new QSqlQuery;
     QSqlQuery query;
     QSqlRecord record;
+    QSqlQueryModel *model = new QSqlQueryModel;
     QStringList temp1, temp2, temp3, temp4;
-
     query.prepare("SELECT CustomerName, ProductName, ReviewNumber, TextReview FROM CustomerReviews;");
     if (!query.exec())
         qDebug() << query.lastError();
@@ -112,39 +114,16 @@ void FrontPage::setupReviews() {
         temp3 << record.value(2).toString();
         temp4 << record.value(3).toString();
     }
-    ui->nameList->addItems(temp1);
-    ui->productList->addItems(temp2);
-    ui->ratingList->addItems(temp3);
-    ui->reviewList->addItems(temp4);
+    model->setQuery(query);
+    this->ui->tableView->setModel(model);
+    this->ui->tableView->setColumnWidth(1, 260);
+    this->ui->tableView->setColumnWidth(2, 260);
+    this->ui->tableView->setColumnWidth(3, 260);
+   for (int i = 0; i < model->rowCount(); ++i)
+    this->ui->tableView->resizeRowToContents(i);
 }
 
-void FrontPage::refreshWindow()
-{
-    QSqlQuery query;
-    QSqlRecord record;
-    QStringList temp1, temp2, temp3, temp4;
-
-    query.prepare("SELECT CustomerName, ProductName, ReviewNumber, TextReview FROM CustomerReviews;");
-
-    if(!query.exec())
-        qDebug() << query.lastError();
-
-    while(query.next())
-    {
-        record = query.record();
-        temp1 << record.value(0).toString();
-        temp2 << record.value(1).toString();
-        temp3 << record.value(2).toString();
-        temp4 << record.value(3).toString();
-    }
-
-    ui->nameList->clear();
-    ui->productList->clear();
-    ui->ratingList->clear();
-    ui->reviewList->clear();
-
-    ui->nameList->addItems(temp1);
-    ui->productList->addItems(temp2);
-    ui->ratingList->addItems(temp3);
-    ui->reviewList->addItems(temp4);
+void FrontPage::refreshWindow() {
+    setupReviews();
 }
+

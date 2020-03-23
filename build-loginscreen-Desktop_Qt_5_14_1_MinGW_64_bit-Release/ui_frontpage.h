@@ -13,14 +13,15 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
-#include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
+#include <QtWidgets/QTableView>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -53,10 +54,7 @@ public:
     QWidget *home_4;
     QPushButton *homeButton_3;
     QPushButton *reviewButton;
-    QListWidget *nameList;
-    QListWidget *productList;
-    QListWidget *ratingList;
-    QListWidget *reviewList;
+    QTableView *tableView;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -176,18 +174,13 @@ public:
         reviewButton = new QPushButton(home_4);
         reviewButton->setObjectName(QString::fromUtf8("reviewButton"));
         reviewButton->setGeometry(QRect(992, 40, 111, 28));
-        nameList = new QListWidget(home_4);
-        nameList->setObjectName(QString::fromUtf8("nameList"));
-        nameList->setGeometry(QRect(10, 60, 171, 581));
-        productList = new QListWidget(home_4);
-        productList->setObjectName(QString::fromUtf8("productList"));
-        productList->setGeometry(QRect(190, 60, 181, 581));
-        ratingList = new QListWidget(home_4);
-        ratingList->setObjectName(QString::fromUtf8("ratingList"));
-        ratingList->setGeometry(QRect(380, 60, 191, 581));
-        reviewList = new QListWidget(home_4);
-        reviewList->setObjectName(QString::fromUtf8("reviewList"));
-        reviewList->setGeometry(QRect(580, 60, 191, 581));
+        tableView = new QTableView(home_4);
+        tableView->setObjectName(QString::fromUtf8("tableView"));
+        tableView->setGeometry(QRect(30, 30, 901, 731));
+        tableView->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+        tableView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        tableView->setSizeAdjustPolicy(QAbstractScrollArea::AdjustIgnored);
+        tableView->setVerticalScrollMode(QAbstractItemView::ScrollPerItem);
         stackedWidget->addWidget(home_4);
 
         horizontalLayout->addWidget(stackedWidget);
@@ -195,7 +188,7 @@ public:
         FrontPage->setCentralWidget(centralwidget);
         menubar = new QMenuBar(FrontPage);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1270, 21));
+        menubar->setGeometry(QRect(0, 0, 1270, 26));
         FrontPage->setMenuBar(menubar);
         statusbar = new QStatusBar(FrontPage);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
