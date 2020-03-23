@@ -18,23 +18,29 @@ SOURCES +=\
         adminoption.cpp \
         emailwidget.cpp \
         frontpage.cpp \
+        helpmenu.cpp \
         loginwindow.cpp \
         main.cpp \
-        reviewwindow.cpp
+        reviewwindow.cpp \
+        sql_database.cpp
 
 HEADERS  += \
     adminoption.h \
     adminwindow.h \
     emailwidget.h \
     frontpage.h \
+    header.h \
+    helpmenu.h \
     loginwindow.h \
-    reviewwindow.h \
+    reviewwindow.h \ \
+    sql_database.h
 
 FORMS    += \
     adminoption.ui \
     adminwindow.ui \
     emailwidget.ui \
     frontpage.ui \
+    helpmenu.ui \
     loginwindow.ui \
     reviewwindow.ui
 

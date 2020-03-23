@@ -1,59 +1,19 @@
 #include "adminwindow.h"
 #include "ui_adminwindow.h"
-#include <QDebug>
-#include <QSqlQueryModel>
-#include <QSqlQuery>
+
 adminWindow::adminWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::adminWindow)
 {
+
     ui->setupUi(this);
-    this->ui->adDropMenu->addItem("Alphabetical");
-    this->ui->adDropMenu->addItem("Interest");
-    this->ui->adDropMenu->addItem("Most Recent");
-    QObject::connect(this->ui->adDropMenu, SIGNAL(activated(int)), this, SLOT(alphaNumOptions(int)));
-    qDebug()<< "Start";
+    ui->adminWindow_sortComboBox->addItem("Ascending A-Z");
+    ui->adminWindow_sortComboBox->addItem("Descending Z-A");
+    ui->adminWindow_sortComboBox->addItem("Interest Level");
+    ui->adminWindow_sortComboBox->addItem("Key Customers");
 
-//Creates and opens the database
-    QString path= "db.sqlite";
-    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName(path);
-    db.open();
-    if(db.isOpen()){
-        qDebug() << "Databse is open";
-    }
-    else{
-        qDebug() << "Database doesn't open";
-    }
-    QString query = "CREATE TABLE customertable ("
-                    "Name VARCHAR(20),"
-                    "Address VARCHAR(40),"
-                    "Address2 VARCHAR(30),"
-                    "Website VARCHAR(30),"
-                    "Intrest VARCHAR(20),"
-                    "Key VARCHAR(10))";
- //TBH im not entirely sure what this does but it works..
-    QSqlQuery *qry = new QSqlQuery(db);
-    qry->prepare("select * from customertable");
-    qry->exec();
- //DELETES ITEMS FROM DATABASE  - use it to delete the items
-  /*  QString name= "Orange County Airport";
-    qry.prepare("Delete from customertable");
-     if(!qry.exec() )
-        qDebug() << "deletion failed";
-
-     query.clear();
-     qry.prepare("DELETE FROM SQLITE_SEQUENCE WHERE name='customertable'");
-     if(!qry.exec() )
-         qDebug() << "deletion failed";
-*/
-    //readFromFile(); //Uses the function to insert the file into the database (THE DATABASE IS ALREADY FULL SO NO NEED TO UNCOMMENT THIS)
-    QSqlQueryModel *model = new QSqlQueryModel();
-    model->setQuery(*qry);
-    this->ui->tableView->setModel(model);
-    //qDebug() << (model->rowCount());
-    db.close();
-    qDebug()<< "END";
+    QObject::connect(this->ui->adminWindow_sortComboBox, SIGNAL(activated(int)), this, SLOT(alphaNumOptions(int)));
+    setupPage();
 }
 
 adminWindow::~adminWindow()
@@ -61,34 +21,225 @@ adminWindow::~adminWindow()
     delete ui;
 }
 
-void adminWindow::searchFor() {
+void adminWindow::searchFor()
+{
     //Obviously this function is going to be for searching
-    QString searchingFor = this->ui->searchLine->text();
-    this->ui->searchLine->setText("");
-}
+    QSqlQuery query;
+    QSqlRecord record;
+    QStringList temp1, temp2, temp3;
+    QString searchingFor = this->ui->adminWindow_searchBar->text();
 
-void adminWindow::alphaNumOptions(int index) {
-    /*
-        MAKE SURE TO COMMENT OUT OR REMOVE DEBUG!
-        WAS ONLY USED TO CHECK/ENSURE FUNCTIONALITY!
-    */
-    QString option = this->ui->adDropMenu->itemText(index);
-    if (option == "Alphabetical") {
-        //insert a function to sort alphabetically
-        qDebug() << "Alpha works";
-    } else if (option == "Interest") {
-        //insert a function to sort by interest
-        qDebug() << "Interest works";
-    } else if (option == "Most Recent") {
-        //insert a function to sort by most recent
-        qDebug() << "Recents works";
+    query.prepare("SELECT CompanyName, InterestLevel, KeyCustomer FROM iRobotsPamphlet WHERE CompanyName LIKE '%" + searchingFor + "%';");
+
+    if(!query.exec())
+        qDebug() << query.lastError();
+
+    while(query.next())
+    {
+        record = query.record();
+        temp1 << record.value(0).toString();
+        temp2 << record.value(1).toString();
+        temp3 << record.value(2).toString();
+    }
+
+    if(temp1.empty())
+        QMessageBox::information(this, "Info Box", "Searched string was empty! Search did not find anything of use.");
+
+    else
+    {
+        ui->adminWindow_displayListCompanyName->clear();
+        ui->adminWindow_displayListCompanyName->addItems(temp1);
+
+        ui->adminWindow_displayListInterestLevel->clear();
+        ui->adminWindow_displayListInterestLevel->addItems(temp2);
+
+        ui->adminWindow_displayListKeyCustomer->clear();
+        ui->adminWindow_displayListKeyCustomer->addItems(temp3);
     }
 }
 
-void adminWindow::updateDB() {
+void adminWindow::selectCompany(const QModelIndex &index)
+{
+    selectedCompany = ui->adminWindow_displayListCompanyName->model()->data(index).toString();
+    qDebug() << selectedCompany;
+}
+
+void adminWindow::setupPage()
+{
+    QSqlQuery query;
+    QSqlRecord record;
+    QStringList temp1, temp2, temp3;
+
+    query.prepare("SELECT CompanyName, InterestLevel, KeyCustomer FROM iRobotsPamphlet;");
+
+    if(!query.exec())
+        qDebug() << query.lastError();
+
+    while(query.next())
+    {
+        record = query.record();
+        temp1 << record.value(0).toString();
+        temp2 << record.value(1).toString();
+        temp3 << record.value(2).toString();
+    }
+
+    ui->adminWindow_displayListCompanyName->addItems(temp1);
+    ui->adminWindow_displayListInterestLevel->addItems(temp2);
+    ui->adminWindow_displayListKeyCustomer->addItems(temp3);
+}
+
+void adminWindow::alphaNumOptions(int index)
+{
+    QSqlQuery query;
+    QSqlRecord record;
+    QStringList temp1, temp2, temp3;
+    QString option = this->ui->adminWindow_sortComboBox->itemText(index);
+
+    ui->adminWindow_displayListCompanyName->clear();
+    ui->adminWindow_displayListInterestLevel->clear();
+    ui->adminWindow_displayListKeyCustomer->clear();
+
+    if (index == 0)
+    {
+        query.prepare("SELECT CompanyName, InterestLevel, KeyCustomer FROM iRobotsPamphlet ORDER BY CompanyName;");
+
+        if(!query.exec())
+            qDebug() << query.lastError();
+
+        while(query.next())
+        {
+            record = query.record();
+            temp1 << record.value(0).toString();
+            temp2 << record.value(1).toString();
+            temp3 << record.value(2).toString();
+        }
+
+        ui->adminWindow_displayListCompanyName->addItems(temp1);
+        ui->adminWindow_displayListInterestLevel->addItems(temp2);
+        ui->adminWindow_displayListKeyCustomer->addItems(temp3);
+    }
+
+    else if (index == 1)
+    {
+        query.prepare("SELECT CompanyName, InterestLevel, KeyCustomer FROM iRobotsPamphlet ORDER BY CompanyName DESC;");
+
+        if(!query.exec())
+            qDebug() << query.lastError();
+
+        while(query.next())
+        {
+            record = query.record();
+            temp1 << record.value(0).toString();
+            temp2 << record.value(1).toString();
+            temp3 << record.value(2).toString();
+        }
+
+        ui->adminWindow_displayListCompanyName->addItems(temp1);
+        ui->adminWindow_displayListInterestLevel->addItems(temp2);
+        ui->adminWindow_displayListKeyCustomer->addItems(temp3);
+    }
+
+    if (index == 2)
+    {
+        query.prepare("SELECT CompanyName, InterestLevel, KeyCustomer FROM iRobotsPamphlet ORDER BY InterestLevel DESC;");
+
+        if(!query.exec())
+            qDebug() << query.lastError();
+
+        while(query.next())
+        {
+            record = query.record();
+            temp1 << record.value(0).toString();
+            temp2 << record.value(1).toString();
+            temp3 << record.value(2).toString();
+        }
+
+        ui->adminWindow_displayListCompanyName->addItems(temp1);
+        ui->adminWindow_displayListInterestLevel->addItems(temp2);
+        ui->adminWindow_displayListKeyCustomer->addItems(temp3);
+    }
+
+    else if (index == 3)
+    {
+        query.prepare("SELECT CompanyName, InterestLevel, KeyCustomer FROM iRobotsPamphlet ORDER BY KeyCustomer ASC;");
+
+        if(!query.exec())
+            qDebug() << query.lastError();
+
+        while(query.next())
+        {
+            record = query.record();
+
+            if(record.value(2).toString() == "key")
+            {
+                temp1 << record.value(0).toString();
+                temp2 << record.value(1).toString();
+                temp3 << record.value(2).toString();
+            }
+        }
+
+        ui->adminWindow_displayListCompanyName->addItems(temp1);
+        ui->adminWindow_displayListInterestLevel->addItems(temp2);
+        ui->adminWindow_displayListKeyCustomer->addItems(temp3);
+    }
+}
+
+void adminWindow::refreshWindow()
+{
+    QSqlQuery query;
+    QSqlRecord record;
+    QStringList temp1, temp2, temp3;
+
+    query.prepare("SELECT CompanyName, InterestLevel, KeyCustomer FROM iRobotsPamphlet;");
+
+    if(!query.exec())
+        qDebug() << query.lastError();
+
+    while(query.next())
+    {
+        record = query.record();
+        temp1 << record.value(0).toString();
+        temp2 << record.value(1).toString();
+        temp3 << record.value(2).toString();
+    }
+
+    ui->adminWindow_searchBar->clear();
+    ui->adminWindow_displayListCompanyName->clear();
+    ui->adminWindow_displayListInterestLevel->clear();
+    ui->adminWindow_displayListKeyCustomer->clear();
+
+    ui->adminWindow_displayListCompanyName->addItems(temp1);
+    ui->adminWindow_displayListInterestLevel->addItems(temp2);
+    ui->adminWindow_displayListKeyCustomer->addItems(temp3);
+}
+
+void adminWindow::on_adminWindow_refreshButton_clicked()
+{
+    refreshWindow();
+}
+
+void adminWindow::updateDB()
+{
 
 }
 
-void adminWindow::deleteInDB() {
+void adminWindow::deleteInDB()
+{
+    QSqlQuery query;
+    QSqlRecord record;
+    QStringList temp1, temp2, temp3;
 
+    if(selectedCompany.isEmpty())
+        QMessageBox::information(this, "Info Box", "Please select a Company to delete first!");
+
+    else
+    {
+        query.prepare("DELETE FROM iRobotsPamphlet WHERE CompanyName = :cn");
+        query.bindValue(":cn", selectedCompany);
+
+        if(!query.exec())
+            qDebug() << query.lastError();
+
+        refreshWindow();
+    }
 }

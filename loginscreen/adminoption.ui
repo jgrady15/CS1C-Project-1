@@ -17,13 +17,13 @@
    <property name="geometry">
     <rect>
      <x>120</x>
-     <y>60</y>
+     <y>20</y>
      <width>171</width>
      <height>28</height>
     </rect>
    </property>
    <property name="text">
-    <string>View and Edit Customer List</string>
+    <string>View and Edit Company List</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_2">
@@ -37,6 +37,19 @@
    </property>
    <property name="text">
     <string>Send Pamphlet</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>60</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>View Customer List</string>
    </property>
   </widget>
  </widget>

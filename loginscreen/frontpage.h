@@ -6,6 +6,7 @@
 #include "loginwindow.h"
 #include "reviewwindow.h"
 #include "ui_frontpage.h"
+#include "helpmenu.h"
 
 namespace Ui {
 class FrontPage;
@@ -35,10 +36,13 @@ private slots:
     void on_homeButton_3_clicked();
 
     void submitReview();
+
+    void stopItGetSomeHelp();
 private:
     Ui::FrontPage *ui;
-    MainWindow *mainWindow;
+    MainWindow *mainW = new MainWindow;
     reviewWindow *review;
+    helpMenu *help = new helpMenu;
 };
 
 #endif // FRONTPAGE_H
