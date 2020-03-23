@@ -116,9 +116,10 @@ void FrontPage::setupReviews() {
     }
     model->setQuery(query);
     this->ui->tableView->setModel(model);
+    this->ui->tableView->setColumnWidth(0, 140);
     this->ui->tableView->setColumnWidth(1, 260);
-    this->ui->tableView->setColumnWidth(2, 260);
-    this->ui->tableView->setColumnWidth(3, 260);
+    this->ui->tableView->setColumnWidth(2, 180);
+    this->ui->tableView->setColumnWidth(3, 300);
    for (int i = 0; i < model->rowCount(); ++i)
     this->ui->tableView->resizeRowToContents(i);
 }
