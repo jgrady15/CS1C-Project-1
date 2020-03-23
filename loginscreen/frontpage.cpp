@@ -11,6 +11,7 @@ FrontPage::FrontPage(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->stackedWidget->setCurrentIndex(0);
+
     QPixmap pix(":/img/images/info.png");
     int w =  ui->pamphlet_pic->width();
     int h =  ui->pamphlet_pic->height();
@@ -124,6 +125,10 @@ void FrontPage::stopItGetSomeHelp() {
  */
 void FrontPage::sendPamphlet() {
     email->show();
+}
+
+void FrontPage::orderWin() {
+    order->show();
 }
 
 /*!

@@ -32,3 +32,9 @@ void orderWindow::setProduct(int index)
         this->ui->totalLine->setText(total);
     }
 }
+
+
+void orderWindow::on_orderButton_clicked()
+{
+
+}
