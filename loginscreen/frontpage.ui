@@ -229,9 +229,6 @@
             <height>760</height>
            </rect>
           </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(240, 240, 240);</string>
-          </property>
           <property name="text">
            <string/>
           </property>
@@ -266,19 +263,6 @@
          <string/>
         </property>
        </widget>
-       <widget class="QPushButton" name="pamphlet_button">
-        <property name="geometry">
-         <rect>
-          <x>920</x>
-          <y>0</y>
-          <width>121</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Request Pamphlet</string>
-        </property>
-       </widget>
       </widget>
       <widget class="QWidget" name="home_4">
        <widget class="QPushButton" name="homeButton_3">
@@ -307,6 +291,28 @@
          <string>Submit A Review</string>
         </property>
        </widget>
+       <widget class="QTableView" name="tableView">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>30</y>
+          <width>901</width>
+          <height>731</height>
+         </rect>
+        </property>
+        <property name="verticalScrollBarPolicy">
+         <enum>Qt::ScrollBarAsNeeded</enum>
+        </property>
+        <property name="horizontalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="sizeAdjustPolicy">
+         <enum>QAbstractScrollArea::AdjustIgnored</enum>
+        </property>
+        <property name="verticalScrollMode">
+         <enum>QAbstractItemView::ScrollPerItem</enum>
+        </property>
+       </widget>
       </widget>
      </widget>
     </item>
@@ -318,7 +324,7 @@
      <x>0</x>
      <y>0</y>
      <width>1270</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
