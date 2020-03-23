@@ -2,6 +2,7 @@
 #include "ui_frontpage.h"
 #include "reviewwindow.h"
 #include <QMessageBox>
+#include <QTableWidget>
 #include <QPixmap>
 
 FrontPage::FrontPage(QWidget *parent) :
@@ -34,7 +35,7 @@ FrontPage::FrontPage(QWidget *parent) :
     int w5 =  ui->logo->width();
     int h5 =  ui->logo->height();
     ui->logo->setPixmap(pix5.scaled(w5,h5));
-
+    setupReviews();
 }
 
 FrontPage::~FrontPage()
@@ -55,11 +56,6 @@ void FrontPage::on_pushButton_2_clicked()
 void FrontPage::on_pushButton_3_clicked()
 {
     ui->stackedWidget->setCurrentIndex(3);
-}
-
-void FrontPage::on_pamphlet_button_clicked()
-{
-    sendPamphlet();
 }
 
 
@@ -86,6 +82,7 @@ void FrontPage::on_homeButton_2_clicked()
 void FrontPage::on_homeButton_3_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
+    refreshWindow();
 }
 
 void FrontPage::submitReview() {
@@ -101,4 +98,33 @@ void FrontPage::sendPamphlet() {
     email->show();
 }
 
+void FrontPage::setupReviews() {
+    //QSqlQuery *query = new QSqlQuery;
+    QSqlQuery query;
+    QSqlRecord record;
+    QSqlQueryModel *model = new QSqlQueryModel;
+    QStringList temp1, temp2, temp3, temp4;
+    query.prepare("SELECT CustomerName, ProductName, ReviewNumber, TextReview FROM CustomerReviews;");
+    if (!query.exec())
+        qDebug() << query.lastError();
+    while(query.next()) {
+        record = query.record();
+        temp1 << record.value(0).toString();
+        temp2 << record.value(1).toString();
+        temp3 << record.value(2).toString();
+        temp4 << record.value(3).toString();
+    }
+    model->setQuery(query);
+    this->ui->tableView->setModel(model);
+    this->ui->tableView->setColumnWidth(0, 140);
+    this->ui->tableView->setColumnWidth(1, 260);
+    this->ui->tableView->setColumnWidth(2, 180);
+    this->ui->tableView->setColumnWidth(3, 300);
+   for (int i = 0; i < model->rowCount(); ++i)
+    this->ui->tableView->resizeRowToContents(i);
+}
+
+void FrontPage::refreshWindow() {
+    setupReviews();
+}
 
