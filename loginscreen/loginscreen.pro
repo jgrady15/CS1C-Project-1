@@ -14,6 +14,7 @@ TEMPLATE = app
 
 
 SOURCES +=\
+        addnewcompany.cpp \
         adminWindow.cpp \
         adminoption.cpp \
         emailwidget.cpp \
@@ -25,6 +26,7 @@ SOURCES +=\
         sql_database.cpp
 
 HEADERS  += \
+    addnewcompany.h \
     adminoption.h \
     adminwindow.h \
     emailwidget.h \
@@ -36,6 +38,7 @@ HEADERS  += \
     sql_database.h
 
 FORMS    += \
+    addnewcompany.ui \
     adminoption.ui \
     adminwindow.ui \
     emailwidget.ui \

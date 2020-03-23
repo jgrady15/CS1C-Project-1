@@ -1,3 +1,4 @@
+addnewcompany.o
 adminWindow.o
 adminoption.o
 emailwidget.o
@@ -8,6 +9,7 @@ main.o
 reviewwindow.o
 sql_database.o
 qrc_resource.o
+moc_addnewcompany.o
 moc_adminoption.o
 moc_adminwindow.o
 moc_emailwidget.o

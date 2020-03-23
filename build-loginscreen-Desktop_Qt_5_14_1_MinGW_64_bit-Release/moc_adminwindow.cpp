@@ -23,7 +23,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_adminWindow_t {
     QByteArrayData data[10];
-    char stringdata0[128];
+    char stringdata0[102];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -41,13 +41,12 @@ QT_MOC_LITERAL(5, 48, 10), // "deleteInDB"
 QT_MOC_LITERAL(6, 59, 13), // "selectCompany"
 QT_MOC_LITERAL(7, 73, 11), // "QModelIndex"
 QT_MOC_LITERAL(8, 85, 5), // "index"
-QT_MOC_LITERAL(9, 91, 36) // "on_adminWindow_refreshButton_..."
+QT_MOC_LITERAL(9, 91, 10) // "addCompany"
 
     },
     "adminWindow\0searchFor\0\0alphaNumOptions\0"
     "updateDB\0deleteInDB\0selectCompany\0"
-    "QModelIndex\0index\0"
-    "on_adminWindow_refreshButton_clicked"
+    "QModelIndex\0index\0addCompany"
 };
 #undef QT_MOC_LITERAL
 
@@ -94,7 +93,7 @@ void adminWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         case 2: _t->updateDB(); break;
         case 3: _t->deleteInDB(); break;
         case 4: _t->selectCompany((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
-        case 5: _t->on_adminWindow_refreshButton_clicked(); break;
+        case 5: _t->addCompany(); break;
         default: ;
         }
     }

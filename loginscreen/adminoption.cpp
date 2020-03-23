@@ -14,9 +14,15 @@ adminOption::~adminOption()
 }
 
 void adminOption::viewCustomerList() {
+    admin->displayCompany();
     admin->show();
 }
 
 void adminOption::sendPamphlet() {
     email->show();
+}
+
+void adminOption::on_pushButton_3_clicked() {
+    admin->displayCustomer();
+    admin->show();
 }
