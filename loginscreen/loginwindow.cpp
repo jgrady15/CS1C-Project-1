@@ -13,8 +13,13 @@ MainWindow::MainWindow(QWidget *parent)
     int w =  ui->label_pic->width();
     int h =  ui->label_pic->height();
     ui->label_pic->setPixmap(pix.scaled(w,h,Qt::KeepAspectRatio));
+
     this->ui->pushButton_Login->connect(this->ui->lineEdit_password, SIGNAL(returnPressed()), this, SLOT(on_pushButton_Login_clicked()));
 
+    QString username = ui->lineEdit_username->text();
+    QString password = ui->lineEdit_password->text();
+    username = "";
+    password = "";
 }
 
 MainWindow::~MainWindow()
@@ -32,6 +37,6 @@ void MainWindow::on_pushButton_Login_clicked() {
         this->hide();
     }
     else {
-        ui->statusbar->showMessage("ur not in", 5000);
+        QMessageBox::information(this, "Login Failed", "Incorrect Username or Password", QMessageBox::Ok);
     }
 }
