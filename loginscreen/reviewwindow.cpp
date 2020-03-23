@@ -1,5 +1,7 @@
 #include "reviewwindow.h"
 #include "ui_reviewwindow.h"
+#include "QSqlQuery"
+#include "QMessageBox"
 
 reviewWindow::reviewWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -64,8 +66,6 @@ void reviewWindow::submitReview()
         query.bindValue(":rating", ui->ratingBox->text());
         query.bindValue(":textReview", splitData);
 
-        if(!query.exec())
-            qDebug() << query.lastError();
 
         this->close();
     }
