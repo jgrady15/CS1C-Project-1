@@ -45,6 +45,7 @@ public:
     QListWidget *customerPage_displayListCustomerName;
     QListWidget *customerPage_displayListProductName;
     QListWidget *customerPage_displayListCost;
+    QListWidget *customerPage_displayListQuantity;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -102,15 +103,19 @@ public:
         customerPage_displayListCustomerName = new QListWidget(customerPage);
         customerPage_displayListCustomerName->setObjectName(QString::fromUtf8("customerPage_displayListCustomerName"));
         customerPage_displayListCustomerName->setEnabled(false);
-        customerPage_displayListCustomerName->setGeometry(QRect(20, 20, 491, 531));
+        customerPage_displayListCustomerName->setGeometry(QRect(20, 20, 251, 531));
         customerPage_displayListProductName = new QListWidget(customerPage);
         customerPage_displayListProductName->setObjectName(QString::fromUtf8("customerPage_displayListProductName"));
         customerPage_displayListProductName->setEnabled(false);
-        customerPage_displayListProductName->setGeometry(QRect(510, 20, 221, 531));
+        customerPage_displayListProductName->setGeometry(QRect(269, 20, 221, 531));
         customerPage_displayListCost = new QListWidget(customerPage);
         customerPage_displayListCost->setObjectName(QString::fromUtf8("customerPage_displayListCost"));
         customerPage_displayListCost->setEnabled(false);
-        customerPage_displayListCost->setGeometry(QRect(730, 20, 181, 531));
+        customerPage_displayListCost->setGeometry(QRect(700, 20, 211, 531));
+        customerPage_displayListQuantity = new QListWidget(customerPage);
+        customerPage_displayListQuantity->setObjectName(QString::fromUtf8("customerPage_displayListQuantity"));
+        customerPage_displayListQuantity->setEnabled(false);
+        customerPage_displayListQuantity->setGeometry(QRect(490, 20, 211, 531));
         stackedWidget->addWidget(customerPage);
         adminWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(adminWindow);

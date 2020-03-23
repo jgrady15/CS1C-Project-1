@@ -106,6 +106,31 @@ void adminWindow::setupPage()
     ui->companyPage_displayListKeyCustomer->addItems(temp3);
 }
 
+void adminWindow::setupCustomer() {
+    QSqlQuery query;
+    QSqlRecord record;
+    QStringList temp1, temp2, temp3, temp4;
+
+    query.prepare("SELECT CustomerName, ProductName, QtyBought, MoneySpent FROM iRobotsPamphlet;");
+
+    if(!query.exec())
+        qDebug() << query.lastError();
+
+    while(query.next())
+    {
+        record = query.record();
+        temp1 << record.value(0).toString();
+        temp2 << record.value(1).toString();
+        temp3 << record.value(2).toString();
+        temp4 << record.value(3).toString();
+    }
+
+    ui->customerPage_displayListCustomerName->addItems(temp1);
+    ui->customerPage_displayListProductName->addItems(temp2);
+    ui->customerPage_displayListQuantity->addItems(temp3);
+    ui->customerPage_displayListCost->addItems(temp4);
+}
+
 void adminWindow::alphaNumOptions(int index)
 {
     QSqlQuery query;

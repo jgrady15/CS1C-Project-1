@@ -125,7 +125,9 @@ void FrontPage::stopItGetSomeHelp() {
 void FrontPage::sendPamphlet() {
     email->show();
 }
-
+void FrontPage::orderWin() {
+    order->show();
+}
 /*!
  * \brief prompts user to enter a review for product
  */
@@ -158,4 +160,5 @@ void FrontPage::setupReviews() {
 void FrontPage::refreshWindow() {
     setupReviews();
 }
+
 

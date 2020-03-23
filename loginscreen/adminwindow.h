@@ -27,6 +27,7 @@ private slots:
     void deleteInDB();
     void selectCompany(const QModelIndex &index);
     void addCompany();
+    void setupCustomer();
 private:
     QString selectedCompany;
     customerNode tempCustomer;
