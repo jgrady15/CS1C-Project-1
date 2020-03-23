@@ -10,7 +10,7 @@ FrontPage::FrontPage(QWidget *parent) :
     ui(new Ui::FrontPage)
 {
     ui->setupUi(this);
-
+    ui->stackedWidget->setCurrentIndex(0);
     QPixmap pix(":/img/images/info.png");
     int w =  ui->pamphlet_pic->width();
     int h =  ui->pamphlet_pic->height();
