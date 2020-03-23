@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_FrontPage_t {
-    QByteArrayData data[11];
-    char stringdata0[208];
+    QByteArrayData data[13];
+    char stringdata0[234];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -42,14 +42,17 @@ QT_MOC_LITERAL(6, 105, 23), // "on_homeButton_1_clicked"
 QT_MOC_LITERAL(7, 129, 23), // "on_homeButton_2_clicked"
 QT_MOC_LITERAL(8, 153, 23), // "on_homeButton_3_clicked"
 QT_MOC_LITERAL(9, 177, 12), // "submitReview"
-QT_MOC_LITERAL(10, 190, 17) // "stopItGetSomeHelp"
+QT_MOC_LITERAL(10, 190, 17), // "stopItGetSomeHelp"
+QT_MOC_LITERAL(11, 208, 12), // "sendPamphlet"
+QT_MOC_LITERAL(12, 221, 12) // "setupReviews"
 
     },
     "FrontPage\0on_pushButton_4_clicked\0\0"
     "on_pushButton_clicked\0on_pushButton_2_clicked\0"
     "on_pushButton_3_clicked\0on_homeButton_1_clicked\0"
     "on_homeButton_2_clicked\0on_homeButton_3_clicked\0"
-    "submitReview\0stopItGetSomeHelp"
+    "submitReview\0stopItGetSomeHelp\0"
+    "sendPamphlet\0setupReviews"
 };
 #undef QT_MOC_LITERAL
 
@@ -59,7 +62,7 @@ static const uint qt_meta_data_FrontPage[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       9,   14, // methods
+      11,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -67,17 +70,21 @@ static const uint qt_meta_data_FrontPage[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   59,    2, 0x08 /* Private */,
-       3,    0,   60,    2, 0x08 /* Private */,
-       4,    0,   61,    2, 0x08 /* Private */,
-       5,    0,   62,    2, 0x08 /* Private */,
-       6,    0,   63,    2, 0x08 /* Private */,
-       7,    0,   64,    2, 0x08 /* Private */,
-       8,    0,   65,    2, 0x08 /* Private */,
-       9,    0,   66,    2, 0x08 /* Private */,
-      10,    0,   67,    2, 0x08 /* Private */,
+       1,    0,   69,    2, 0x08 /* Private */,
+       3,    0,   70,    2, 0x08 /* Private */,
+       4,    0,   71,    2, 0x08 /* Private */,
+       5,    0,   72,    2, 0x08 /* Private */,
+       6,    0,   73,    2, 0x08 /* Private */,
+       7,    0,   74,    2, 0x08 /* Private */,
+       8,    0,   75,    2, 0x08 /* Private */,
+       9,    0,   76,    2, 0x08 /* Private */,
+      10,    0,   77,    2, 0x08 /* Private */,
+      11,    0,   78,    2, 0x08 /* Private */,
+      12,    0,   79,    2, 0x08 /* Private */,
 
  // slots: parameters
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -106,6 +113,8 @@ void FrontPage::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         case 6: _t->on_homeButton_3_clicked(); break;
         case 7: _t->submitReview(); break;
         case 8: _t->stopItGetSomeHelp(); break;
+        case 9: _t->sendPamphlet(); break;
+        case 10: _t->setupReviews(); break;
         default: ;
         }
     }
@@ -141,13 +150,13 @@ int FrontPage::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 9)
+        if (_id < 11)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 9;
+        _id -= 11;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 9)
+        if (_id < 11)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 9;
+        _id -= 11;
     }
     return _id;
 }

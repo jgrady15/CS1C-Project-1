@@ -288,6 +288,46 @@
          <string>Submit A Review</string>
         </property>
        </widget>
+       <widget class="QListWidget" name="nameList">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>60</y>
+          <width>171</width>
+          <height>581</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QListWidget" name="productList">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>60</y>
+          <width>181</width>
+          <height>581</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QListWidget" name="ratingList">
+        <property name="geometry">
+         <rect>
+          <x>380</x>
+          <y>60</y>
+          <width>191</width>
+          <height>581</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QListWidget" name="reviewList">
+        <property name="geometry">
+         <rect>
+          <x>580</x>
+          <y>60</y>
+          <width>191</width>
+          <height>581</height>
+         </rect>
+        </property>
+       </widget>
       </widget>
      </widget>
     </item>
@@ -299,7 +339,7 @@
      <x>0</x>
      <y>0</y>
      <width>1270</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

@@ -34,6 +34,7 @@ FrontPage::FrontPage(QWidget *parent) :
     int w5 =  ui->logo->width();
     int h5 =  ui->logo->height();
     ui->logo->setPixmap(pix5.scaled(w5,h5,Qt::KeepAspectRatio));
+    setupReviews();
 
 }
 
@@ -94,4 +95,25 @@ void FrontPage::stopItGetSomeHelp() {
 
 void FrontPage::sendPamphlet() {
     email->show();
+}
+
+void FrontPage::setupReviews() {
+    QSqlQuery query;
+    QSqlRecord record;
+    QStringList temp1, temp2, temp3, temp4;
+
+    query.prepare("SELECT CustomerName, ProductName, ReviewNumber, TextReview FROM CustomerReviews");
+    if (!query.exec())
+        qDebug() << query.lastError();
+    while(query.next()) {
+        record = query.record();
+        temp1 << record.value(0).toString();
+        temp2 << record.value(1).toString();
+        temp3 << record.value(2).toString();
+        temp4 << record.value(3).toString();
+    }
+    ui->nameList->addItems(temp1);
+    ui->productList->addItems(temp2);
+    ui->ratingList->addItems(temp3);
+    ui->reviewList->addItems(temp4);
 }

@@ -40,6 +40,7 @@ private slots:
 
     void stopItGetSomeHelp();
     void sendPamphlet();
+    void setupReviews();
 private:
     Ui::FrontPage *ui;
     MainWindow *mainW = new MainWindow;

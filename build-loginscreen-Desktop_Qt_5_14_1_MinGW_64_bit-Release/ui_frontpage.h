@@ -14,6 +14,7 @@
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -51,8 +52,11 @@ public:
     QLabel *contact_label;
     QWidget *home_4;
     QPushButton *homeButton_3;
-    QLabel *customer_label;
     QPushButton *reviewButton;
+    QListWidget *nameList;
+    QListWidget *productList;
+    QListWidget *ratingList;
+    QListWidget *reviewList;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -138,43 +142,52 @@ public:
         home_2->setSizePolicy(sizePolicy);
         homeButton_1 = new QPushButton(home_2);
         homeButton_1->setObjectName(QString::fromUtf8("homeButton_1"));
-        homeButton_1->setGeometry(QRect(970, 70, 93, 28));
+        homeButton_1->setGeometry(QRect(1120, 10, 93, 28));
         tabWidget = new QTabWidget(home_2);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
-        tabWidget->setGeometry(QRect(0, 40, 900, 480));
+        tabWidget->setGeometry(QRect(0, 40, 1250, 760));
         tab = new QWidget();
         tab->setObjectName(QString::fromUtf8("tab"));
         pamphlet_pic = new QLabel(tab);
         pamphlet_pic->setObjectName(QString::fromUtf8("pamphlet_pic"));
-        pamphlet_pic->setGeometry(QRect(0, 0, 900, 450));
+        pamphlet_pic->setGeometry(QRect(0, 0, 1250, 760));
         tabWidget->addTab(tab, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QString::fromUtf8("tab_2"));
         pricing_label = new QLabel(tab_2);
         pricing_label->setObjectName(QString::fromUtf8("pricing_label"));
-        pricing_label->setGeometry(QRect(0, 0, 900, 450));
+        pricing_label->setGeometry(QRect(0, 0, 1250, 760));
         tabWidget->addTab(tab_2, QString());
         stackedWidget->addWidget(home_2);
         home_3 = new QWidget();
         home_3->setObjectName(QString::fromUtf8("home_3"));
         homeButton_2 = new QPushButton(home_3);
         homeButton_2->setObjectName(QString::fromUtf8("homeButton_2"));
-        homeButton_2->setGeometry(QRect(1020, 0, 93, 28));
+        homeButton_2->setGeometry(QRect(1070, 0, 93, 28));
         contact_label = new QLabel(home_3);
         contact_label->setObjectName(QString::fromUtf8("contact_label"));
-        contact_label->setGeometry(QRect(15, 45, 1001, 481));
+        contact_label->setGeometry(QRect(0, 40, 1250, 760));
         stackedWidget->addWidget(home_3);
         home_4 = new QWidget();
         home_4->setObjectName(QString::fromUtf8("home_4"));
         homeButton_3 = new QPushButton(home_4);
         homeButton_3->setObjectName(QString::fromUtf8("homeButton_3"));
         homeButton_3->setGeometry(QRect(992, 10, 111, 28));
-        customer_label = new QLabel(home_4);
-        customer_label->setObjectName(QString::fromUtf8("customer_label"));
-        customer_label->setGeometry(QRect(0, 0, 981, 511));
         reviewButton = new QPushButton(home_4);
         reviewButton->setObjectName(QString::fromUtf8("reviewButton"));
         reviewButton->setGeometry(QRect(992, 40, 111, 28));
+        nameList = new QListWidget(home_4);
+        nameList->setObjectName(QString::fromUtf8("nameList"));
+        nameList->setGeometry(QRect(10, 60, 171, 581));
+        productList = new QListWidget(home_4);
+        productList->setObjectName(QString::fromUtf8("productList"));
+        productList->setGeometry(QRect(190, 60, 181, 581));
+        ratingList = new QListWidget(home_4);
+        ratingList->setObjectName(QString::fromUtf8("ratingList"));
+        ratingList->setGeometry(QRect(380, 60, 191, 581));
+        reviewList = new QListWidget(home_4);
+        reviewList->setObjectName(QString::fromUtf8("reviewList"));
+        reviewList->setGeometry(QRect(580, 60, 191, 581));
         stackedWidget->addWidget(home_4);
 
         horizontalLayout->addWidget(stackedWidget);
@@ -192,7 +205,7 @@ public:
         QObject::connect(reviewButton, SIGNAL(clicked()), FrontPage, SLOT(submitReview()));
         QObject::connect(helpButton, SIGNAL(clicked()), FrontPage, SLOT(stopItGetSomeHelp()));
 
-        stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(3);
         tabWidget->setCurrentIndex(0);
 
 
@@ -216,7 +229,6 @@ public:
         homeButton_2->setText(QCoreApplication::translate("FrontPage", "Home", nullptr));
         contact_label->setText(QString());
         homeButton_3->setText(QCoreApplication::translate("FrontPage", "Home", nullptr));
-        customer_label->setText(QString());
         reviewButton->setText(QCoreApplication::translate("FrontPage", "Submit A Review", nullptr));
     } // retranslateUi
 
