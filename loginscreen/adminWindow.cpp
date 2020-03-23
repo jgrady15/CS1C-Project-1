@@ -1,6 +1,10 @@
 #include "adminwindow.h"
 #include "ui_adminwindow.h"
 
+/**
+ * @brief Constructor for adminWindow
+ * @param parent
+ */
 adminWindow::adminWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::adminWindow)
@@ -9,6 +13,9 @@ adminWindow::adminWindow(QWidget *parent) :
     setupPage();
 }
 
+/**
+ * @brief Destructor for adminWindow
+ */
 adminWindow::~adminWindow()
 {
     delete ui;

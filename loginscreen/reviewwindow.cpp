@@ -7,7 +7,10 @@
 #include <QDebug>
 #include <QSqlError>
 
-
+/**
+ * @brief Constructor for reviewWindow that sets up a connection, QPixmap, and drop down menu
+ * @param parent
+ */
 reviewWindow::reviewWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::reviewWindow)
@@ -22,11 +25,17 @@ reviewWindow::reviewWindow(QWidget *parent) :
     this->ui->starLabel->setPixmap(star.scaled(250,22,Qt::KeepAspectRatio));
 }
 
+/**
+ * @brief Destructor for reviewWindow
+ */
 reviewWindow::~reviewWindow()
 {
     delete ui;
 }
 
+/**
+ * @brief If the checkbox is checked, the name will be set to Anonymous and the line will be grayed out
+ */
 void reviewWindow::makeAnon()
 {
     if (this->ui->anonBox->isChecked())
@@ -44,6 +53,10 @@ void reviewWindow::makeAnon()
     }
 }
 
+/**
+ * @brief Function that checks the index of the combobox and then sets the product and price lines to their respective values
+ * @param index
+ */
 void reviewWindow::setProduct(int index)
 {
     this->ui->productLine->setText(this->ui->menuDrop->itemText(index));
@@ -56,6 +69,9 @@ void reviewWindow::setProduct(int index)
     }
 }
 
+/**
+ * @brief Function that adds valid reviews into a table in our database
+ */
 void reviewWindow::submitReview()
 {
     QSqlQuery query;

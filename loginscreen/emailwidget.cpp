@@ -4,6 +4,10 @@
 #include <QMessageBox>
 #include "./src/SmtpMime"
 
+/**
+ * @brief Constructor for emailWidget
+ * @param parent
+ */
 emailWidget::emailWidget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::emailWidget)
@@ -12,11 +16,19 @@ emailWidget::emailWidget(QWidget *parent) :
     //this->ui->sendButton->connect(this->ui->emailLine, SIGNAL(returnPressed()), this, SLOT(sendPamphlet()));
 }
 
+/**
+ * @brief Destructor for emailWidget
+ */
 emailWidget::~emailWidget()
 {
     delete ui;
 }
 
+/**
+ * @brief Connects to Google's SMTP server for Gmail using their Tls socket.
+ *        Sends an email to whomever you choose (no email discrimination) with
+ *        our product's pamphlet attached.
+ */
 void emailWidget::sendPamphlet() {
     QMessageBox sent;
     QString name = this->ui->nameEdit->text();

@@ -188,7 +188,7 @@ public:
         FrontPage->setCentralWidget(centralwidget);
         menubar = new QMenuBar(FrontPage);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1270, 26));
+        menubar->setGeometry(QRect(0, 0, 1270, 21));
         FrontPage->setMenuBar(menubar);
         statusbar = new QStatusBar(FrontPage);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));

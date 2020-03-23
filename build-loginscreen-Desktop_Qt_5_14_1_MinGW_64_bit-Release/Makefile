@@ -20,7 +20,7 @@ CXXFLAGS      = -fno-keep-inline-dllexport -O2 -Wall -Wextra -Wextra -fexception
 INCPATH       = -I..\loginscreen -I. -I..\OpenSSL-Win64\include -I..\OpenSSL-Win64\include -I..\SmtpClient-for-Qt-1.1 -IC:\Qt\5.14.1\mingw73_64\include -IC:\Qt\5.14.1\mingw73_64\include\QtWidgets -IC:\Qt\5.14.1\mingw73_64\include\QtGui -IC:\Qt\5.14.1\mingw73_64\include\QtANGLE -IC:\Qt\5.14.1\mingw73_64\include\QtSql -IC:\Qt\5.14.1\mingw73_64\include\QtCore -I. -I. -I/include -IC:\Qt\5.14.1\mingw73_64\mkspecs\win32-g++ 
 LINKER      =        g++
 LFLAGS        =        -Wl,-s -Wl,-subsystem,windows -mthreads
-LIBS        =        -LC:\Users\edpou\Documents\GitHub\CS1C-Project-1\OpenSSL-Win64\lib -llibcrypto -llibssl -LC:\Users\edpou\Documents\GitHub\CS1C-Project-1\SmtpClient-for-Qt-1.1 -lSMTPEmail C:\Qt\5.14.1\mingw73_64\lib\libQt5Widgets.a C:\Qt\5.14.1\mingw73_64\lib\libQt5Gui.a C:\Qt\5.14.1\mingw73_64\lib\libQt5Sql.a C:\Qt\5.14.1\mingw73_64\lib\libQt5Core.a  -lmingw32 C:\Qt\5.14.1\mingw73_64\lib\libqtmain.a -LC:\openssl\lib -LC:\Utils\my_sql\mysql-5.7.25-winx64\lib -LC:\Utils\postgresql\pgsql\lib -lshell32 
+LIBS        =        -LC:\Users\Eddie\Documents\GitHub\CS1C-Project-1\OpenSSL-Win64\lib -llibcrypto -llibssl -LC:\Users\Eddie\Documents\GitHub\CS1C-Project-1\SmtpClient-for-Qt-1.1 -lSMTPEmail C:\Qt\5.14.1\mingw73_64\lib\libQt5Widgets.a C:\Qt\5.14.1\mingw73_64\lib\libQt5Gui.a C:\Qt\5.14.1\mingw73_64\lib\libQt5Sql.a C:\Qt\5.14.1\mingw73_64\lib\libQt5Core.a  -lmingw32 C:\Qt\5.14.1\mingw73_64\lib\libqtmain.a -LC:\openssl\lib -LC:\Utils\my_sql\mysql-5.7.25-winx64\lib -LC:\Utils\postgresql\pgsql\lib -lshell32 
 QMAKE         = C:\Qt\5.14.1\mingw73_64\bin\qmake.exe
 DEL_FILE      = del
 CHK_DIR_EXISTS= if not exist
@@ -849,7 +849,7 @@ moc_addnewcompany.cpp: ../loginscreen/addnewcompany.h \
 		../loginscreen/sql_database.h \
 		moc_predefs.h \
 		C:/Qt/5.14.1/mingw73_64/bin/moc.exe
-	C:\Qt\5.14.1\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/edpou/Documents/GitHub/CS1C-Project-1/build-loginscreen-Desktop_Qt_5_14_1_MinGW_64_bit-Release/moc_predefs.h -IC:/Qt/5.14.1/mingw73_64/mkspecs/win32-g++ -IC:/Users/edpou/Documents/GitHub/CS1C-Project-1/loginscreen -IC:/Users/edpou/Documents/GitHub/CS1C-Project-1/OpenSSL-Win64/include -IC:/Users/edpou/Documents/GitHub/CS1C-Project-1/OpenSSL-Win64/include -IC:/Users/edpou/Documents/GitHub/CS1C-Project-1/SmtpClient-for-Qt-1.1 -IC:/Qt/5.14.1/mingw73_64/include -IC:/Qt/5.14.1/mingw73_64/include/QtWidgets -IC:/Qt/5.14.1/mingw73_64/include/QtGui -IC:/Qt/5.14.1/mingw73_64/include/QtANGLE -IC:/Qt/5.14.1/mingw73_64/include/QtSql -IC:/Qt/5.14.1/mingw73_64/include/QtCore -I. -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\loginscreen\addnewcompany.h -o moc_addnewcompany.cpp
+	C:\Qt\5.14.1\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/Eddie/Documents/GitHub/CS1C-Project-1/build-loginscreen-Desktop_Qt_5_14_1_MinGW_64_bit-Release/moc_predefs.h -IC:/Qt/5.14.1/mingw73_64/mkspecs/win32-g++ -IC:/Users/Eddie/Documents/GitHub/CS1C-Project-1/loginscreen -IC:/Users/Eddie/Documents/GitHub/CS1C-Project-1/OpenSSL-Win64/include -IC:/Users/Eddie/Documents/GitHub/CS1C-Project-1/OpenSSL-Win64/include -IC:/Users/Eddie/Documents/GitHub/CS1C-Project-1/SmtpClient-for-Qt-1.1 -IC:/Qt/5.14.1/mingw73_64/include -IC:/Qt/5.14.1/mingw73_64/include/QtWidgets -IC:/Qt/5.14.1/mingw73_64/include/QtGui -IC:/Qt/5.14.1/mingw73_64/include/QtANGLE -IC:/Qt/5.14.1/mingw73_64/include/QtSql -IC:/Qt/5.14.1/mingw73_64/include/QtCore -I. -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\loginscreen\addnewcompany.h -o moc_addnewcompany.cpp
 
 moc_adminoption.cpp: ../loginscreen/adminoption.h \
 		../loginscreen/header.h \
@@ -1144,7 +1144,7 @@ moc_adminoption.cpp: ../loginscreen/adminoption.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QWidget \
 		moc_predefs.h \
 		C:/Qt/5.14.1/mingw73_64/bin/moc.exe
-	C:\Qt\5.14.1\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/edpou/Documents/GitHub/CS1C-Project-1/build-loginscreen-Desktop_Qt_5_14_1_MinGW_64_bit-Release/moc_predefs.h -IC:/Qt/5.14.1/mingw73_64/mkspecs/win32-g++ -IC:/Users/edpou/Documents/GitHub/CS1C-Project-1/loginscreen -IC:/Users/edpou/Documents/GitHub/CS1C-Project-1/OpenSSL-Win64/include -IC:/Users/edpou/Documents/GitHub/CS1C-Project-1/OpenSSL-Win64/include -IC:/Users/edpou/Documents/GitHub/CS1C-Project-1/SmtpClient-for-Qt-1.1 -IC:/Qt/5.14.1/mingw73_64/include -IC:/Qt/5.14.1/mingw73_64/include/QtWidgets -IC:/Qt/5.14.1/mingw73_64/include/QtGui -IC:/Qt/5.14.1/mingw73_64/include/QtANGLE -IC:/Qt/5.14.1/mingw73_64/include/QtSql -IC:/Qt/5.14.1/mingw73_64/include/QtCore -I. -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\loginscreen\adminoption.h -o moc_adminoption.cpp
+	C:\Qt\5.14.1\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/Eddie/Documents/GitHub/CS1C-Project-1/build-loginscreen-Desktop_Qt_5_14_1_MinGW_64_bit-Release/moc_predefs.h -IC:/Qt/5.14.1/mingw73_64/mkspecs/win32-g++ -IC:/Users/Eddie/Documents/GitHub/CS1C-Project-1/loginscreen -IC:/Users/Eddie/Documents/GitHub/CS1C-Project-1/OpenSSL-Win64/include -IC:/Users/Eddie/Documents/GitHub/CS1C-Project-1/OpenSSL-Win64/include -IC:/Users/Eddie/Documents/GitHub/CS1C-Project-1/SmtpClient-for-Qt-1.1 -IC:/Qt/5.14.1/mingw73_64/include -IC:/Qt/5.14.1/mingw73_64/include/QtWidgets -IC:/Qt/5.14.1/mingw73_64/include/QtGui -IC:/Qt/5.14.1/mingw73_64/include/QtANGLE -IC:/Qt/5.14.1/mingw73_64/include/QtSql -IC:/Qt/5.14.1/mingw73_64/include/QtCore -I. -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\loginscreen\adminoption.h -o moc_adminoption.cpp
 
 moc_adminwindow.cpp: ../loginscreen/adminwindow.h \
 		../loginscreen/header.h \
@@ -1436,7 +1436,7 @@ moc_adminwindow.cpp: ../loginscreen/adminwindow.h \
 		../loginscreen/sql_database.h \
 		moc_predefs.h \
 		C:/Qt/5.14.1/mingw73_64/bin/moc.exe
-	C:\Qt\5.14.1\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/edpou/Documents/GitHub/CS1C-Project-1/build-loginscreen-Desktop_Qt_5_14_1_MinGW_64_bit-Release/moc_predefs.h -IC:/Qt/5.14.1/mingw73_64/mkspecs/win32-g++ -IC:/Users/edpou/Documents/GitHub/CS1C-Project-1/loginscreen -IC:/Users/edpou/Documents/GitHub/CS1C-Project-1/OpenSSL-Win64/include -IC:/Users/edpou/Documents/GitHub/CS1C-Project-1/OpenSSL-Win64/include -IC:/Users/edpou/Documents/GitHub/CS1C-Project-1/SmtpClient-for-Qt-1.1 -IC:/Qt/5.14.1/mingw73_64/include -IC:/Qt/5.14.1/mingw73_64/include/QtWidgets -IC:/Qt/5.14.1/mingw73_64/include/QtGui -IC:/Qt/5.14.1/mingw73_64/include/QtANGLE -IC:/Qt/5.14.1/mingw73_64/include/QtSql -IC:/Qt/5.14.1/mingw73_64/include/QtCore -I. -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\loginscreen\adminwindow.h -o moc_adminwindow.cpp
+	C:\Qt\5.14.1\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/Eddie/Documents/GitHub/CS1C-Project-1/build-loginscreen-Desktop_Qt_5_14_1_MinGW_64_bit-Release/moc_predefs.h -IC:/Qt/5.14.1/mingw73_64/mkspecs/win32-g++ -IC:/Users/Eddie/Documents/GitHub/CS1C-Project-1/loginscreen -IC:/Users/Eddie/Documents/GitHub/CS1C-Project-1/OpenSSL-Win64/include -IC:/Users/Eddie/Documents/GitHub/CS1C-Project-1/OpenSSL-Win64/include -IC:/Users/Eddie/Documents/GitHub/CS1C-Project-1/SmtpClient-for-Qt-1.1 -IC:/Qt/5.14.1/mingw73_64/include -IC:/Qt/5.14.1/mingw73_64/include/QtWidgets -IC:/Qt/5.14.1/mingw73_64/include/QtGui -IC:/Qt/5.14.1/mingw73_64/include/QtANGLE -IC:/Qt/5.14.1/mingw73_64/include/QtSql -IC:/Qt/5.14.1/mingw73_64/include/QtCore -I. -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\loginscreen\adminwindow.h -o moc_adminwindow.cpp
 
 moc_emailwidget.cpp: ../loginscreen/emailwidget.h \
 		../loginscreen/header.h \
@@ -1727,7 +1727,7 @@ moc_emailwidget.cpp: ../loginscreen/emailwidget.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QWidget \
 		moc_predefs.h \
 		C:/Qt/5.14.1/mingw73_64/bin/moc.exe
-	C:\Qt\5.14.1\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/edpou/Documents/GitHub/CS1C-Project-1/build-loginscreen-Desktop_Qt_5_14_1_MinGW_64_bit-Release/moc_predefs.h -IC:/Qt/5.14.1/mingw73_64/mkspecs/win32-g++ -IC:/Users/edpou/Documents/GitHub/CS1C-Project-1/loginscreen -IC:/Users/edpou/Documents/GitHub/CS1C-Project-1/OpenSSL-Win64/include -IC:/Users/edpou/Documents/GitHub/CS1C-Project-1/OpenSSL-Win64/include -IC:/Users/edpou/Documents/GitHub/CS1C-Project-1/SmtpClient-for-Qt-1.1 -IC:/Qt/5.14.1/mingw73_64/include -IC:/Qt/5.14.1/mingw73_64/include/QtWidgets -IC:/Qt/5.14.1/mingw73_64/include/QtGui -IC:/Qt/5.14.1/mingw73_64/include/QtANGLE -IC:/Qt/5.14.1/mingw73_64/include/QtSql -IC:/Qt/5.14.1/mingw73_64/include/QtCore -I. -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\loginscreen\emailwidget.h -o moc_emailwidget.cpp
+	C:\Qt\5.14.1\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/Eddie/Documents/GitHub/CS1C-Project-1/build-loginscreen-Desktop_Qt_5_14_1_MinGW_64_bit-Release/moc_predefs.h -IC:/Qt/5.14.1/mingw73_64/mkspecs/win32-g++ -IC:/Users/Eddie/Documents/GitHub/CS1C-Project-1/loginscreen -IC:/Users/Eddie/Documents/GitHub/CS1C-Project-1/OpenSSL-Win64/include -IC:/Users/Eddie/Documents/GitHub/CS1C-Project-1/OpenSSL-Win64/include -IC:/Users/Eddie/Documents/GitHub/CS1C-Project-1/SmtpClient-for-Qt-1.1 -IC:/Qt/5.14.1/mingw73_64/include -IC:/Qt/5.14.1/mingw73_64/include/QtWidgets -IC:/Qt/5.14.1/mingw73_64/include/QtGui -IC:/Qt/5.14.1/mingw73_64/include/QtANGLE -IC:/Qt/5.14.1/mingw73_64/include/QtSql -IC:/Qt/5.14.1/mingw73_64/include/QtCore -I. -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\loginscreen\emailwidget.h -o moc_emailwidget.cpp
 
 moc_frontpage.cpp: ../loginscreen/frontpage.h \
 		../loginscreen/header.h \
@@ -2023,10 +2023,10 @@ moc_frontpage.cpp: ../loginscreen/frontpage.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qlayoutitem.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qboxlayout.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QHBoxLayout \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QHeaderView \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qheaderview.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QLabel \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qlabel.h \
-		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QListWidget \
-		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qlistwidget.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QMenuBar \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qmenubar.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qmenu.h \
@@ -2040,6 +2040,8 @@ moc_frontpage.cpp: ../loginscreen/frontpage.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QStatusBar \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qstatusbar.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QTabWidget \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QTableView \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qtableview.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QWidget \
 		../loginscreen/loginwindow.h \
 		../loginscreen/adminoption.h \
@@ -2052,7 +2054,7 @@ moc_frontpage.cpp: ../loginscreen/frontpage.h \
 		../loginscreen/helpmenu.h \
 		moc_predefs.h \
 		C:/Qt/5.14.1/mingw73_64/bin/moc.exe
-	C:\Qt\5.14.1\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/edpou/Documents/GitHub/CS1C-Project-1/build-loginscreen-Desktop_Qt_5_14_1_MinGW_64_bit-Release/moc_predefs.h -IC:/Qt/5.14.1/mingw73_64/mkspecs/win32-g++ -IC:/Users/edpou/Documents/GitHub/CS1C-Project-1/loginscreen -IC:/Users/edpou/Documents/GitHub/CS1C-Project-1/OpenSSL-Win64/include -IC:/Users/edpou/Documents/GitHub/CS1C-Project-1/OpenSSL-Win64/include -IC:/Users/edpou/Documents/GitHub/CS1C-Project-1/SmtpClient-for-Qt-1.1 -IC:/Qt/5.14.1/mingw73_64/include -IC:/Qt/5.14.1/mingw73_64/include/QtWidgets -IC:/Qt/5.14.1/mingw73_64/include/QtGui -IC:/Qt/5.14.1/mingw73_64/include/QtANGLE -IC:/Qt/5.14.1/mingw73_64/include/QtSql -IC:/Qt/5.14.1/mingw73_64/include/QtCore -I. -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\loginscreen\frontpage.h -o moc_frontpage.cpp
+	C:\Qt\5.14.1\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/Eddie/Documents/GitHub/CS1C-Project-1/build-loginscreen-Desktop_Qt_5_14_1_MinGW_64_bit-Release/moc_predefs.h -IC:/Qt/5.14.1/mingw73_64/mkspecs/win32-g++ -IC:/Users/Eddie/Documents/GitHub/CS1C-Project-1/loginscreen -IC:/Users/Eddie/Documents/GitHub/CS1C-Project-1/OpenSSL-Win64/include -IC:/Users/Eddie/Documents/GitHub/CS1C-Project-1/OpenSSL-Win64/include -IC:/Users/Eddie/Documents/GitHub/CS1C-Project-1/SmtpClient-for-Qt-1.1 -IC:/Qt/5.14.1/mingw73_64/include -IC:/Qt/5.14.1/mingw73_64/include/QtWidgets -IC:/Qt/5.14.1/mingw73_64/include/QtGui -IC:/Qt/5.14.1/mingw73_64/include/QtANGLE -IC:/Qt/5.14.1/mingw73_64/include/QtSql -IC:/Qt/5.14.1/mingw73_64/include/QtCore -I. -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\loginscreen\frontpage.h -o moc_frontpage.cpp
 
 moc_helpmenu.cpp: ../loginscreen/helpmenu.h \
 		../loginscreen/header.h \
@@ -2343,7 +2345,7 @@ moc_helpmenu.cpp: ../loginscreen/helpmenu.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QWidget \
 		moc_predefs.h \
 		C:/Qt/5.14.1/mingw73_64/bin/moc.exe
-	C:\Qt\5.14.1\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/edpou/Documents/GitHub/CS1C-Project-1/build-loginscreen-Desktop_Qt_5_14_1_MinGW_64_bit-Release/moc_predefs.h -IC:/Qt/5.14.1/mingw73_64/mkspecs/win32-g++ -IC:/Users/edpou/Documents/GitHub/CS1C-Project-1/loginscreen -IC:/Users/edpou/Documents/GitHub/CS1C-Project-1/OpenSSL-Win64/include -IC:/Users/edpou/Documents/GitHub/CS1C-Project-1/OpenSSL-Win64/include -IC:/Users/edpou/Documents/GitHub/CS1C-Project-1/SmtpClient-for-Qt-1.1 -IC:/Qt/5.14.1/mingw73_64/include -IC:/Qt/5.14.1/mingw73_64/include/QtWidgets -IC:/Qt/5.14.1/mingw73_64/include/QtGui -IC:/Qt/5.14.1/mingw73_64/include/QtANGLE -IC:/Qt/5.14.1/mingw73_64/include/QtSql -IC:/Qt/5.14.1/mingw73_64/include/QtCore -I. -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\loginscreen\helpmenu.h -o moc_helpmenu.cpp
+	C:\Qt\5.14.1\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/Eddie/Documents/GitHub/CS1C-Project-1/build-loginscreen-Desktop_Qt_5_14_1_MinGW_64_bit-Release/moc_predefs.h -IC:/Qt/5.14.1/mingw73_64/mkspecs/win32-g++ -IC:/Users/Eddie/Documents/GitHub/CS1C-Project-1/loginscreen -IC:/Users/Eddie/Documents/GitHub/CS1C-Project-1/OpenSSL-Win64/include -IC:/Users/Eddie/Documents/GitHub/CS1C-Project-1/OpenSSL-Win64/include -IC:/Users/Eddie/Documents/GitHub/CS1C-Project-1/SmtpClient-for-Qt-1.1 -IC:/Qt/5.14.1/mingw73_64/include -IC:/Qt/5.14.1/mingw73_64/include/QtWidgets -IC:/Qt/5.14.1/mingw73_64/include/QtGui -IC:/Qt/5.14.1/mingw73_64/include/QtANGLE -IC:/Qt/5.14.1/mingw73_64/include/QtSql -IC:/Qt/5.14.1/mingw73_64/include/QtCore -I. -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\loginscreen\helpmenu.h -o moc_helpmenu.cpp
 
 moc_loginwindow.cpp: ../loginscreen/loginwindow.h \
 		../loginscreen/header.h \
@@ -2639,7 +2641,7 @@ moc_loginwindow.cpp: ../loginscreen/loginwindow.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QWidget \
 		moc_predefs.h \
 		C:/Qt/5.14.1/mingw73_64/bin/moc.exe
-	C:\Qt\5.14.1\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/edpou/Documents/GitHub/CS1C-Project-1/build-loginscreen-Desktop_Qt_5_14_1_MinGW_64_bit-Release/moc_predefs.h -IC:/Qt/5.14.1/mingw73_64/mkspecs/win32-g++ -IC:/Users/edpou/Documents/GitHub/CS1C-Project-1/loginscreen -IC:/Users/edpou/Documents/GitHub/CS1C-Project-1/OpenSSL-Win64/include -IC:/Users/edpou/Documents/GitHub/CS1C-Project-1/OpenSSL-Win64/include -IC:/Users/edpou/Documents/GitHub/CS1C-Project-1/SmtpClient-for-Qt-1.1 -IC:/Qt/5.14.1/mingw73_64/include -IC:/Qt/5.14.1/mingw73_64/include/QtWidgets -IC:/Qt/5.14.1/mingw73_64/include/QtGui -IC:/Qt/5.14.1/mingw73_64/include/QtANGLE -IC:/Qt/5.14.1/mingw73_64/include/QtSql -IC:/Qt/5.14.1/mingw73_64/include/QtCore -I. -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\loginscreen\loginwindow.h -o moc_loginwindow.cpp
+	C:\Qt\5.14.1\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/Eddie/Documents/GitHub/CS1C-Project-1/build-loginscreen-Desktop_Qt_5_14_1_MinGW_64_bit-Release/moc_predefs.h -IC:/Qt/5.14.1/mingw73_64/mkspecs/win32-g++ -IC:/Users/Eddie/Documents/GitHub/CS1C-Project-1/loginscreen -IC:/Users/Eddie/Documents/GitHub/CS1C-Project-1/OpenSSL-Win64/include -IC:/Users/Eddie/Documents/GitHub/CS1C-Project-1/OpenSSL-Win64/include -IC:/Users/Eddie/Documents/GitHub/CS1C-Project-1/SmtpClient-for-Qt-1.1 -IC:/Qt/5.14.1/mingw73_64/include -IC:/Qt/5.14.1/mingw73_64/include/QtWidgets -IC:/Qt/5.14.1/mingw73_64/include/QtGui -IC:/Qt/5.14.1/mingw73_64/include/QtANGLE -IC:/Qt/5.14.1/mingw73_64/include/QtSql -IC:/Qt/5.14.1/mingw73_64/include/QtCore -I. -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\loginscreen\loginwindow.h -o moc_loginwindow.cpp
 
 moc_reviewwindow.cpp: ../loginscreen/reviewwindow.h \
 		../loginscreen/header.h \
@@ -2930,7 +2932,7 @@ moc_reviewwindow.cpp: ../loginscreen/reviewwindow.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QComboBox \
 		moc_predefs.h \
 		C:/Qt/5.14.1/mingw73_64/bin/moc.exe
-	C:\Qt\5.14.1\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/edpou/Documents/GitHub/CS1C-Project-1/build-loginscreen-Desktop_Qt_5_14_1_MinGW_64_bit-Release/moc_predefs.h -IC:/Qt/5.14.1/mingw73_64/mkspecs/win32-g++ -IC:/Users/edpou/Documents/GitHub/CS1C-Project-1/loginscreen -IC:/Users/edpou/Documents/GitHub/CS1C-Project-1/OpenSSL-Win64/include -IC:/Users/edpou/Documents/GitHub/CS1C-Project-1/OpenSSL-Win64/include -IC:/Users/edpou/Documents/GitHub/CS1C-Project-1/SmtpClient-for-Qt-1.1 -IC:/Qt/5.14.1/mingw73_64/include -IC:/Qt/5.14.1/mingw73_64/include/QtWidgets -IC:/Qt/5.14.1/mingw73_64/include/QtGui -IC:/Qt/5.14.1/mingw73_64/include/QtANGLE -IC:/Qt/5.14.1/mingw73_64/include/QtSql -IC:/Qt/5.14.1/mingw73_64/include/QtCore -I. -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\loginscreen\reviewwindow.h -o moc_reviewwindow.cpp
+	C:\Qt\5.14.1\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/Eddie/Documents/GitHub/CS1C-Project-1/build-loginscreen-Desktop_Qt_5_14_1_MinGW_64_bit-Release/moc_predefs.h -IC:/Qt/5.14.1/mingw73_64/mkspecs/win32-g++ -IC:/Users/Eddie/Documents/GitHub/CS1C-Project-1/loginscreen -IC:/Users/Eddie/Documents/GitHub/CS1C-Project-1/OpenSSL-Win64/include -IC:/Users/Eddie/Documents/GitHub/CS1C-Project-1/OpenSSL-Win64/include -IC:/Users/Eddie/Documents/GitHub/CS1C-Project-1/SmtpClient-for-Qt-1.1 -IC:/Qt/5.14.1/mingw73_64/include -IC:/Qt/5.14.1/mingw73_64/include/QtWidgets -IC:/Qt/5.14.1/mingw73_64/include/QtGui -IC:/Qt/5.14.1/mingw73_64/include/QtANGLE -IC:/Qt/5.14.1/mingw73_64/include/QtSql -IC:/Qt/5.14.1/mingw73_64/include/QtCore -I. -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\loginscreen\reviewwindow.h -o moc_reviewwindow.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -4531,10 +4533,10 @@ frontpage.o: ../loginscreen/frontpage.cpp ../loginscreen/frontpage.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qlayoutitem.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qboxlayout.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QHBoxLayout \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QHeaderView \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qheaderview.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QLabel \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qlabel.h \
-		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QListWidget \
-		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qlistwidget.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QMenuBar \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qmenubar.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qmenu.h \
@@ -4548,6 +4550,8 @@ frontpage.o: ../loginscreen/frontpage.cpp ../loginscreen/frontpage.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QStatusBar \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qstatusbar.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QTabWidget \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QTableView \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qtableview.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QWidget \
 		../loginscreen/loginwindow.h \
 		../loginscreen/adminoption.h \
@@ -4557,7 +4561,9 @@ frontpage.o: ../loginscreen/frontpage.cpp ../loginscreen/frontpage.h \
 		../loginscreen/emailwidget.h \
 		../loginscreen/reviewwindow.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QComboBox \
-		../loginscreen/helpmenu.h
+		../loginscreen/helpmenu.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QTableWidget \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qtablewidget.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o frontpage.o ..\loginscreen\frontpage.cpp
 
 helpmenu.o: ../loginscreen/helpmenu.cpp ../loginscreen/helpmenu.h \
@@ -5474,10 +5480,10 @@ main.o: ../loginscreen/main.cpp ../loginscreen/frontpage.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qlayoutitem.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qboxlayout.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QHBoxLayout \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QHeaderView \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qheaderview.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QLabel \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qlabel.h \
-		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QListWidget \
-		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qlistwidget.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QMenuBar \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qmenubar.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qmenu.h \
@@ -5491,6 +5497,8 @@ main.o: ../loginscreen/main.cpp ../loginscreen/frontpage.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QStatusBar \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qstatusbar.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QTabWidget \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QTableView \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qtableview.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QWidget \
 		../loginscreen/loginwindow.h \
 		../loginscreen/adminoption.h \
