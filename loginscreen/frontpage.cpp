@@ -43,23 +43,34 @@ FrontPage::~FrontPage()
     delete ui;
 }
 
+/*!
+ * \brief Displays "About Us" page
+ */
 void FrontPage::on_pushButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
 }
 
+/*!
+ * \brief Displays "Contact Us" page
+ */
 void FrontPage::on_pushButton_2_clicked()
 {
     ui->stackedWidget->setCurrentIndex(2);
 }
 
+/*!
+ * \brief Displays "Reviews" page
+ */
 void FrontPage::on_pushButton_3_clicked()
 {
     ui->stackedWidget->setCurrentIndex(3);
 }
 
 
-
+/*!
+ * \brief Opens Admin logon window
+ */
 void FrontPage::on_pushButton_4_clicked()
 {
     mainW->show();
@@ -68,36 +79,56 @@ void FrontPage::on_pushButton_4_clicked()
 
 
 
-
+/*!
+ * \brief Displays home page
+ */
 void FrontPage::on_homeButton_1_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
 }
 
+/*!
+ * \brief Displays home page
+ */
 void FrontPage::on_homeButton_2_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
 }
 
+/*!
+ * \brief Displays home page
+ */
 void FrontPage::on_homeButton_3_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
     refreshWindow();
 }
 
+/*!
+ * \brief opens review window
+ */
 void FrontPage::submitReview() {
    review = new reviewWindow();
    review->show();
 }
 
+/*!
+ * \brief shows help menu
+ */
 void FrontPage::stopItGetSomeHelp() {
     help->show();
 }
 
+/*!
+ * \brief prompts user to enter email for pamphlet
+ */
 void FrontPage::sendPamphlet() {
     email->show();
 }
 
+/*!
+ * \brief prompts user to enter a review for product
+ */
 void FrontPage::setupReviews() {
     //QSqlQuery *query = new QSqlQuery;
     QSqlQuery query;
