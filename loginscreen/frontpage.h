@@ -39,11 +39,13 @@ private slots:
     void submitReview();
 
     void stopItGetSomeHelp();
+    void sendPamphlet();
 private:
     Ui::FrontPage *ui;
     MainWindow *mainW = new MainWindow;
     reviewWindow *review;
     helpMenu *help = new helpMenu;
+    emailWidget *email = new emailWidget();
 };
 
 #endif // FRONTPAGE_H
