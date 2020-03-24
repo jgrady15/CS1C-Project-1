@@ -1,0 +1,72 @@
+#include "pamphletinfo.h"
+#include "ui_pamphletinfo.h"
+#include <QSqlQuery>
+#include <QSqlRecord>
+#include <QDebug>
+#include <QSqlError>
+
+/**
+ * @brief Constructor for pamphletInfo
+ * @param parent
+ */
+pamphletInfo::pamphletInfo(QWidget *parent) :
+    QWidget(parent),
+    ui(new Ui::pamphletInfo)
+{
+    ui->setupUi(this);
+    setupPage();
+}
+
+/**
+ * @brief Destructor for pamphletInfo
+ */
+pamphletInfo::~pamphletInfo()
+{
+    delete ui;
+}
+
+/**
+ * @brief Sets up the pamphlets page by reading from the database.
+ */
+void pamphletInfo::setupPage() {
+    QSqlQuery query;
+    QSqlRecord record;
+    QStringList temp1, temp2;
+    query.prepare("SELECT CustomerName, CustomerEmail FROM PamphletInfo;");
+    if(!query.exec())
+        qDebug() << query.lastError();
+
+    while(query.next())
+    {
+        record = query.record();
+        temp1 << record.value(0).toString();
+        temp2 << record.value(1).toString();
+    }
+
+    ui->nameList->addItems(temp1);
+    ui->emailList->addItems(temp2);
+}
+
+/**
+ * @brief Refreshes the list widgets to show updated information
+ */
+void pamphletInfo::refresh() {
+    QSqlQuery query;
+    QSqlRecord record;
+    QStringList temp1, temp2;
+    query.prepare("SELECT CustomerName, CustomerEmail FROM PamphletInfo;");
+    if(!query.exec())
+        qDebug() << query.lastError();
+
+    while(query.next())
+    {
+        record = query.record();
+        temp1 << record.value(0).toString();
+        temp2 << record.value(1).toString();
+    }
+    ui->nameList->clear();
+    ui->emailList->clear();
+
+    ui->nameList->addItems(temp1);
+    ui->emailList->addItems(temp2);
+}

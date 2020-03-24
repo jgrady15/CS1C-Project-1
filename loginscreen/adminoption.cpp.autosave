@@ -1,0 +1,51 @@
+#include "adminoption.h"
+#include "ui_adminoption.h"
+
+/**
+ * @brief Constructor for adminOption
+ * @param parent
+ */
+adminOption::adminOption(QWidget *parent) :
+    QDialog(parent),
+    ui(new Ui::adminOption)
+{
+    ui->setupUi(this);
+}
+
+/**
+ * @brief Destructor for adminOption
+ */
+adminOption::~adminOption()
+{
+    delete ui;
+}
+
+/**
+ * @brief Function to create and display the various variables from the company list
+ */
+void adminOption::viewCustomerList() {
+    admin->displayCompany();
+    admin->show();
+}
+
+/**
+ * @brief Function to send a pamphlet via email
+ */
+void adminOption::sendPamphlet() {
+    email->show();
+}
+
+/**
+ * @brief Function to show the admin logon window
+ */
+void adminOption::on_pushButton_3_clicked() {
+    admin->displayCustomer();
+    admin->show();
+}
+
+/**
+ * @brief Function to see the pamphlet info
+ */
+void adminOption::viewPamphletList() {
+    pamphlet->show();
+}
