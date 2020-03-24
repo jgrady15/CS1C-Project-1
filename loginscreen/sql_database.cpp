@@ -1,5 +1,9 @@
 #include "sql_database.h"
 #include <QFileInfo>
+
+/*!
+ * \brief Creates a database with relative path, sets path, then proceeds to open database
+ */
 sql_database::sql_database()
 {
     database = QSqlDatabase::addDatabase("QSQLITE");
@@ -29,6 +33,9 @@ void sql_database::closeConnection()
     database.close();
 }
 
+/*!
+ * \brief Creates 4 tables to be used throughout program
+ */
 void sql_database::sql_createDatabase()
 {
     QSqlQuery query;
@@ -46,16 +53,21 @@ void sql_database::sql_createDatabase()
                "ReviewNumber  INTEGER,"
                "TextReview    TEXT,"
                "UNIQUE        (CustomerName, ProductName));");
+
     query.exec("CREATE TABLE CustomerInfo("
                "CustomerName VARCHAR(50),"
                "ProductName VARCHAR(50),"
                "QtyBought INTEGER,"
                "MoneySpent VARCHAR(20));");
+
     query.exec("CREATE TABLE PamphletInfo("
                "CustomerName VARCHAR(50),"
                "CustomerEmail VARCHAR (50));");
 }
 
+/*!
+ * \brief Adds company information through a struct and then to database
+ */
 void sql_database::addCustomer(customerNode &temp)
 {
     QSqlQuery query;
