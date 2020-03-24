@@ -28,6 +28,9 @@ MainWindow::~MainWindow()
 }
 
 
+/*!
+ * \brief checks if user input matches correct values. If it doesn't, displays an error message. If it does, open the admin options
+ */
 void MainWindow::on_pushButton_Login_clicked() {
     QString username = ui->lineEdit_username->text();
     QString password = ui->lineEdit_password->text();

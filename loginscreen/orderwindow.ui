@@ -20,24 +20,10 @@
       <x>20</x>
       <y>20</y>
       <width>372</width>
-      <height>141</height>
+      <height>154</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="5" column="2">
-      <widget class="QLineEdit" name="totalLine">
-       <property name="readOnly">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="0">
-      <widget class="QLabel" name="productLabel">
-       <property name="text">
-        <string>Product:</string>
-       </property>
-      </widget>
-     </item>
      <item row="5" column="1">
       <widget class="QLabel" name="totalLabel">
        <property name="text">
@@ -45,17 +31,10 @@
        </property>
       </widget>
      </item>
-     <item row="2" column="2">
-      <widget class="QLabel" name="qtyLabel">
-       <property name="text">
-        <string>Quantity: </string>
-       </property>
-      </widget>
-     </item>
-     <item row="7" column="1" colspan="2">
-      <widget class="QPushButton" name="orderButton">
-       <property name="text">
-        <string>Order</string>
+     <item row="5" column="2">
+      <widget class="QLineEdit" name="totalLine">
+       <property name="readOnly">
+        <bool>true</bool>
        </property>
       </widget>
      </item>
@@ -66,23 +45,44 @@
        </property>
       </widget>
      </item>
-     <item row="2" column="3">
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="nameLine"/>
+     </item>
+     <item row="3" column="2">
+      <widget class="QLineEdit" name="productLine">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QComboBox" name="menuDrop"/>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="productLabel">
+       <property name="text">
+        <string>Product:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="qtyLabel">
+       <property name="text">
+        <string>Quantity: </string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
       <widget class="QSpinBox" name="qtyBox">
        <property name="maximum">
         <number>10</number>
        </property>
       </widget>
      </item>
-     <item row="0" column="1">
-      <widget class="QLineEdit" name="nameLine"/>
-     </item>
-     <item row="3" column="0">
-      <widget class="QComboBox" name="menuDrop"/>
-     </item>
-     <item row="3" column="1">
-      <widget class="QLineEdit" name="productLine">
-       <property name="readOnly">
-        <bool>true</bool>
+     <item row="7" column="0" colspan="3">
+      <widget class="QPushButton" name="orderButton">
+       <property name="text">
+        <string>Order</string>
        </property>
       </widget>
      </item>
@@ -95,7 +95,7 @@
      <x>0</x>
      <y>0</y>
      <width>426</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>
