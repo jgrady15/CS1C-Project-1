@@ -105,6 +105,7 @@ public:
 
         productLine = new QLineEdit(gridLayoutWidget);
         productLine->setObjectName(QString::fromUtf8("productLine"));
+        productLine->setReadOnly(true);
 
         gridLayout->addWidget(productLine, 3, 1, 1, 1);
 
