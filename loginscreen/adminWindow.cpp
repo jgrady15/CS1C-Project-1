@@ -1,6 +1,9 @@
 #include "adminwindow.h"
 #include "ui_adminwindow.h"
 
+/*!
+ * \brief Sets up combo boxes, and customer listing to be displayed on screen
+ */
 adminWindow::adminWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::adminWindow)
@@ -15,6 +18,9 @@ adminWindow::~adminWindow()
     delete ui;
 }
 
+/*!
+ * \brief Creates 4 choices for combo box, activates signal, and sets current page to companyPage
+ */
 void adminWindow::displayCompany()
 {
     ui->companyPage_sortComboBox->addItem("Ascending A-Z");
@@ -26,6 +32,9 @@ void adminWindow::displayCompany()
     ui->stackedWidget->setCurrentIndex(0);
 }
 
+/*!
+ * \brief Sets current page to customer page
+ */
 void adminWindow::displayCustomer()
 {
     QSqlQuery query;
@@ -39,6 +48,9 @@ void adminWindow::displayCustomer()
     ui->stackedWidget->setCurrentIndex(1);
 }
 
+/*!
+ * \brief Allows for case-insensitive string searching through database
+ */
 void adminWindow::searchFor()
 {
     //Obviously this function is going to be for searching
@@ -77,12 +89,18 @@ void adminWindow::searchFor()
     this->ui->companyPage_searchBar->setText("");
 }
 
+/*!
+ * \brief Selects company to be edited/deleted/modified
+ */
 void adminWindow::selectCompany(const QModelIndex &index)
 {
     selectedCompany = ui->companyPage_displayListCompanyName->model()->data(index).toString();
     qDebug() << selectedCompany;
 }
 
+/*!
+ * \brief Calls database and spews out information onto list widgets in company page
+ */
 void adminWindow::setupPage()
 {
     QSqlQuery query;
@@ -107,6 +125,9 @@ void adminWindow::setupPage()
     ui->companyPage_displayListKeyCustomer->addItems(temp3);
 }
 
+/*!
+ * \brief Calls database and spews out information to list widget in customer page
+ */
 void adminWindow::setupCustomer() {
     QSqlQuery query;
     QSqlRecord record;
@@ -132,6 +153,9 @@ void adminWindow::setupCustomer() {
     ui->customerPage_displayListCost->addItems(temp4);
 }
 
+/*!
+ * \brief Combo box allows for sorting in ascending, descending, interest level, and key customer
+ */
 void adminWindow::alphaNumOptions(int index)
 {
     QSqlQuery query;

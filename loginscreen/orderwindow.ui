@@ -80,11 +80,7 @@
       <widget class="QComboBox" name="menuDrop"/>
      </item>
      <item row="3" column="1">
-      <widget class="QLineEdit" name="productLine">
-       <property name="readOnly">
-        <bool>true</bool>
-       </property>
-      </widget>
+      <widget class="QLineEdit" name="productLine"/>
      </item>
     </layout>
    </widget>
